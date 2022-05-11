@@ -24,3 +24,5 @@ An app that help a group of hikers to prepare their logistic by tracking their l
 (name) - changes has been made
 
 ex: ditcu - refactoring
+
+#### Tambah Readme JIA
