@@ -18,3 +18,9 @@ An app that help a group of hikers to prepare their logistic by tracking their l
 5. Francezka April
 6. Mario
 7. Afina
+
+## Commit Messages Rule
+
+(name) - changes has been made
+
+ex: ditcu - refactoring
