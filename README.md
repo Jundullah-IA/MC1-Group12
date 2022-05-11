@@ -1,4 +1,4 @@
-# MC1 Group 1
+# MC1 Group 12
 ![Screen Shot 2022-04-18 at 16 50 32](https://user-images.githubusercontent.com/65699305/167760717-e5b588a6-de28-44dd-a604-6f9d2f254f94.png)
 
 ## Project Name
