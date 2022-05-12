@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
+		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
+		0814729F282C40D50092BFB3 /* ItemDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729E282C40D50092BFB3 /* ItemDetailForm.swift */; };
 		08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */; };
 		08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F2282B569E00B0AA72 /* ContentView.swift */; };
 		08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F4282B56A000B0AA72 /* Assets.xcassets */; };
 		08A089F8282B56A000B0AA72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */; };
+		08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F916E9282D09A400463F69 /* TestFormsFile.swift */; };
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
+		0814729E282C40D50092BFB3 /* ItemDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailForm.swift; sourceTree = "<group>"; };
 		08A089ED282B569E00B0AA72 /* MC1-Group12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Group12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1_Group12App.swift; sourceTree = "<group>"; };
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08A089F4282B56A000B0AA72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08F916E9282D09A400463F69 /* TestFormsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFormsFile.swift; sourceTree = "<group>"; };
 		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +42,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0814729D282C081A0092BFB3 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				0814729B282C08070092BFB3 /* HikingDetailForm.swift */,
+				0814729E282C40D50092BFB3 /* ItemDetailForm.swift */,
+				08F916E9282D09A400463F69 /* TestFormsFile.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
 		08A089E4282B569E00B0AA72 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +93,7 @@
 		0E777EB1282BFDE20090B74D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0814729D282C081A0092BFB3 /* Forms */,
 				0E777EB3282BFE8F0090B74D /* HomeScreen */,
 			);
 			path = Screen;
@@ -169,8 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
+				0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */,
 				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
+				0814729F282C40D50092BFB3 /* ItemDetailForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

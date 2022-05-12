@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HikingDetailForm: View {
+    @Environment(\.dismiss) var dismiss
+    
     @State var destination: String = "Rinjani"
     @State var tripDate: Date = Date.now
     @State var totalParticipant: Int = 1
@@ -25,28 +27,43 @@ struct HikingDetailForm: View {
                     }
                     
                     DatePicker(selection: $tripDate, label: {Text("Date")})
-                    
-                    Stepper(
-                        value: $totalParticipant,
-                        in: 1...100,
-                        label: {
-                            Text("Total Participant")
-                            
-                            Text("\(totalParticipant)")
-                                .padding(.leading, 30)
-                        }
-                    )
                 }
                 
-                Section(header: Text("Participants' Name")) {
+                Section(
+                    header: Text("Participant \t\t\t\t\t\t\t \(totalParticipant)")
+                        .font(.callout)
+                        .foregroundColor(.black),
+                    
+                    footer: Button(
+                        action: {
+                            totalParticipant += 1
+                        }, label: {
+                            Text("+ Add Participant")
+                                .font(.callout)
+                        }
+                    )
+                ) {
                     List() {
                         ForEach(1...totalParticipant, id: \.self) {a in
-                            TextField("Particpant \(a)", text: $participantName)
+                            HStack {
+                                TextField("Particpant \(a)", text: $participantName)
+                                
+                                Spacer()
+                                
+                                Button(
+                                    action: {
+                                        if(totalParticipant != 1){totalParticipant -= 1}
+                                    }, label: {
+                                        Image(systemName: "minus.circle")
+                                            .foregroundColor(.red)
+                                    }
+                                )
+                            }
                         }
                     }
                 }
             }
-            .padding(.top, 70)
+            .padding(.top, 60)
             
             .navigationTitle("Hiking Details")
             .navigationBarTitleDisplayMode(.inline)
@@ -54,6 +71,7 @@ struct HikingDetailForm: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
+                        dismiss()
                     }, label: {
                         Text("Cancel")
                     })
