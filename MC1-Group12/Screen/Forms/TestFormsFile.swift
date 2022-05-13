@@ -18,25 +18,24 @@ struct TestForms: View {
                 showSheet.toggle()
             }, label: {
                 Text("Show Hiking Form")
-            })
+            }) .padding()
             
             Button(action: {
                 selectedSheet = 1
                 showSheet.toggle()
             }, label: {
                 Text("Show Item Form")
-            })
+            }) .padding()
             
             Text("\(String(showSheet))")
             
-                .sheet(isPresented: $showSheet) {
-                    if(selectedSheet == 0) {
-                        HikingDetailForm()
-                    } else {
-                        ItemDetailForm()
-                        
-                    }
+            .sheet(isPresented: $showSheet) {
+                switch selectedSheet {
+                    case 0 : HikingDetailForm()
+                    case 1 : ItemDetailForm()
+                    default: TestForms()
                 }
+            }
         }
     }
 }
