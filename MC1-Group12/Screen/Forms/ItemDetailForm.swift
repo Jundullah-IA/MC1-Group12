@@ -12,47 +12,72 @@ struct ItemDetailForm: View {
     
     @State var emptyString: String = ""
     @State var totalItem: Int = 1
+    @State var dueDate: Date = Date.now
+    @State var counter: Int = 1
+    @State var counter1: Int = 1
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Item Name")
-                    .font(.callout)
-                    .foregroundColor(.black)
-                ) {
-                    TextField("", text: $emptyString)
+                
+                Section {
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        TextField("name", text: $emptyString)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    
+                    HStack {
+                        Text("Total")
+                        
+                        Stepper(value: $counter1, in: 1...100) {
+                            Text("\(counter1)") .padding(.leading, 130)
+                        }
+                    }
+                    
+                    HStack {
+                        Text("Notes")
+                        Spacer()
+                        TextField("notes", text: $emptyString)
+                            .multilineTextAlignment(.trailing)
+                    }
                 }
                 
-                Section(header: Text("Person In Charge")
-                    .font(.callout)
-                    .foregroundColor(.black)
-                ) {
-                    TextField("", text: $emptyString)
-                }
-                
-                Section() {
-                    Stepper(
-                        value: $totalItem,
-                        in: 1...100,
-                        label: {
-                            Text("AMOUNT")
+                Section(
+                    header: Text("Person In Charge")
+                        .font(.callout)
+                        .foregroundColor(.black),
+                    
+                    footer: Button(
+                        action: {
+                            counter += 1
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                            Text("Add PIC")
                                 .font(.callout)
-                                .foregroundColor(.black)
-
-                            
-                            Text("\(totalItem)")
-                                .padding(.leading, 60)
-                                .font(.callout)
-                                .foregroundColor(.black)
                         }
                     )
-                }
-                
-                Section(header: Text("Notes")
-                    .font(.callout)
-                    .foregroundColor(.black)
+
                 ) {
-                    TextEditor(text: $emptyString)
+                    List {
+                        ForEach(0...counter-1, id: \.self) {_ in
+                            HStack {
+                                TextField("Person", text: $emptyString)
+                                
+                                Spacer()
+                                
+                                Button(
+                                    action: {
+                                        if(counter != 1){counter -= 1}
+                                    }, label: {
+                                        Image(systemName: "minus.circle")
+                                            .foregroundColor(.red)
+                                    }
+                                )
+                            }
+                        }
+                    }
                 }
             }
             
