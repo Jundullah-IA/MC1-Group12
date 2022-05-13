@@ -30,7 +30,7 @@ struct HikingDetailForm: View {
                 }
                 
                 Section(
-                    header: Text("Participant \t\t\t\t\t\t\t \(totalParticipant)")
+                    header: Text("Participants \t\t\t\t\t\t \(totalParticipant)")
                         .font(.callout)
                         .foregroundColor(.black),
                     
@@ -38,7 +38,8 @@ struct HikingDetailForm: View {
                         action: {
                             totalParticipant += 1
                         }, label: {
-                            Text("+ Add Participant")
+                            Image(systemName: "plus.circle")
+                            Text("Add Participant")
                                 .font(.callout)
                         }
                     )
