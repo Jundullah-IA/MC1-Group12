@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Gunung gede pangrango-2.jpeg",
+      "filename" : "Gunung gede pangrango.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Gunung gede pangrango-1.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Gunung gede pangrango.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }
