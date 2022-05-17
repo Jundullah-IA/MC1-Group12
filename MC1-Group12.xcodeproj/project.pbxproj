@@ -13,10 +13,23 @@
 		08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F2282B569E00B0AA72 /* ContentView.swift */; };
 		08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F4282B56A000B0AA72 /* Assets.xcassets */; };
 		08A089F8282B56A000B0AA72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */; };
+<<<<<<< HEAD
+		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
+		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
+		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
+=======
+		08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */; };
+		08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C4282E4A5900862E8A /* ItemDetailForm.swift */; };
+		08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F916E9282D09A400463F69 /* TestFormsFile.swift */; };
+>>>>>>> 5cd7cfd (JIA-AddFormFiles)
+		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
+		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
+		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
 		08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */; };
 		08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C4282E4A5900862E8A /* ItemDetailForm.swift */; };
 		08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F916E9282D09A400463F69 /* TestFormsFile.swift */; };
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
+		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +40,18 @@
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08A089F4282B56A000B0AA72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		0E67E024282FFFEE00829F52 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
+		0E67E02828300E8900829F52 /* JourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyList.swift; sourceTree = "<group>"; };
+		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
+=======
 		08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailScreen.swift; sourceTree = "<group>"; };
 		08A923C4282E4A5900862E8A /* ItemDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailForm.swift; sourceTree = "<group>"; };
 		08F916E9282D09A400463F69 /* TestFormsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFormsFile.swift; sourceTree = "<group>"; };
 		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+>>>>>>> 5cd7cfd (JIA-AddFormFiles)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +124,13 @@
 		0E777EB1282BFDE20090B74D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				0E777EB8282C106A0090B74D /* MountainListScreen */,
+=======
+				08A923C1282E0B6B00862E8A /* MountainDetailScreen */,
+				0814729D282C081A0092BFB3 /* Forms */,
+>>>>>>> 5cd7cfd (JIA-AddFormFiles)
+				0E777EB8282C106A0090B74D /* MountainListScreen */,
 				08A923C1282E0B6B00862E8A /* MountainDetailScreen */,
 				0814729D282C081A0092BFB3 /* Forms */,
 				0E777EB3282BFE8F0090B74D /* HomeScreen */,
@@ -114,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				0E777EB4282BFF030090B74D /* HomeScreen.swift */,
+				0E67E0262830014B00829F52 /* MountCard.swift */,
+				0E67E02828300E8900829F52 /* JourneyList.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -121,8 +151,17 @@
 		0E777EB7282BFF930090B74D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0E67E024282FFFEE00829F52 /* Colors.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0E777EB8282C106A0090B74D /* MountainListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0E777EB9282C107F0090B74D /* MountainListScreen.swift */,
+			);
+			path = MountainListScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +236,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+<<<<<<< HEAD
+				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
+				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
+				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
+				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
+				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
+=======
+				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
+				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
+				0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */,
+>>>>>>> 5cd7cfd (JIA-AddFormFiles)
+				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,
+				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
+				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
+				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
+				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
+				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
+				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
 				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
 				0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */,

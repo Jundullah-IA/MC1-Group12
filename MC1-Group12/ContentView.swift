@@ -7,12 +7,30 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        HomeScreen()
-    }
+enum Tabs: String, CaseIterable, Identifiable {
+    case home, mountains
+    var id: Self { self }
 }
 
+struct ContentView: View {
+    @State private var selectedTab: Tabs = .home
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+                HomeScreen()
+                    .tabItem {
+                        Label("Home", systemImage: "globe.asia.australia.fill")
+                    }
+                    .tag(Tabs.home)
+                
+                MountainListScreen()
+                    .tabItem {
+                        Label("Mountain List", systemImage: "triangle.tophalf.filled")
+                    }
+                    .tag(Tabs.mountains)
+        }
+    }
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
