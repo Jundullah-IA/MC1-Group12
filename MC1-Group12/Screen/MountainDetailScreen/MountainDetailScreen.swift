@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct MountainDetail {
+    var mount: MountainData
+    var about: String
+    var requirements: [String] /// administration papers
+    var pathWays: String
+    var estTime: String
+    var minGroup: Int
+    var maxGroup: Int
+    var ticketPriceWeekend: String
+    var ticketPriceWeekdays: String
+    var selfLogistic: [String]
+    var groupLogistic: [String]
+    var extraLogistic: [String] /// additional
+    var sources: String
+}
+
 struct RoundedCornersShape: Shape {
     let corners: UIRectCorner
     let radius: CGFloat
@@ -32,8 +48,8 @@ struct MountainDetailScreen: View {
                 VStack {
                     Image("gunung_gede")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.size.width, height: 300)
                         .scaledToFill()
+                        .frame(width: UIScreen.main.bounds.size.width, height: 300)
                     
                     ScrollView {
                         switch currentSubview {

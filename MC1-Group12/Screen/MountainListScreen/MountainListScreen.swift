@@ -15,10 +15,8 @@ struct MountainListScreen: View {
         NavigationView {
             ScrollView {
                 ForEach(searchResults, id: \.self) { name in
-                    NavigationLink(destination: Text(name)) {
-                        MountCard()
-                            .padding(.vertical, 2)
-                    }
+                    MountCard()
+                        .padding(.vertical, 2)
                 }
                 .listRowBackground(Color.clear)
             }
