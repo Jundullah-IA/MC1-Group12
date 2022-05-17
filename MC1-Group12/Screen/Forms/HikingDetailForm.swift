@@ -15,9 +15,22 @@ struct HikingDetailForm: View {
     @State var totalParticipant: Int = 1
     @State var participantName: String = ""
     
+    @ViewBuilder var headerParticipant: some View {
+        HStack {
+            Text("Participants")
+                .font(.callout)
+                .foregroundColor(.black)
+
+            Spacer()
+            Text("\(totalParticipant)")
+                .font(.callout)
+                .foregroundColor(.black)
+        }
+    }
+    
     var body: some View {
         NavigationView {
-            Form {
+            List {
                 Section {
                     HStack {
                         Text("Destination")
@@ -30,41 +43,38 @@ struct HikingDetailForm: View {
                 }
                 
                 Section(
-                    header: Text("Participants \t\t\t\t\t\t \(totalParticipant)")
-                        .font(.callout)
-                        .foregroundColor(.black),
+                    header: headerParticipant,
                     
                     footer: Button(
                         action: {
                             totalParticipant += 1
                         }, label: {
-                            Image(systemName: "plus.circle")
-                            Text("Add Participant")
-                                .font(.callout)
+                            HStack {
+                                Image(systemName: "plus.circle")
+                                Text("Add Participant")
+                                    .font(.callout)
+                            }.foregroundColor(.blue)
                         }
                     )
                 ) {
-                    List() {
-                        ForEach(1...totalParticipant, id: \.self) {a in
-                            HStack {
-                                TextField("Particpant \(a)", text: $participantName)
+                    ForEach(1...totalParticipant, id: \.self) {a in
+                        HStack {
+                            TextField("Particpant \(a)", text: $participantName)
                                 
-                                Spacer()
-                                
-                                Button(
-                                    action: {
-                                        if(totalParticipant != 1){totalParticipant -= 1}
-                                    }, label: {
-                                        Image(systemName: "minus.circle")
-                                            .foregroundColor(.red)
-                                    }
-                                )
-                            }
+                            Button(
+                                action: {
+                                    if(totalParticipant != 1){totalParticipant -= 1}
+                                }, label: {
+                                    Image(systemName: "minus.circle")
+                                        .foregroundColor(.red)
+                                }
+                            )
                         }
                     }
                 }
             }
-            .padding(.top, 60)
+            .padding(.top, 57)
+            .listStyle(.grouped)
             
             .navigationTitle("Hiking Details")
             .navigationBarTitleDisplayMode(.inline)

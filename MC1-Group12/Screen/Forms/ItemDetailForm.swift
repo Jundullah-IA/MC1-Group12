@@ -16,10 +16,22 @@ struct ItemDetailForm: View {
     @State var counter: Int = 1
     @State var counter1: Int = 1
     
+    @ViewBuilder var headerPic: some View {
+        HStack {
+            Text("Person In Charge")
+                .font(.callout)
+                .foregroundColor(.black)
+            
+            Spacer()
+            Text("\(counter)")
+                .font(.callout)
+                .foregroundColor(.black)
+        }
+    }
+    
     var body: some View {
         NavigationView {
-            Form {
-                
+            List {
                 Section {
                     HStack {
                         Text("Name")
@@ -45,9 +57,7 @@ struct ItemDetailForm: View {
                 }
                 
                 Section(
-                    header: Text("Person In Charge")
-                        .font(.callout)
-                        .foregroundColor(.black),
+                    header: headerPic,
                     
                     footer: Button(
                         action: {
@@ -60,28 +70,26 @@ struct ItemDetailForm: View {
                     )
 
                 ) {
-                    List {
-                        ForEach(0...counter-1, id: \.self) {_ in
-                            HStack {
-                                TextField("Person", text: $emptyString)
-                                
-                                Spacer()
-                                
-                                Button(
-                                    action: {
-                                        if(counter != 1){counter -= 1}
-                                    }, label: {
-                                        Image(systemName: "minus.circle")
-                                            .foregroundColor(.red)
-                                    }
-                                )
-                            }
+                    ForEach(0...counter-1, id: \.self) {_ in
+                        HStack {
+                            TextField("Person", text: $emptyString)
+                            
+                            Button(
+                                action: {
+                                    if(counter != 1){counter -= 1}
+                                }, label: {
+                                    Image(systemName: "minus.circle")
+                                        .foregroundColor(.red)
+                                }
+                            )
                         }
                     }
+
                 }
             }
             
-            .padding(.top, 60)
+            .padding(.top, 57)
+            .listStyle(.grouped)
             
             .navigationTitle("Item Details")
             .navigationBarTitleDisplayMode(.inline)
