@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct ItemDetailForm: View {
+    @Environment(\.dismiss) var dismiss
+    
     @State var emptyString: String = ""
     @State var totalItem: Int = 1
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Item Name")) {
-                    TextField("Item name", text: $emptyString)
+                Section(header: Text("Item Name")
+                    .font(.callout)
+                    .foregroundColor(.black)
+                ) {
+                    TextField("", text: $emptyString)
                 }
                 
-                Section(header: Text("Person In Charge")) {
-                    TextField("Person in charge", text: $emptyString)
+                Section(header: Text("Person In Charge")
+                    .font(.callout)
+                    .foregroundColor(.black)
+                ) {
+                    TextField("", text: $emptyString)
                 }
                 
                 Section() {
@@ -27,20 +35,28 @@ struct ItemDetailForm: View {
                         value: $totalItem,
                         in: 1...100,
                         label: {
-                            Text("Total Item")
+                            Text("AMOUNT")
+                                .font(.callout)
+                                .foregroundColor(.black)
+
                             
                             Text("\(totalItem)")
                                 .padding(.leading, 60)
+                                .font(.callout)
+                                .foregroundColor(.black)
                         }
                     )
                 }
                 
-                Section(header: Text("Notes")) {
-                    TextField("Notes", text: $emptyString)
+                Section(header: Text("Notes")
+                    .font(.callout)
+                    .foregroundColor(.black)
+                ) {
+                    TextEditor(text: $emptyString)
                 }
             }
             
-            .padding(.top, 70)
+            .padding(.top, 60)
             
             .navigationTitle("Item Details")
             .navigationBarTitleDisplayMode(.inline)
@@ -48,6 +64,7 @@ struct ItemDetailForm: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
+                        dismiss()
                     }, label: {
                         Text("Cancel")
                     })
