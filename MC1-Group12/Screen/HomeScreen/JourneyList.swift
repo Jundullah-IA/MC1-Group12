@@ -12,7 +12,7 @@ struct Mount: Identifiable {
     let id = UUID()
 }
 
- var mounts = [
+var mounts = [
     Mount(name: "Semeru"),
     Mount(name: "Bromo"),
     Mount(name: "Merapi"),
@@ -52,7 +52,6 @@ struct JourneyList: View {
                 }
                 .padding(.vertical, 5)
             }
-            .listRowBackground(Color.white.opacity(0.9))
         }.listStyle(.plain)
     }
 }
