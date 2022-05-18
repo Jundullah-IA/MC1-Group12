@@ -23,18 +23,6 @@ struct MountainDetail {
     var sources: String
 }
 
-struct RoundedCornersShape: Shape {
-    let corners: UIRectCorner
-    let radius: CGFloat
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect,
-                                byRoundingCorners: corners,
-                                cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
 struct MountainDetailScreen: View {
     @State private var currentSubview:Int = 0
     @State private var showSheet: Bool = false
@@ -42,7 +30,7 @@ struct MountainDetailScreen: View {
     var body: some View {
         VStack {
             ZStack {
-                Color(UIColor.systemGray5)
+                Color.background
                     .padding(.top, 200)
                 
                 VStack {
@@ -83,58 +71,38 @@ struct MountainDetailScreen: View {
                     HStack {
                         Spacer()
                         VStack {
-//                            if currentSubview == 0 {
-//                                Rectangle()
-//                                    .frame(width: 80, height: 7, alignment: .center)
-//                                    .padding(.bottom, 6)
-//                            }
-                            
                             Image(systemName: "info.circle.fill")
                             Text("Information")
                                 .font(.callout)
                         }
                         .padding()
                         .onTapGesture(perform: {currentSubview = 0})
-                        .foregroundColor(currentSubview == 0 ? Color(UIColor.systemCyan) : .gray)
+                        .foregroundColor(currentSubview == 0 ? Color.mountainDetailButton : .gray)
                         
-                        Spacer()
                         VStack {
-//                            if currentSubview == 1 {
-//                                Rectangle()
-//                                    .frame(width: 80, height: 7, alignment: .center)
-//                                    .padding(.bottom, 6)
-//                            }
-                            
                             Image(systemName: "wand.and.stars")
                             Text("Esssential")
                                 .font(.callout)
                         }
+                        .padding()
                         .onTapGesture(perform: {currentSubview = 1})
-                        .foregroundColor(currentSubview == 1 ? Color(UIColor.systemCyan) : .gray)
+                        .foregroundColor(currentSubview == 1 ? Color.mountainDetailButton : .gray)
                         
-                        Spacer()
                         VStack {
-//                            if currentSubview == 2 {
-//                                Rectangle()
-//                                    .frame(width: 80, height: 7, alignment: .center)
-//                                    .padding(.bottom, 6)
-//                            }
-                            
                             Image(systemName: "newspaper.fill")
                             Text("Requirement")
                                 .font(.callout)
                         }
+                        .padding()
                         .onTapGesture(perform: {currentSubview = 2})
-                        .foregroundColor(currentSubview == 2 ? Color(UIColor.systemCyan) : .gray)
+                        .foregroundColor(currentSubview == 2 ? Color.mountainDetailButton : .gray)
                         
                         Spacer()
                     }
                     .frame(height: 70)
                     .foregroundColor(.gray)
-                    .background(
-                        RoundedCornersShape(corners: [.topLeft, .topRight], radius: 30)
-                            .fill(Color(UIColor.systemGray6))
-                    )
+                    .background(.white)
+                    
                     Spacer()
                 } .padding(.top, 20)
             } .padding(.top, 100)

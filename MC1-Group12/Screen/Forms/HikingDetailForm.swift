@@ -13,7 +13,7 @@ struct HikingDetailForm: View {
     @State var destination: String = "Rinjani"
     @State var tripDate: Date = Date.now
     @State var totalParticipant: Int = 1
-    @State var participantName: String = ""
+    @State var participants: [String] = [""]
     
     @ViewBuilder var headerParticipant: some View {
         HStack {
@@ -22,7 +22,7 @@ struct HikingDetailForm: View {
                 .foregroundColor(.black)
 
             Spacer()
-            Text("\(totalParticipant)")
+            Text("\(participants.count)")
                 .font(.callout)
                 .foregroundColor(.black)
         }
@@ -47,7 +47,7 @@ struct HikingDetailForm: View {
                     
                     footer: Button(
                         action: {
-                            totalParticipant += 1
+                            self.participants.append("")
                         }, label: {
                             HStack {
                                 Image(systemName: "plus.circle")
@@ -57,13 +57,14 @@ struct HikingDetailForm: View {
                         }
                     )
                 ) {
-                    ForEach(1...totalParticipant, id: \.self) {a in
+                    ForEach(0..<participants.count, id: \.self) {n in
                         HStack {
-                            TextField("Particpant \(a)", text: $participantName)
+                            TextField("Particpant \(n+1)", text: self.$participants[n])
                                 
                             Button(
                                 action: {
-                                    if(totalParticipant != 1){totalParticipant -= 1}
+                                    if(participants.count != 1) { self.participants.remove(at: n)}
+                                    else {self.participants[n] = ""}
                                 }, label: {
                                     Image(systemName: "minus.circle")
                                         .foregroundColor(.red)
