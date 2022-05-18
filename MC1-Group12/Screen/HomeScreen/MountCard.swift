@@ -29,7 +29,7 @@ struct MountCard: View {
     var body: some View {
         NavigationLink(destination: {
             if planCard ?? false {
-                Text("Hiking Detail Screen")
+                HikingDetailScreen()
             } else {
                 MountainDetailScreen()
             }
