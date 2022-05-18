@@ -27,7 +27,13 @@ struct MountCard: View {
     //    var data: MountData
     
     var body: some View {
-        NavigationLink(destination: MountainDetailScreen()) {
+        NavigationLink(destination: {
+            if planCard ?? false {
+                HikingDetailScreen()
+            } else {
+                MountainDetailScreen()
+            }
+        }) {
             ZStack(alignment: .bottom) {
                 
                 Image("semeru")
@@ -40,30 +46,36 @@ struct MountCard: View {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            Text("SEMERU").font(.title2).fontWeight(.bold)
-                            Text("Part of Indonesia").font(.caption).italic()
+                            Text("SEMERU")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Text("Part of Indonesia")
+                                .font(.system(size: 16, weight: .regular, design: .serif))
+                                .italic()
                         }
                         if planCard ?? false {
                             Spacer()
                             HStack{
                                 Image(systemName: "calendar")
-                                Text("18 June 2022").font(.footnote)
+                                Text("18 June 2022")
+                                    .font(.subheadline)
                             }
                         }
                     }
                     Spacer()
                     HStack{
                         Image(systemName: "triangle.tophalf.filled")
-                        Text("3.012 mdpl").font(.footnote)
+                        Text("3.012 mdpl")
+                            .font(.subheadline)
                     }
                 }
                 .foregroundColor(.white)
                 .padding()
                 
             }
-            
             .frame(height: cardHeight)
             .padding(.horizontal)
+            
         }
     }
 }

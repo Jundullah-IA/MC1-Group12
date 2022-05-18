@@ -10,5 +10,6 @@ import SwiftUI
 extension Color {
     static let darkGreen = Color("dark-green")
     static let background = Color("bg")
+    static let disabledCardBg = Color("disabled-card-bg")
     static let mountainDetailButton = Color("mount-detail-color")
 }

@@ -10,18 +10,30 @@ import SwiftUI
 struct MountainListScreen: View {
     let names = mounts.map {$0.name}
     @State private var searchText = ""
+    var textOnly: Bool?
     
     var body: some View {
-        NavigationView {
-            ScrollView {
+        if textOnly ?? false {
+            List {
                 ForEach(searchResults, id: \.self) { name in
-                    MountCard()
-                        .padding(.vertical, 2)
+                    NavigationLink(destination: MountainDetailScreen()) {
+                        Text(name).foregroundColor(.accentColor)
+                    }
                 }
-                .listRowBackground(Color.clear)
             }
             .searchable(text: $searchText)
-            .navigationTitle("Mountains")
+            .navigationTitle("Destinations")
+            .navigationBarTitleDisplayMode(.inline)
+        } else {
+            NavigationView {
+                ScrollView {
+                    ForEach(searchResults, id: \.self) { name in
+                        MountCard().padding(.vertical, 2)
+                    }
+                }
+                .searchable(text: $searchText)
+                .navigationTitle("Mountains")
+            }
         }
     }
     
