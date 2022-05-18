@@ -20,6 +20,8 @@
 		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
 		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
 		0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B31E2834AEB900D052A0 /* Carousel.swift */; };
+		0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */; };
+		0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B3422834DD1B00D052A0 /* Persistence.swift */; };
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
 		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
 		0E67E02828300E8900829F52 /* JourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyList.swift; sourceTree = "<group>"; };
 		0E75B31E2834AEB900D052A0 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata.xcdatamodel; sourceTree = "<group>"; };
+		0E75B3422834DD1B00D052A0 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +139,8 @@
 		0E777EB7282BFF930090B74D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0E75B3422834DD1B00D052A0 /* Persistence.swift */,
+				0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */,
 				0E67E024282FFFEE00829F52 /* Colors.swift */,
 			);
 			path = Services;
@@ -222,6 +228,7 @@
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
 				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
 				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
+				0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */,
 				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
@@ -231,6 +238,7 @@
 				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,
 				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
 				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
+				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */,
+			);
+			currentVersion = 0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */;
+			path = coredata.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 08A089E5282B569E00B0AA72 /* Project object */;
 }
