@@ -25,7 +25,7 @@ struct ContentView: View {
                 
                 MountainListScreen()
                     .tabItem {
-                        Label("Mountain List", systemImage: "triangle.tophalf.filled")
+                        Label("Mountains", systemImage: "triangle.tophalf.filled")
                     }
                     .tag(Tabs.mountains)
         }
