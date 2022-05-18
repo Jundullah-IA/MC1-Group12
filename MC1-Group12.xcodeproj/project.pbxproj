@@ -74,6 +74,13 @@
 			path = Forms;
 			sourceTree = "<group>";
 		};
+		08852CF52834E3C800C7DD59 /* En */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = En;
+			sourceTree = "<group>";
+		};
 		08A089E4282B569E00B0AA72 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +101,7 @@
 		08A089EF282B569E00B0AA72 /* MC1-Group12 */ = {
 			isa = PBXGroup;
 			children = (
+				08852CF52834E3C800C7DD59 /* En */,
 				0E777EB7282BFF930090B74D /* Services */,
 				0E777EB1282BFDE20090B74D /* Screen */,
 				08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */,

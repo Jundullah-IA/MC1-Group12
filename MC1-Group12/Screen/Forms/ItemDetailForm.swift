@@ -15,19 +15,17 @@ struct ItemDetailForm: View {
     @State var dueDate: Date = Date.now
     @State var counter: Int = 1
     @State var counter1: Int = 1
+    @State var isSelectRemindMe: Bool = false
+    @State var reminderDate: Date = Date.now
     
-    @ViewBuilder var headerPic: some View {
-        HStack {
-            Text("Person In Charge")
-                .font(.callout)
-                .foregroundColor(.black)
-            
-            Spacer()
-            Text("\(counter)")
-                .font(.callout)
-                .foregroundColor(.black)
-        }
-    }
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
+    let persons = ["Sarach Princy Mipon", "Billi Umar Daeli", "Aditya Cahyo", "Franceka April", "Jundullah Ilhaq Aulia", "Mario Telepeta", "Afina R. Vinci"]
+    @State var selectedPIC: [String] = [""]
     
     var body: some View {
         NavigationView {
@@ -36,7 +34,7 @@ struct ItemDetailForm: View {
                     HStack {
                         Text("Name")
                         Spacer()
-                        TextField("name", text: $emptyString)
+                        TextField("item name", text: $emptyString)
                             .multilineTextAlignment(.trailing)
                     }
                     
@@ -44,7 +42,7 @@ struct ItemDetailForm: View {
                         Text("Total")
                         
                         Stepper(value: $counter1, in: 1...100) {
-                            Text("\(counter1)") .padding(.leading, 130)
+                            Text("\(counter1)") .padding(.leading, 180)
                         }
                     }
                     
@@ -54,38 +52,88 @@ struct ItemDetailForm: View {
                         TextField("notes", text: $emptyString)
                             .multilineTextAlignment(.trailing)
                     }
-                }
-                
-                Section(
-                    header: headerPic,
                     
-                    footer: Button(
-                        action: {
-                            counter += 1
-                        }, label: {
-                            Image(systemName: "plus.circle")
-                            Text("Add PIC")
-                                .font(.callout)
-                        }
-                    )
-
-                ) {
-                    ForEach(0...counter-1, id: \.self) {_ in
+                    HStack {
+                        Text("Remind Me")
+                        Spacer()
+                        Toggle("", isOn: $isSelectRemindMe)
+                    }
+                    
+                    if(isSelectRemindMe) {
                         HStack {
-                            TextField("Person", text: $emptyString)
-                            
-                            Button(
-                                action: {
-                                    if(counter != 1){counter -= 1}
-                                }, label: {
-                                    Image(systemName: "minus.circle")
-                                        .foregroundColor(.red)
-                                }
-                            )
+                            DatePicker(selection: $reminderDate, label: {Text("Date")})
                         }
                     }
-
+                    
+                    HStack {
+                        Text("Person in charge")
+                        Spacer()
+                    }
+                    
+                    LazyVGrid(columns: columns) {
+                        ForEach(0..<persons.count, id: \.self) {index in
+                            ZStack {
+                                Color.background
+                                HStack {
+                                    Image(systemName: "person")
+                                    Text(persons[index])
+                                }
+                                .cornerRadius(15)
+                            }
+                            .cornerRadius(15)
+                            .frame(width: 110, height: 35)
+                        }
+                    }
                 }
+                
+//                Section(
+//                    header:
+//                        Text("Person In Charge")
+////                            .font(.callout)
+////                            .foregroundColor(.black)
+//                    ,
+//
+//                    footer: Button(
+//                        action: {
+//                            self.selectedPIC.append("")
+//                        }, label: {
+//                            Image(systemName: "plus.circle")
+//                            Text("Add PIC")
+//                                .font(.callout)
+//                        }
+//                    )
+//
+//                ) {
+//                    ForEach(0..<selectedPIC.count, id: \.self) {n in
+//                        HStack {
+//                            if(self.selectedPIC[n] != "") {
+//                                Text("\(self.selectedPIC[n])")
+//                            } else {
+//                                Picker(
+//                                    "Select PIC",
+//                                    selection: self.$selectedPIC[n],
+//                                    content: {
+//                                        ForEach(persons, id: \.self) { person in
+//                                            Text(person)
+//                                        }
+//                                    }
+//                                ).pickerStyle(.menu)
+//                            }
+//
+//                            Spacer()
+//
+//                            Button(
+//                                action: {
+//                                    if(selectedPIC.count != 1) { self.selectedPIC.remove(at: n)}
+//                                    else {self.selectedPIC[n] = ""}
+//                                }, label: {
+//                                    Image(systemName: "minus.circle")
+//                                        .foregroundColor(.red)
+//                                }
+//                            )
+//                        }
+//                    }
+//                }
             }
             
             .padding(.top, 57)
