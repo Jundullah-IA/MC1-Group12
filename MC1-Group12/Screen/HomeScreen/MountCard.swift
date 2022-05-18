@@ -27,7 +27,13 @@ struct MountCard: View {
     //    var data: MountData
     
     var body: some View {
-        NavigationLink(destination: MountainDetailScreen()) {
+        NavigationLink(destination: {
+            if planCard ?? false {
+                Text("Hiking Detail Screen")
+            } else {
+                MountainDetailScreen()
+            }
+        }) {
             ZStack(alignment: .bottom) {
                 
                 Image("semeru")

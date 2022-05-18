@@ -29,13 +29,14 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if noPlan {
+                    if false {
                         Text("No ongoing plan")
                             .font(.subheadline)
+                            .foregroundColor(.darkGreen)
                             .opacity(0.4)
                             .padding(.vertical, 25)
                     } else {
-                        MountCard(planCard: true).padding(.vertical, 10)
+                        Carousel().padding(.bottom, 10)
                     }
                     
                     VStack(alignment: .leading) {
@@ -50,12 +51,14 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if noJourney {
+                    if false {
+                        VStack {
+                        Image("empty")
                         Text("No journey history")
                             .font(.subheadline)
+                            .foregroundColor(.darkGreen)
                             .opacity(0.4)
-                            .padding(.vertical, 25)
-                            
+                        }.padding(.vertical, 25)
                     } else {
                         JourneyList()
                     }
@@ -65,7 +68,7 @@ struct HomeScreen: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {noPlan = !noPlan; noJourney = !noJourney}) {
+                    NavigationLink(destination: MountainListScreen(textOnly: true)) {
                         Image(systemName: "plus")
                     }
                 }
