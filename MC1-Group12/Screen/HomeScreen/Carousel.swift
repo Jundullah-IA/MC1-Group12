@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-struct CardView: View{
-    var body: some View{
-        Rectangle()
-            .fill(Color.pink)
-            .frame(height: 200)
-            .border(Color.black)
-            .padding()
-    }
-}
-
 struct Carousel: View {
     @State private var index = 0
     
@@ -25,7 +15,7 @@ struct Carousel: View {
         VStack(spacing: 0) {
             TabView(selection: $index) {
                 ForEach((0..<3), id: \.self) { index in
-                    MountCard()
+                    MountCard(planCard: true)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
