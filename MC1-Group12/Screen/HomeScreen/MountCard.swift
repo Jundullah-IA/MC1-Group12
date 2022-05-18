@@ -73,9 +73,9 @@ struct MountCard: View {
                 .padding()
                 
             }
-            
             .frame(height: cardHeight)
             .padding(.horizontal)
+            
         }
     }
 }

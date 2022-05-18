@@ -35,16 +35,21 @@ struct JourneyList: View {
                         Text(item.name)
                             .font(.title3)
                             .fontWeight(.medium)
-                        Text("Part of Indonesia").font(.system(size: 16, weight: .regular, design: .serif)).italic().foregroundColor(Color.darkGreen)
+                        Text("Part of Indonesia")
+                            .font(.system(size: 16, weight: .regular, design: .serif))
+                            .italic()
+                            .foregroundColor(Color.darkGreen)
                         Spacer()
                         HStack {
                             HStack {
-                                Image(systemName: "calendar").foregroundColor(Color.darkGreen)
+                                Image(systemName: "calendar")
+                                    .foregroundColor(Color.darkGreen)
                                 Text("18 June 2022")
                             }
                             Spacer()
                             HStack {
-                                Image(systemName: "person.3.fill").foregroundColor(Color.darkGreen)
+                                Image(systemName: "person.3.fill")
+                                    .foregroundColor(Color.darkGreen)
                                 Text("10")
                             }
                         }.font(.subheadline)

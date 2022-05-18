@@ -28,10 +28,8 @@ struct MountainListScreen: View {
             NavigationView {
                 ScrollView {
                     ForEach(searchResults, id: \.self) { name in
-                        MountCard()
-                            .padding(.vertical, 2)
+                        MountCard().padding(.vertical, 2)
                     }
-                    .listRowBackground(Color.clear)
                 }
                 .searchable(text: $searchText)
                 .navigationTitle("Mountains")
