@@ -7,25 +7,11 @@
 
 import SwiftUI
 
-struct MountainDetail {
-    var mount: MountainData
-    var about: String
-    var requirements: [String] /// administration papers
-    var pathWays: String
-    var estTime: String
-    var minGroup: Int
-    var maxGroup: Int
-    var ticketPriceWeekend: String
-    var ticketPriceWeekdays: String
-    var selfLogistic: [String]
-    var groupLogistic: [String]
-    var extraLogistic: [String] /// additional
-    var sources: String
-}
-
 struct MountainDetailScreen: View {
     @State private var currentSubview:Int = 0
     @State private var showSheet: Bool = false
+    
+    @State var mountain: Mountain = Mountain(location: "", height: 0)
     
     var body: some View {
         VStack {
@@ -41,9 +27,9 @@ struct MountainDetailScreen: View {
                     
                     ScrollView {
                         switch currentSubview {
-                            case 0: Text("Information")
-                            case 1: Text("Essential")
-                            case 2: Text("Requirement")
+                            case 0: InformationView(mountainInfo:  mountain.informations)
+                            case 1: EssentialView(mountainEssential: mountain.essentials)
+                            case 2: RequirementView(mountainRequairement: mountain.reqirements)
                             default: Text("")
                         }
                     }
@@ -53,7 +39,7 @@ struct MountainDetailScreen: View {
                 
                 VStack {
                     HStack {
-                        Text("Lombok, Indonesia")
+                        Text(mountain.location)
                             .font(.title3)
                             .italic()
                             .foregroundColor(.white)
@@ -61,7 +47,7 @@ struct MountainDetailScreen: View {
                     } .padding(.horizontal)
                     
                     HStack {
-                        Text("3,762 mdpl")
+                        Text("\(mountain.height) mdpl")
                             .foregroundColor(.white)
                         Spacer()
                     }
@@ -108,7 +94,7 @@ struct MountainDetailScreen: View {
             } .padding(.top, 100)
 
             
-            .navigationTitle("Rinjani")
+                .navigationTitle(mountain.name)
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.all)
             .toolbar {
