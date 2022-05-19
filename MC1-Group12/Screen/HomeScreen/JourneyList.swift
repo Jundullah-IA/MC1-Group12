@@ -12,7 +12,7 @@ struct Mount: Identifiable {
     let id = UUID()
 }
 
- var mounts = [
+var mounts = [
     Mount(name: "Semeru"),
     Mount(name: "Bromo"),
     Mount(name: "Merapi"),
@@ -35,24 +35,28 @@ struct JourneyList: View {
                         Text(item.name)
                             .font(.title3)
                             .fontWeight(.medium)
-                        Text("Part of Indonesia").font(.system(size: 12, weight: .regular, design: .serif)).italic().foregroundColor(Color.darkGreen)
+                        Text("Part of Indonesia")
+                            .font(.system(size: 16, weight: .regular, design: .serif))
+                            .italic()
+                            .foregroundColor(Color.darkGreen)
                         Spacer()
                         HStack {
                             HStack {
-                                Image(systemName: "calendar").font(.footnote).foregroundColor(Color.darkGreen)
-                                Text("18 June 2022").font(.footnote)
+                                Image(systemName: "calendar")
+                                    .foregroundColor(Color.darkGreen)
+                                Text("18 June 2022")
                             }
                             Spacer()
                             HStack {
-                                Image(systemName: "person.3.fill").font(.footnote).foregroundColor(Color.darkGreen)
-                                Text("10").font(.footnote)
+                                Image(systemName: "person.3.fill")
+                                    .foregroundColor(Color.darkGreen)
+                                Text("10")
                             }
-                        }
+                        }.font(.subheadline)
                     }
                 }
                 .padding(.vertical, 5)
             }
-            .listRowBackground(Color.white.opacity(0.9))
         }.listStyle(.plain)
     }
 }
