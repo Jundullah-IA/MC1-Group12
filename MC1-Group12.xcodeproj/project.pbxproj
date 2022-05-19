@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0804005D28368A4D00BC43A2 /* MountainInformation.swift */; };
+		0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0804005F28368CA100BC43A2 /* MountainEssentialView.swift */; };
+		08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08040061283691BA00BC43A2 /* MountainRequirement.swift */; };
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
 		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
 		08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */; };
@@ -15,6 +18,9 @@
 		08A089F8282B56A000B0AA72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */; };
 		08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */; };
 		08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C4282E4A5900862E8A /* ItemDetailForm.swift */; };
+		08D68C612835D7C10021EF0E /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C602835D7C10021EF0E /* Mountain.swift */; };
+		08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C62283616D80021EF0E /* HikingJourney.swift */; };
+		08D68C65283620910021EF0E /* MountainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C64283620910021EF0E /* MountainList.swift */; };
 		08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F916E9282D09A400463F69 /* TestFormsFile.swift */; };
 		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
 		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
@@ -30,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0804005D28368A4D00BC43A2 /* MountainInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInformation.swift; sourceTree = "<group>"; };
+		0804005F28368CA100BC43A2 /* MountainEssentialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainEssentialView.swift; sourceTree = "<group>"; };
+		08040061283691BA00BC43A2 /* MountainRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRequirement.swift; sourceTree = "<group>"; };
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
 		08A089ED282B569E00B0AA72 /* MC1-Group12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Group12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +48,9 @@
 		08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailScreen.swift; sourceTree = "<group>"; };
 		08A923C4282E4A5900862E8A /* ItemDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailForm.swift; sourceTree = "<group>"; };
+		08D68C602835D7C10021EF0E /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
+		08D68C62283616D80021EF0E /* HikingJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingJourney.swift; sourceTree = "<group>"; };
+		08D68C64283620910021EF0E /* MountainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainList.swift; sourceTree = "<group>"; };
 		08F916E9282D09A400463F69 /* TestFormsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFormsFile.swift; sourceTree = "<group>"; };
 		0E67E024282FFFEE00829F52 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
@@ -74,11 +86,14 @@
 			path = Forms;
 			sourceTree = "<group>";
 		};
-		08852CF52834E3C800C7DD59 /* En */ = {
+		08852CF52834E3C800C7DD59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				08D68C602835D7C10021EF0E /* Mountain.swift */,
+				08D68C64283620910021EF0E /* MountainList.swift */,
+				08D68C62283616D80021EF0E /* HikingJourney.swift */,
 			);
-			path = En;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		08A089E4282B569E00B0AA72 = {
@@ -101,7 +116,7 @@
 		08A089EF282B569E00B0AA72 /* MC1-Group12 */ = {
 			isa = PBXGroup;
 			children = (
-				08852CF52834E3C800C7DD59 /* En */,
+				08852CF52834E3C800C7DD59 /* Model */,
 				0E777EB7282BFF930090B74D /* Services */,
 				0E777EB1282BFDE20090B74D /* Screen */,
 				08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */,
@@ -124,6 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */,
+				0804005D28368A4D00BC43A2 /* MountainInformation.swift */,
+				0804005F28368CA100BC43A2 /* MountainEssentialView.swift */,
+				08040061283691BA00BC43A2 /* MountainRequirement.swift */,
 			);
 			path = MountainDetailScreen;
 			sourceTree = "<group>";
@@ -251,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */,
+				0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */,
 				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
 				0E75B348283502A700D052A0 /* ItemCard.swift in Sources */,
 				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
@@ -258,8 +278,12 @@
 				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
+				0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */,
 				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
+				08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */,
 				0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */,
+				08D68C612835D7C10021EF0E /* Mountain.swift in Sources */,
+				08D68C65283620910021EF0E /* MountainList.swift in Sources */,
 				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
 				0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */,
 				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,

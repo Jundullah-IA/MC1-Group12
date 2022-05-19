@@ -26,12 +26,14 @@ struct MountCard: View {
     var planCard: Bool?
     //    var data: MountData
     
+    @State var mountain: Mountain = Mountain(location: "", height: 0)
+    
     var body: some View {
         NavigationLink(destination: {
             if planCard ?? false {
                 HikingDetailScreen()
             } else {
-                MountainDetailScreen()
+                MountainDetailScreen(mountain: mountain)
             }
         }) {
             ZStack(alignment: .bottom) {
@@ -46,10 +48,10 @@ struct MountCard: View {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            Text("SEMERU")
+                            Text(mountain.name)
                                 .font(.title2)
                                 .fontWeight(.bold)
-                            Text("Part of Indonesia")
+                            Text(mountain.location)
                                 .font(.system(size: 16, weight: .regular, design: .serif))
                                 .italic()
                         }
@@ -65,7 +67,7 @@ struct MountCard: View {
                     Spacer()
                     HStack{
                         Image(systemName: "triangle.tophalf.filled")
-                        Text("3.012 mdpl")
+                        Text("\(mountain.height) mdpl")
                             .font(.subheadline)
                     }
                 }
