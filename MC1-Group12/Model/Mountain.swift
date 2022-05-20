@@ -195,7 +195,7 @@ let MountainList: [Mountain] = [
                 "- Drinks",
                 "- Private Water Bottle",
                 "- Garbage Bag",
-                "- Survival Kit (Multipurpose Folding Knife, Compass, Match)"
+                "- Survival Kit (Multipurpose Folding Knife, Compass, Match)",
                 "- Kernmantle Rope 30 m",
                 "- Carabiners",
                 "- Webbing",
@@ -208,7 +208,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 5.000",
@@ -297,7 +297,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 15.000",
@@ -386,7 +386,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 34.000",
@@ -474,7 +474,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 30.000",
@@ -561,7 +561,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -648,7 +648,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -735,7 +735,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -822,7 +822,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -909,7 +909,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -996,7 +996,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1083,7 +1083,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1170,7 +1170,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1257,7 +1257,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1344,7 +1344,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1431,7 +1431,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1518,7 +1518,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1605,7 +1605,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1692,7 +1692,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1779,7 +1779,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1866,7 +1866,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -1953,7 +1953,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -2040,7 +2040,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -2127,7 +2127,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
@@ -2214,7 +2214,7 @@ let MountainList: [Mountain] = [
             ]
         ),
         reqirements: [
-            MountainRequirement MountainRequirement(
+            MountainRequirement(
                 title: "Minimum Cost",
                 items: [
                     "Weekeday : IDR 10.000",
