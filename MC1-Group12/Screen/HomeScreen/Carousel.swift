@@ -9,13 +9,14 @@ import SwiftUI
 
 struct Carousel: View {
     @State private var index = 0
+    var runingHikingJourney: [Hiking]?
     
     var body: some View {
         
         VStack(spacing: 0) {
             TabView(selection: $index) {
-                ForEach((0..<3), id: \.self) { index in
-                    MountCard(planCard: true)
+                ForEach(runingHikingJourney!) { hiking in
+                    MountCard(planCard: true, hikingDate: hiking.date)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

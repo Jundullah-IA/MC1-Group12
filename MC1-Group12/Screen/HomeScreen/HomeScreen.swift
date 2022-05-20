@@ -10,8 +10,12 @@ import SwiftUI
 struct HomeScreen: View {
     @State var noPlan = true
     @State var noJourney = true
+//    var hikingJourneyHistory: [Hiking]
+    
+    @ObservedObject var hikingJourney = HikingJourney()
     
     var body: some View {
+        
         NavigationView {
             ZStack(alignment: .top){
                 
@@ -29,15 +33,26 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if false {
+                    if (hikingJourney.hikingJourney.count != 0) {
+                        Carousel(runingHikingJourney: hikingJourney.hikingJourney)
+                            .padding(.bottom, 10)
+                    } else {
                         Text("No ongoing plan")
                             .font(.subheadline)
                             .foregroundColor(.darkGreen)
                             .opacity(0.4)
                             .padding(.vertical, 25)
-                    } else {
-                        Carousel().padding(.bottom, 10)
                     }
+                    
+//                    if false {
+//                        Text("No ongoing plan")
+//                            .font(.subheadline)
+//                            .foregroundColor(.darkGreen)
+//                            .opacity(0.4)
+//                            .padding(.vertical, 25)
+//                    } else {
+//                        Carousel().padding(.bottom, 10)
+//                    }
                     
                     VStack(alignment: .leading) {
                         Divider()

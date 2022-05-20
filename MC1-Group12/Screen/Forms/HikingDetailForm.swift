@@ -10,10 +10,11 @@ import SwiftUI
 struct HikingDetailForm: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var destination: String = "Rinjani"
+    @State var mountain: Mountain = MountainList[0]
     @State var tripDate: Date = Date.now
-    @State var totalParticipant: Int = 1
     @State var participants: [String] = [""]
+    
+    @ObservedObject var hikingJourney = HikingJourney()
     
     @ViewBuilder var headerParticipant: some View {
         HStack {
@@ -35,8 +36,9 @@ struct HikingDetailForm: View {
                     HStack {
                         Text("Destination")
                         Spacer()
-                        TextField("Destination", text: $destination)
+                        TextField("Destination", text: $mountain.name)
                             .multilineTextAlignment(.trailing)
+                            .disabled(true)
                     }
                     
                     DatePicker(selection: $tripDate, label: {Text("Date")})
@@ -82,19 +84,26 @@ struct HikingDetailForm: View {
             .edgesIgnoringSafeArea(.all)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Text("Cancel")
-                    })
+                    Button(
+                        action: {
+//                            dismiss()
+                            print(hikingJourney.hikingJourney)
+                        },
+                        label: { Text("Cancel") }
+                    )
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
+                            hikingJourney.hikingJourney.append(Hiking(
+                                mountain: mountain, date: tripDate, hiker: participants
+                            ))
+                            
+//                            print(hikingJourney.hikingJourney)
+                            
+//                            dismiss()
                         },
-                        label: {
-                            Text("Save").fontWeight(.bold)
-                        }
+                        label: { Text("Save").fontWeight(.bold) }
                     )
                 }
             }
