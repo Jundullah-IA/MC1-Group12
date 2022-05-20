@@ -909,7 +909,7 @@ let MountainList: [Mountain] = [
         name: "Sumbing",
         location: "Magelang, Central Java, Indonesia",
         height: 3371,
-        image: "image",
+        image: "sumbing",
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 8700,
@@ -2214,7 +2214,7 @@ let MountainList: [Mountain] = [
         name: "Leuser",
         location: "Aceh, Aceh, Indonesia",
         height: 3404,
-        image: "leuser",
+        image: "leuseur",
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 8700,

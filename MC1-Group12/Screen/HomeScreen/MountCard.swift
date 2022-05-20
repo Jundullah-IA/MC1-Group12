@@ -27,7 +27,7 @@ struct MountCard: View {
         }) {
             ZStack(alignment: .bottom) {
                 
-                Image("semeru")
+                Image(mountain.image)
                     .resizable()
                     .scaledToFill()
                     .frame(height: cardHeight)
