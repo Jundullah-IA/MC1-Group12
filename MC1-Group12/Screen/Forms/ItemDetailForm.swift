@@ -10,13 +10,18 @@ import SwiftUI
 struct ItemDetailForm: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var emptyString: String = ""
+    @State var itemName: String = ""
     @State var totalItem: Int = 1
+    @State var notes: String = ""
     @State var dueDate: Date = Date.now
     @State var counter: Int = 1
     @State var counter1: Int = 1
     @State var isSelectRemindMe: Bool = false
     @State var reminderDate: Date = Date.now
+    
+    @ObservedObject var globalObj: HikingJourney
+    var hiking: Hiking
+    var logisticType: String = "group"
     
     let columns = [
         GridItem(.flexible()),
@@ -24,17 +29,18 @@ struct ItemDetailForm: View {
         GridItem(.flexible())
     ]
     
-    let persons = ["Sarach Princy Mipon", "Billi Umar Daeli", "Aditya Cahyo", "Franceka April", "Jundullah Ilhaq Aulia", "Mario Telepeta", "Afina R. Vinci"]
-    @State var selectedPIC: [String] = [""]
+    @State var selectedPIC: [String] = []
     
     var body: some View {
+        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+        
         NavigationView {
             List {
                 Section {
                     HStack {
                         Text("Name")
                         Spacer()
-                        TextField("item name", text: $emptyString)
+                        TextField("item name", text: $itemName)
                             .multilineTextAlignment(.trailing)
                     }
                     
@@ -49,91 +55,58 @@ struct ItemDetailForm: View {
                     HStack {
                         Text("Notes")
                         Spacer()
-                        TextField("notes", text: $emptyString)
+                        TextField("notes", text: $notes)
                             .multilineTextAlignment(.trailing)
                     }
                     
-                    HStack {
-                        Text("Remind Me")
-                        Spacer()
-                        Toggle("", isOn: $isSelectRemindMe)
-                    }
+//                    HStack {
+//                        Text("Remind Me")
+//                        Spacer()
+//                        Toggle("", isOn: $isSelectRemindMe)
+//                    }
+//
+//                    if(isSelectRemindMe) {
+//                        HStack {
+//                            DatePicker(selection: $reminderDate, label: {Text("Date")})
+//                        }
+//                    }
                     
-                    if(isSelectRemindMe) {
+                    if(logisticType == "group") {
                         HStack {
-                            DatePicker(selection: $reminderDate, label: {Text("Date")})
+                            Text("Person in charge")
+                            Spacer()
                         }
-                    }
-                    
-                    HStack {
-                        Text("Person in charge")
-                        Spacer()
-                    }
-                    
-                    LazyVGrid(columns: columns) {
-                        ForEach(0..<persons.count, id: \.self) {index in
-                            ZStack {
-                                Color.background
-                                HStack {
-                                    Image(systemName: "person")
-                                    Text(persons[index])
+                        
+                        LazyVGrid(columns: columns) {
+                            ForEach(0..<hiking.hiker.count, id: \.self) {index in
+                                ZStack {
+                                    if(selectedPIC.contains(hiking.hiker[index])) {
+                                        Color.green
+                                    } else {
+                                        Color.background
+                                    }
+                                    
+                                    HStack {
+                                        Image(systemName: "person")
+                                        Text(hiking.hiker[index])
+                                    }
+                                    .cornerRadius(15)
                                 }
                                 .cornerRadius(15)
+                                .frame(width: 110, height: 35)
+                                .onTapGesture {
+                                    if(selectedPIC.contains(hiking.hiker[index])) {
+                                        selectedPIC = selectedPIC.filter() {
+                                            $0 != hiking.hiker[index]
+                                        }
+                                    } else {
+                                        selectedPIC.append(hiking.hiker[index])
+                                    }
+                                }
                             }
-                            .cornerRadius(15)
-                            .frame(width: 110, height: 35)
                         }
                     }
                 }
-                
-//                Section(
-//                    header:
-//                        Text("Person In Charge")
-////                            .font(.callout)
-////                            .foregroundColor(.black)
-//                    ,
-//
-//                    footer: Button(
-//                        action: {
-//                            self.selectedPIC.append("")
-//                        }, label: {
-//                            Image(systemName: "plus.circle")
-//                            Text("Add PIC")
-//                                .font(.callout)
-//                        }
-//                    )
-//
-//                ) {
-//                    ForEach(0..<selectedPIC.count, id: \.self) {n in
-//                        HStack {
-//                            if(self.selectedPIC[n] != "") {
-//                                Text("\(self.selectedPIC[n])")
-//                            } else {
-//                                Picker(
-//                                    "Select PIC",
-//                                    selection: self.$selectedPIC[n],
-//                                    content: {
-//                                        ForEach(persons, id: \.self) { person in
-//                                            Text(person)
-//                                        }
-//                                    }
-//                                ).pickerStyle(.menu)
-//                            }
-//
-//                            Spacer()
-//
-//                            Button(
-//                                action: {
-//                                    if(selectedPIC.count != 1) { self.selectedPIC.remove(at: n)}
-//                                    else {self.selectedPIC[n] = ""}
-//                                }, label: {
-//                                    Image(systemName: "minus.circle")
-//                                        .foregroundColor(.red)
-//                                }
-//                            )
-//                        }
-//                    }
-//                }
             }
             
             .padding(.top, 57)
@@ -153,6 +126,20 @@ struct ItemDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
+                            if(logisticType == "group") {
+                                globalObj.journeyList[index].groupLogistic.append(GroupItem(
+                                    name: itemName,
+                                    quantity: totalItem,
+                                    notes: notes,
+                                    pic: selectedPIC))
+                            } else {
+                                globalObj.journeyList[index].personalLogistic.append(PersonalItem(
+                                    name: itemName,
+                                    quantity: totalItem,
+                                    notes: notes))
+                            }
+                            
+                            dismiss()
                         },
                         label: {
                             Text("Save").fontWeight(.bold)
@@ -164,8 +151,8 @@ struct ItemDetailForm: View {
     }
 }
 
-struct ItemDetailForm_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemDetailForm()
-    }
-}
+//struct ItemDetailForm_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ItemDetailForm()
+//    }
+//}

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemCard: View {
+struct ItemCardGroup: View {
     @State var checked: Bool = false
     
     var body: some View {

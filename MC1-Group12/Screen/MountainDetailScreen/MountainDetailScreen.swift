@@ -21,7 +21,7 @@ struct MountainDetailScreen: View {
                     .padding(.top, 200)
                 
                 VStack {
-                    Image("gunung_gede")
+                    Image(mountain.image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: UIScreen.main.bounds.size.width, height: 300)

@@ -13,6 +13,24 @@ struct Hiking: Identifiable {
     var date: Date = Date.now
     var hiker: [String] = [""]
     var isDone: Bool = false
+    
+    var groupLogistic: [GroupItem] = []
+    var personalLogistic: [PersonalItem] = []
+}
+
+struct GroupItem: Identifiable {
+    let id = UUID()
+    var name: String = "Kaos"
+    var quantity: Int = 0
+    var notes: String = ""
+    var pic: [String] = []
+}
+
+struct PersonalItem: Identifiable {
+    let id = UUID()
+    var name: String = "lala"
+    var quantity: Int = 0
+    var notes: String = ""
 }
 
 class HikingJourney: ObservableObject {

@@ -11,9 +11,9 @@ struct HomeScreen: View {
     @State var noPlan = true
     @State var noJourney = true
 //    var hikingJourneyHistory: [Hiking]
-    
+   
     @ObservedObject var globalObj: HikingJourney
-    
+
     var body: some View {
         
         NavigationView {
@@ -50,16 +50,6 @@ struct HomeScreen: View {
                             }
                     }
                     
-//                    if false {
-//                        Text("No ongoing plan")
-//                            .font(.subheadline)
-//                            .foregroundColor(.darkGreen)
-//                            .opacity(0.4)
-//                            .padding(.vertical, 25)
-//                    } else {
-//                        Carousel().padding(.bottom, 10)
-//                    }
-                    
                     VStack(alignment: .leading) {
                         Divider()
                         Text("Journey History")
@@ -81,7 +71,7 @@ struct HomeScreen: View {
                             .opacity(0.4)
                         }.padding(.vertical, 25)
                     } else {
-                        JourneyList()
+                        JourneyList(globalObj: globalObj)
                     }
                     
                 }
