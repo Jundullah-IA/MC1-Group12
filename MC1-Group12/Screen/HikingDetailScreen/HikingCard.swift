@@ -10,9 +10,15 @@ import SwiftUI
 struct HikingCard: View {
     let height: CGFloat = 120
     
+    @ObservedObject var globalObj: HikingJourney
+    var hiking: Hiking
+    
     var body: some View {
+        let mountain = hiking.mountain
+        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+        
         ZStack {
-            Image("semeru")
+            Image(mountain.image)
                 .resizable()
                 .scaledToFill()
                 .frame(height: height)
@@ -22,10 +28,10 @@ struct HikingCard: View {
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text("Part of Indonesia")
+                        Text(mountain.location)
                             .font(.system(size: 18, weight: .regular, design: .serif))
                             .italic()
-                        Text("3,212 mdpl")
+                        Text("\(mountain.height) mdpl")
                             .font(.subheadline)
                     }
                     Spacer()
@@ -35,6 +41,19 @@ struct HikingCard: View {
                         }
                         Button(role: .destructive, action: {}) {
                             Label("Delete", systemImage: "trash")
+                        }
+                        Button(role: .destructive, action: {
+//                            print(hiking)
+//                            print(globalObj.journeyList.first {$0.id == hiking.id}.isDone = true)
+                            globalObj.journeyList[index].isDone.toggle()
+                            if var foo = globalObj.journeyList.first(where: {$0.id == hiking.id}) {
+                                foo.isDone = true
+                            } else {
+                               // item could not be found
+                            }
+                            
+                        }) {
+                            Label("test", systemImage: "trash")
                         }
                     } label: {
                         Image(systemName: "ellipsis")
@@ -63,9 +82,9 @@ struct HikingCard: View {
         }.frame(height: height)
     }
 }
-
-struct HikingCard_Previews: PreviewProvider {
-    static var previews: some View {
-        HikingCard()
-    }
-}
+//
+//struct HikingCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HikingCard()
+//    }
+//}

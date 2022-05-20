@@ -33,6 +33,7 @@
 		0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B349283502C800D052A0 /* HikingCard.swift */; };
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
 		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
+		0EBE72722837D58F00ECC55A /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Func.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		0E75B349283502C800D052A0 /* HikingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingCard.swift; sourceTree = "<group>"; };
 		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
+		0EBE72712837D58F00ECC55A /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				0E75B3422834DD1B00D052A0 /* Persistence.swift */,
 				0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */,
 				0E67E024282FFFEE00829F52 /* Colors.swift */,
+				0EBE72712837D58F00ECC55A /* Func.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */,
 				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
+				0EBE72722837D58F00ECC55A /* Func.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
 				0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */,
 				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,

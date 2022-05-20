@@ -12,11 +12,11 @@ struct Carousel: View {
     @ObservedObject var globalObj: HikingJourney
     
     var body: some View {
-        
+        let list = globalObj.journeyList.filter {$0.isDone}
         VStack(spacing: 0) {
             TabView(selection: $index) {
                 ForEach(globalObj.journeyList) { hiking in
-                    MountCard(planCard: true, hikingDate: hiking.date, globalObj: globalObj, mountain: hiking.mountain)
+                    MountCard(globalObj: globalObj, hikeDetail: hiking, mountain: hiking.mountain)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
