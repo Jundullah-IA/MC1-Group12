@@ -16,7 +16,7 @@ struct Carousel: View {
         VStack(spacing: 0) {
             TabView(selection: $index) {
                 ForEach(globalObj.journeyList) { hiking in
-                    MountCard(planCard: true, hikingDate: hiking.date, globalObj: globalObj, mountainDetail: hiking.mountain)
+                    MountCard(planCard: true, hikingDate: hiking.date, globalObj: globalObj, mountain: hiking.mountain)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

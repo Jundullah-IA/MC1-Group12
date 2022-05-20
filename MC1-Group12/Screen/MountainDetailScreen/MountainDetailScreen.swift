@@ -11,8 +11,8 @@ struct MountainDetailScreen: View {
     @State private var currentSubview:Int = 0
     @State private var showSheet: Bool = false
     
-    @State var mountain: Mountain = Mountain(location: "", height: 0)
     @ObservedObject var globalObj: HikingJourney
+    var mountain: Mountain
     
     var body: some View {
         VStack {
@@ -107,7 +107,7 @@ struct MountainDetailScreen: View {
                         }
                     )
                     
-                    .sheet(isPresented: $showSheet) { HikingDetailForm(globalObj: globalObj) }
+                    .sheet(isPresented: $showSheet) { HikingDetailForm(globalObj: globalObj, mountain: mountain) }
                 }
             }
         }

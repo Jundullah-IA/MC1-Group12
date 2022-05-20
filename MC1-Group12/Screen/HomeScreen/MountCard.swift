@@ -28,7 +28,7 @@ struct MountCard: View {
     var hikingDate: Date = Date.now
     
     @ObservedObject var globalObj: HikingJourney
-    var mountainDetail: Mountain
+    var mountain: Mountain
     
     func dateToString(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -41,9 +41,9 @@ struct MountCard: View {
         
         NavigationLink(destination: {
             if planCard ?? false {
-                HikingDetailScreen(globalObj: globalObj)
+                HikingDetailScreen(globalObj: globalObj, mountain: mountain)
             } else {
-                MountainDetailScreen(mountain: mountainDetail, globalObj: globalObj)
+                MountainDetailScreen(globalObj: globalObj, mountain: mountain)
             }
         }) {
             ZStack(alignment: .bottom) {
@@ -58,10 +58,10 @@ struct MountCard: View {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            Text(mountainDetail.name)
+                            Text(mountain.name)
                                 .font(.title2)
                                 .fontWeight(.bold)
-                            Text(mountainDetail.location)
+                            Text(mountain.location)
                                 .font(.system(size: 16, weight: .regular, design: .serif))
                                 .italic()
                         }
@@ -77,7 +77,7 @@ struct MountCard: View {
                     Spacer()
                     HStack{
                         Image(systemName: "triangle.tophalf.filled")
-                        Text("\(mountainDetail.height) mdpl")
+                        Text("\(mountain.height) mdpl")
                             .font(.subheadline)
                     }
                 }

@@ -17,7 +17,7 @@ struct MountainListScreen: View {
         if textOnly ?? false {
             List {
                 ForEach(MountainList) {mountain in
-                    NavigationLink(destination: MountainDetailScreen(mountain: mountain, globalObj: globalObj)) {
+                    NavigationLink(destination: MountainDetailScreen(globalObj: globalObj, mountain: mountain)) {
                         Text(mountain.name).foregroundColor(.accentColor)
                     }
                 }
@@ -29,7 +29,7 @@ struct MountainListScreen: View {
             NavigationView {
                 ScrollView {
                     ForEach(MountainList) { mountain in
-                        MountCard(globalObj: globalObj, mountainDetail: mountain).padding(.vertical, 2)
+                        MountCard(globalObj: globalObj, mountain: mountain).padding(.vertical, 2)
                     }
                 }
                 .searchable(text: $searchText)

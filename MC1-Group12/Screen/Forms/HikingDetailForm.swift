@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct HikingDetailForm: View {
-    @ObservedObject var globalObj: HikingJourney
+
     @Environment(\.dismiss) var dismiss
-    
-    @State var mountain: Mountain = MountainList[0]
+    @ObservedObject var globalObj: HikingJourney
+    @State var mountain: Mountain
     @State var tripDate: Date = Date.now
     @State var participants: [String] = [""]
     
@@ -86,7 +86,6 @@ struct HikingDetailForm: View {
                     Button(
                         action: {
                             dismiss()
-//                            print(globalObj.hikingJourney)
                         },
                         label: { Text("Cancel") }
                     )
@@ -97,10 +96,8 @@ struct HikingDetailForm: View {
                             globalObj.journeyList.append(Hiking(
                                 mountain: mountain, date: tripDate, hiker: participants
                             ))
-                            
-//                            print(hikingJourney.hikingJourney)
-                            
-//                            dismiss()
+
+                            dismiss()
                         },
                         label: { Text("Save").fontWeight(.bold) }
                     )
