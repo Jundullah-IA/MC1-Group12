@@ -25,15 +25,25 @@ struct MountCard: View {
     let cardHeight: CGFloat = 165
     var planCard: Bool?
     //    var data: MountData
+    var hikingDate: Date = Date.now
     
-    @State var mountain: Mountain = Mountain(location: "", height: 0)
+    @ObservedObject var globalObj: HikingJourney
+    var mountain: Mountain
+    
+    func dateToString(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        let someDateTime = formatter.string(from: date)
+        return someDateTime
+    }
     
     var body: some View {
+        
         NavigationLink(destination: {
             if planCard ?? false {
-                HikingDetailScreen()
+                HikingDetailScreen(globalObj: globalObj, mountain: mountain)
             } else {
-                MountainDetailScreen(mountain: mountain)
+                MountainDetailScreen(globalObj: globalObj, mountain: mountain)
             }
         }) {
             ZStack(alignment: .bottom) {
@@ -59,7 +69,7 @@ struct MountCard: View {
                             Spacer()
                             HStack{
                                 Image(systemName: "calendar")
-                                Text("18 June 2022")
+                                Text(dateToString(hikingDate))
                                     .font(.subheadline)
                             }
                         }
@@ -82,8 +92,8 @@ struct MountCard: View {
     }
 }
 
-struct MyPlanCard_Previews: PreviewProvider {
-    static var previews: some View {
-        MountCard()
-    }
-}
+//struct MyPlanCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MountCard()
+//    }
+//}

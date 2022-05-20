@@ -11,12 +11,13 @@ struct MountainListScreen: View {
     let names = mounts.map {$0.name}
     @State private var searchText = ""
     var textOnly: Bool?
+    @ObservedObject var globalObj: HikingJourney
     
     var body: some View {
         if textOnly ?? false {
             List {
                 ForEach(MountainList) {mountain in
-                    NavigationLink(destination: MountainDetailScreen(mountain: mountain)) {
+                    NavigationLink(destination: MountainDetailScreen(globalObj: globalObj, mountain: mountain)) {
                         Text(mountain.name).foregroundColor(.accentColor)
                     }
                 }
@@ -28,7 +29,7 @@ struct MountainListScreen: View {
             NavigationView {
                 ScrollView {
                     ForEach(MountainList) { mountain in
-                        MountCard(mountain: mountain).padding(.vertical, 2)
+                        MountCard(globalObj: globalObj, mountain: mountain).padding(.vertical, 2)
                     }
                 }
                 .searchable(text: $searchText)
@@ -46,9 +47,9 @@ struct MountainListScreen: View {
     }
     
 }
-
-struct MountainListScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        MountainListScreen()
-    }
-}
+//
+//struct MountainListScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MountainListScreen()
+//    }
+//}
