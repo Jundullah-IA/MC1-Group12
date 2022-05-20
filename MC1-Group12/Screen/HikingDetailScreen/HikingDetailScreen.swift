@@ -11,6 +11,7 @@ struct HikingDetailScreen: View {
     @State private var favoriteColor = 0
     @State private var isSheetOpen = false
     @State private var isSheetMountainOpen = false
+    @ObservedObject var globalObj: HikingJourney
     
     var body: some View {
         
@@ -63,7 +64,7 @@ struct HikingDetailScreen: View {
             ItemDetailForm()
         }
         .sheet(isPresented: $isSheetMountainOpen){
-            MountainDetailScreen()
+            MountainDetailScreen(globalObj: globalObj)
         }
         .navigationTitle("Rinjani")
         .navigationBarTitleDisplayMode(.inline)
@@ -76,9 +77,9 @@ struct HikingDetailScreen: View {
         }
     }
 }
-
-struct HikingDetailScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HikingDetailScreen()
-    }
-}
+//
+//struct HikingDetailScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HikingDetailScreen()
+//    }
+//}

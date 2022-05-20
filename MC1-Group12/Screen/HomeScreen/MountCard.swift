@@ -27,7 +27,8 @@ struct MountCard: View {
     //    var data: MountData
     var hikingDate: Date = Date.now
     
-    @State var mountain: Mountain = Mountain(location: "", height: 0)
+    @ObservedObject var globalObj: HikingJourney
+    var mountainDetail: Mountain
     
     func dateToString(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -37,11 +38,12 @@ struct MountCard: View {
     }
     
     var body: some View {
+        
         NavigationLink(destination: {
             if planCard ?? false {
-                HikingDetailScreen()
+                HikingDetailScreen(globalObj: globalObj)
             } else {
-                MountainDetailScreen(mountain: mountain)
+                MountainDetailScreen(mountain: mountainDetail, globalObj: globalObj)
             }
         }) {
             ZStack(alignment: .bottom) {
@@ -56,10 +58,10 @@ struct MountCard: View {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            Text(mountain.name)
+                            Text(mountainDetail.name)
                                 .font(.title2)
                                 .fontWeight(.bold)
-                            Text(mountain.location)
+                            Text(mountainDetail.location)
                                 .font(.system(size: 16, weight: .regular, design: .serif))
                                 .italic()
                         }
@@ -75,7 +77,7 @@ struct MountCard: View {
                     Spacer()
                     HStack{
                         Image(systemName: "triangle.tophalf.filled")
-                        Text("\(mountain.height) mdpl")
+                        Text("\(mountainDetail.height) mdpl")
                             .font(.subheadline)
                     }
                 }
@@ -90,8 +92,8 @@ struct MountCard: View {
     }
 }
 
-struct MyPlanCard_Previews: PreviewProvider {
-    static var previews: some View {
-        MountCard()
-    }
-}
+//struct MyPlanCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MountCard()
+//    }
+//}

@@ -12,7 +12,7 @@ struct HomeScreen: View {
     @State var noJourney = true
 //    var hikingJourneyHistory: [Hiking]
     
-    @ObservedObject var hikingJourney = HikingJourney()
+    @ObservedObject var globalObj: HikingJourney
     
     var body: some View {
         
@@ -28,13 +28,16 @@ struct HomeScreen: View {
                             .font(.body)
                             .fontWeight(.semibold)
                             .foregroundColor(.darkGreen)
+                            .onTapGesture {
+                                print(globalObj.journeyList)
+                            }
                         Divider()
                     }
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if (hikingJourney.hikingJourney.count != 0) {
-                        Carousel(runingHikingJourney: hikingJourney.hikingJourney)
+                    if (globalObj.journeyList.count != 0) {
+                        Carousel(globalObj: globalObj)
                             .padding(.bottom, 10)
                     } else {
                         Text("No ongoing plan")
@@ -42,6 +45,9 @@ struct HomeScreen: View {
                             .foregroundColor(.darkGreen)
                             .opacity(0.4)
                             .padding(.vertical, 25)
+                            .onTapGesture {
+                                print(globalObj.journeyList)
+                            }
                     }
                     
 //                    if false {
@@ -83,7 +89,7 @@ struct HomeScreen: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: MountainListScreen(textOnly: true)) {
+                    NavigationLink(destination: MountainListScreen(textOnly: true, globalObj: globalObj)) {
                         Image(systemName: "plus")
                     }
                 }
@@ -96,9 +102,9 @@ struct HomeScreen: View {
 }
 
 
-
-struct HomeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeScreen()
-    }
-}
+//
+//struct HomeScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeScreen()
+//    }
+//}

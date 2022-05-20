@@ -31,7 +31,7 @@ struct TestForms: View {
             
             .sheet(isPresented: $showSheet) {
                 switch selectedSheet {
-                    case 0 : HikingDetailForm()
+//                    case 0 : HikingDetailForm()
                     case 1 : ItemDetailForm()
                     default: TestForms()
                 }

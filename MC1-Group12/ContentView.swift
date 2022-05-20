@@ -14,16 +14,17 @@ enum Tabs: String, CaseIterable, Identifiable {
 
 struct ContentView: View {
     @State private var selectedTab: Tabs = .home
+    @StateObject var globalObj = HikingJourney()
     
     var body: some View {
         TabView(selection: $selectedTab) {
-                HomeScreen()
+                HomeScreen(globalObj: globalObj)
                     .tabItem {
                         Label("Home", systemImage: "globe.asia.australia.fill")
                     }
                     .tag(Tabs.home)
                 
-                MountainListScreen()
+                MountainListScreen(globalObj: globalObj)
                     .tabItem {
                         Label("Mountains", systemImage: "triangle.tophalf.filled")
                     }

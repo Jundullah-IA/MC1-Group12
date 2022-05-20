@@ -16,5 +16,5 @@ struct Hiking: Identifiable {
 }
 
 class HikingJourney: ObservableObject {
-    @Published var hikingJourney: [Hiking] = []
+    @Published var journeyList: [Hiking] = []
 }

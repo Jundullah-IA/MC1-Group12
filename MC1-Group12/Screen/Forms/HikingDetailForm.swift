@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct HikingDetailForm: View {
+    @ObservedObject var globalObj: HikingJourney
     @Environment(\.dismiss) var dismiss
     
     @State var mountain: Mountain = MountainList[0]
     @State var tripDate: Date = Date.now
     @State var participants: [String] = [""]
-    
-    @ObservedObject var hikingJourney = HikingJourney()
     
     @ViewBuilder var headerParticipant: some View {
         HStack {
@@ -86,8 +85,8 @@ struct HikingDetailForm: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(
                         action: {
-//                            dismiss()
-                            print(hikingJourney.hikingJourney)
+                            dismiss()
+//                            print(globalObj.hikingJourney)
                         },
                         label: { Text("Cancel") }
                     )
@@ -95,7 +94,7 @@ struct HikingDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
-                            hikingJourney.hikingJourney.append(Hiking(
+                            globalObj.journeyList.append(Hiking(
                                 mountain: mountain, date: tripDate, hiker: participants
                             ))
                             
@@ -112,8 +111,8 @@ struct HikingDetailForm: View {
     }
 }
 
-struct HikingDetailForm_Previews: PreviewProvider {
-    static var previews: some View {
-        HikingDetailForm()
-    }
-}
+//struct HikingDetailForm_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HikingDetailForm()
+//    }
+//}
