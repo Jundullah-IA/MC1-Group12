@@ -12,9 +12,12 @@ struct HikingDetailScreen: View {
     @State private var isSheetOpen = false
     @State private var isSheetMountainOpen = false
     @ObservedObject var globalObj: HikingJourney
+    
+    @State var currentList: String = "group"
+    
     var hikeDetail: Hiking
+    
     var body: some View {
-        
         VStack {
             VStack {
                 HikingCard(globalObj: globalObj, hiking: hikeDetail)
@@ -32,10 +35,10 @@ struct HikingDetailScreen: View {
                         .fontWeight(.semibold)
                     Spacer()
                     Menu {
-                        Button(action: {}) {
+                        Button(action: {currentList = "group"}) {
                             Label("Sort by PIC", systemImage: "").labelStyle(.titleOnly)
                         }
-                        Button(action: {}) {
+                        Button(action: {currentList = "personal"}) {
                             Label("Sort by Completed", systemImage: "").labelStyle(.titleOnly)
                         }
                     } label: {
@@ -50,9 +53,17 @@ struct HikingDetailScreen: View {
                 
                 ScrollView {
                     VStack(alignment: .leading) {
-                        ForEach((0..<3), id: \.self) { index in
-                            ItemCard()
+                        if(favoriteColor == 0) {
+                            ForEach(hikeDetail.groupLogistic) { groupItem in
+                                ItemCardGroup(groupItem: groupItem)
+                            }
+
+                        } else {
+                            ForEach(hikeDetail.personalLogistic) {personalItem in
+                                ItemCardPersonal(personalItem: personalItem)
+                            }
                         }
+                                                
                         Button(action: {isSheetOpen = true}) {
                             Label("Add new item", systemImage: "plus.circle").padding(.top, 5)
                         }.padding(.horizontal)
@@ -61,7 +72,11 @@ struct HikingDetailScreen: View {
             }
         }
         .sheet(isPresented: $isSheetOpen){
-            ItemDetailForm()
+            ItemDetailForm(
+                globalObj: globalObj,
+                hiking: hikeDetail,
+                logisticType: favoriteColor == 0 ? "group" : "personal"
+            )
         }
         .sheet(isPresented: $isSheetMountainOpen){
             MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain)
