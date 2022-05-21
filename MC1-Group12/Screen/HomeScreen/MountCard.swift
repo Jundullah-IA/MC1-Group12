@@ -7,48 +7,27 @@
 
 import SwiftUI
 
-struct MountainData {
-    var id = UUID()
-    var image: String
-    var name: String
-    var altitude: Int
-    var loc: String
-}
-
-
-struct PlanData {
-    var id = UUID()
-    var mount: MountainData
-}
-
 struct MountCard: View {
     let cardHeight: CGFloat = 165
     var planCard: Bool?
-    //    var data: MountData
-    var hikingDate: Date = Date.now
     
     @ObservedObject var globalObj: HikingJourney
+    var hikeDetail: Hiking?
     var mountain: Mountain
     
-    func dateToString(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM yyyy"
-        let someDateTime = formatter.string(from: date)
-        return someDateTime
-    }
-    
     var body: some View {
+        let mountain: Mountain = hikeDetail?.mountain ?? mountain
         
         NavigationLink(destination: {
-            if planCard ?? false {
-                HikingDetailScreen(globalObj: globalObj, mountain: mountain)
+            if hikeDetail != nil {
+                HikingDetailScreen(globalObj: globalObj, hikeDetail: hikeDetail!)
             } else {
                 MountainDetailScreen(globalObj: globalObj, mountain: mountain)
             }
         }) {
             ZStack(alignment: .bottom) {
                 
-                Image("semeru")
+                Image(mountain.image)
                     .resizable()
                     .scaledToFill()
                     .frame(height: cardHeight)
@@ -69,7 +48,7 @@ struct MountCard: View {
                             Spacer()
                             HStack{
                                 Image(systemName: "calendar")
-                                Text(dateToString(hikingDate))
+                                Text(dateToString(hikeDetail?.date ?? Date.now))
                                     .font(.subheadline)
                             }
                         }

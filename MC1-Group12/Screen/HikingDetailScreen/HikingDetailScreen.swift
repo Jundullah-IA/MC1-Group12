@@ -12,13 +12,12 @@ struct HikingDetailScreen: View {
     @State private var isSheetOpen = false
     @State private var isSheetMountainOpen = false
     @ObservedObject var globalObj: HikingJourney
-    var mountain: Mountain
-    
+    var hikeDetail: Hiking
     var body: some View {
         
         VStack {
             VStack {
-                HikingCard()
+                HikingCard(globalObj: globalObj, hiking: hikeDetail)
                 
                 Picker("", selection: $favoriteColor) {
                     Text("Group").tag(0)
@@ -65,7 +64,7 @@ struct HikingDetailScreen: View {
             ItemDetailForm()
         }
         .sheet(isPresented: $isSheetMountainOpen){
-            MountainDetailScreen(globalObj: globalObj, mountain: mountain)
+            MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain)
         }
         .navigationTitle("Rinjani")
         .navigationBarTitleDisplayMode(.inline)
