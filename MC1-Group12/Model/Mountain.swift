@@ -15,8 +15,8 @@ struct Mountain: Identifiable {
     var image: String = ""
     var estimation: HikingEstimation?
     var informations: [MountainInfo]?
-    var essentials: MountainEssential?
-    var reqirements: [MountainRequirement]?
+    var essentials: MountainEssential
+    var requirements: [MountainRequirement]?
 }
 
 struct MountainInfo: Identifiable {
@@ -114,7 +114,7 @@ let MountainList: [Mountain] = [
                 "Helmet"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Simaksi",
                 items: [
@@ -209,7 +209,7 @@ let MountainList: [Mountain] = [
               
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -310,10 +310,9 @@ let MountainList: [Mountain] = [
                 "Helm",
                 "Jumar",
                 "Tali Prusik"
-            
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -407,7 +406,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -500,7 +499,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -592,7 +591,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -684,7 +683,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -786,7 +785,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -882,7 +881,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -969,7 +968,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1056,7 +1055,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1143,7 +1142,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1230,7 +1229,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1317,7 +1316,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1404,7 +1403,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1491,7 +1490,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1578,7 +1577,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1665,7 +1664,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1752,7 +1751,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1839,7 +1838,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1926,7 +1925,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2013,7 +2012,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2100,7 +2099,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2187,7 +2186,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2274,7 +2273,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
