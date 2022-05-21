@@ -12,7 +12,7 @@
 		08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08040061283691BA00BC43A2 /* MountainRequirement.swift */; };
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
 		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
-		088A26D22837E53200EA19EF /* ItemCarcPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26D12837E53200EA19EF /* ItemCarcPersonal.swift */; };
+		088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26D12837E53200EA19EF /* ItemCardPersonal.swift */; };
 		08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */; };
 		08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F2282B569E00B0AA72 /* ContentView.swift */; };
 		08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F4282B56A000B0AA72 /* Assets.xcassets */; };
@@ -43,7 +43,7 @@
 		08040061283691BA00BC43A2 /* MountainRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRequirement.swift; sourceTree = "<group>"; };
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
-		088A26D12837E53200EA19EF /* ItemCarcPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCarcPersonal.swift; sourceTree = "<group>"; };
+		088A26D12837E53200EA19EF /* ItemCardPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardPersonal.swift; sourceTree = "<group>"; };
 		08A089ED282B569E00B0AA72 /* MC1-Group12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Group12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1_Group12App.swift; sourceTree = "<group>"; };
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			children = (
 				0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */,
 				0E75B347283502A700D052A0 /* ItemCardGroup.swift */,
-				088A26D12837E53200EA19EF /* ItemCarcPersonal.swift */,
+				088A26D12837E53200EA19EF /* ItemCardPersonal.swift */,
 				0E75B349283502C800D052A0 /* HikingCard.swift */,
 			);
 			path = HikingDetailScreen;
@@ -298,7 +298,7 @@
 				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
 				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
 				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
-				088A26D22837E53200EA19EF /* ItemCarcPersonal.swift in Sources */,
+				088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

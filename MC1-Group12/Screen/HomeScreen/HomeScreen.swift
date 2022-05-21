@@ -10,8 +10,6 @@ import SwiftUI
 struct HomeScreen: View {
     @State var noPlan = true
     @State var noJourney = true
-//    var hikingJourneyHistory: [Hiking]
-   
     @ObservedObject var globalObj: HikingJourney
 
     var body: some View {

@@ -93,8 +93,26 @@ struct HikingDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
+                            func qtyCount(_ item: String) -> Int {
+                                switch item {
+                                case "Flysheet":
+                                    return 3
+                                case "Portable Gas", "Raffia rope":
+                                    return 2
+                                default:
+                                    return 1
+                                }
+                            }
+                            let groupLog = mountain.essentials.groupLogistic.map { items -> GroupItem in
+                                let list: GroupItem = GroupItem(name: items, quantity: qtyCount(items), notes: items == "Tents" ? "For \(participants.count) people" : "")
+                                return list
+                            }
+                            let personLog = mountain.essentials.personalLogistic.map { items -> PersonalItem in
+                                let list: PersonalItem = PersonalItem(name: items, quantity: 1)
+                                return list
+                            }
                             globalObj.journeyList.append(Hiking(
-                                mountain: mountain, date: tripDate, hiker: participants
+                                mountain: mountain, date: tripDate, hiker: participants, groupLogistic: groupLog, personalLogistic: personLog
                             ))
 
                             dismiss()
