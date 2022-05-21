@@ -7,38 +7,27 @@
 
 import SwiftUI
 
-struct MountainData {
-    var id = UUID()
-    var image: String
-    var name: String
-    var altitude: Int
-    var loc: String
-}
-
-
-struct PlanData {
-    var id = UUID()
-    var mount: MountainData
-}
-
 struct MountCard: View {
     let cardHeight: CGFloat = 165
     var planCard: Bool?
-    //    var data: MountData
     
-    @State var mountain: Mountain = Mountain(location: "", height: 0)
+    @ObservedObject var globalObj: HikingJourney
+    var hikeDetail: Hiking?
+    var mountain: Mountain
     
     var body: some View {
+        let mountain: Mountain = hikeDetail?.mountain ?? mountain
+        
         NavigationLink(destination: {
-            if planCard ?? false {
-                HikingDetailScreen()
+            if hikeDetail != nil {
+                HikingDetailScreen(globalObj: globalObj, hikeDetail: hikeDetail!)
             } else {
-                MountainDetailScreen(mountain: mountain)
+                MountainDetailScreen(globalObj: globalObj, mountain: mountain)
             }
         }) {
             ZStack(alignment: .bottom) {
                 
-                Image("semeru")
+                Image(mountain.image)
                     .resizable()
                     .scaledToFill()
                     .frame(height: cardHeight)
@@ -59,7 +48,7 @@ struct MountCard: View {
                             Spacer()
                             HStack{
                                 Image(systemName: "calendar")
-                                Text("18 June 2022")
+                                Text(dateToString(hikeDetail?.date ?? Date.now))
                                     .font(.subheadline)
                             }
                         }
@@ -82,8 +71,8 @@ struct MountCard: View {
     }
 }
 
-struct MyPlanCard_Previews: PreviewProvider {
-    static var previews: some View {
-        MountCard()
-    }
-}
+//struct MyPlanCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MountCard()
+//    }
+//}

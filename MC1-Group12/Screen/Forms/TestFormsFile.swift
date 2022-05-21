@@ -30,11 +30,11 @@ struct TestForms: View {
             Text("\(String(showSheet))")
             
             .sheet(isPresented: $showSheet) {
-                switch selectedSheet {
-                    case 0 : HikingDetailForm()
-                    case 1 : ItemDetailForm()
-                    default: TestForms()
-                }
+//                switch selectedSheet {
+//                    case 0 : HikingDetailForm()
+//                    case 1 : ItemDetailForm()
+//                    default: TestForms()
+//                }
             }
         }
     }

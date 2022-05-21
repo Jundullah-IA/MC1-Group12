@@ -12,6 +12,7 @@
 		08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08040061283691BA00BC43A2 /* MountainRequirement.swift */; };
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
 		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
+		088A26D22837E53200EA19EF /* ItemCarcPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26D12837E53200EA19EF /* ItemCarcPersonal.swift */; };
 		08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */; };
 		08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F2282B569E00B0AA72 /* ContentView.swift */; };
 		08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F4282B56A000B0AA72 /* Assets.xcassets */; };
@@ -29,10 +30,11 @@
 		0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */; };
 		0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B3422834DD1B00D052A0 /* Persistence.swift */; };
 		0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */; };
-		0E75B348283502A700D052A0 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B347283502A700D052A0 /* ItemCard.swift */; };
+		0E75B348283502A700D052A0 /* ItemCardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B347283502A700D052A0 /* ItemCardGroup.swift */; };
 		0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B349283502C800D052A0 /* HikingCard.swift */; };
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
 		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
+		0EBE72722837D58F00ECC55A /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Func.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		08040061283691BA00BC43A2 /* MountainRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRequirement.swift; sourceTree = "<group>"; };
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
+		088A26D12837E53200EA19EF /* ItemCarcPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCarcPersonal.swift; sourceTree = "<group>"; };
 		08A089ED282B569E00B0AA72 /* MC1-Group12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Group12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1_Group12App.swift; sourceTree = "<group>"; };
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,10 +62,11 @@
 		0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata.xcdatamodel; sourceTree = "<group>"; };
 		0E75B3422834DD1B00D052A0 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailScreen.swift; sourceTree = "<group>"; };
-		0E75B347283502A700D052A0 /* ItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
+		0E75B347283502A700D052A0 /* ItemCardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardGroup.swift; sourceTree = "<group>"; };
 		0E75B349283502C800D052A0 /* HikingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingCard.swift; sourceTree = "<group>"; };
 		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
+		0EBE72712837D58F00ECC55A /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */,
-				0E75B347283502A700D052A0 /* ItemCard.swift */,
+				0E75B347283502A700D052A0 /* ItemCardGroup.swift */,
+				088A26D12837E53200EA19EF /* ItemCarcPersonal.swift */,
 				0E75B349283502C800D052A0 /* HikingCard.swift */,
 			);
 			path = HikingDetailScreen;
@@ -185,6 +190,7 @@
 				0E75B3422834DD1B00D052A0 /* Persistence.swift */,
 				0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */,
 				0E67E024282FFFEE00829F52 /* Colors.swift */,
+				0EBE72712837D58F00ECC55A /* Func.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -272,11 +278,12 @@
 				08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */,
 				0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */,
 				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
-				0E75B348283502A700D052A0 /* ItemCard.swift in Sources */,
+				0E75B348283502A700D052A0 /* ItemCardGroup.swift in Sources */,
 				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
 				0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */,
 				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
+				0EBE72722837D58F00ECC55A /* Func.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
 				0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */,
 				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
@@ -291,6 +298,7 @@
 				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
 				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
 				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
+				088A26D22837E53200EA19EF /* ItemCarcPersonal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
