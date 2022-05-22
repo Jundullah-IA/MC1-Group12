@@ -18,10 +18,14 @@ struct ItemDetailForm: View {
     @State var counter1: Int = 1
     @State var isSelectRemindMe: Bool = false
     @State var reminderDate: Date = Date.now
+    @State var formState: String = "Edit"
     
     @ObservedObject var globalObj: HikingJourney
-    var hiking: Hiking
+    @State var hiking: Hiking
     var logisticType: String = "group"
+    
+    var groupItem: GroupItem = GroupItem()
+    var personalItem: PersonalItem = PersonalItem()
     
     let columns = [
         GridItem(.flexible()),
@@ -33,6 +37,8 @@ struct ItemDetailForm: View {
     
     var body: some View {
         let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+        let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
+        let indexPersonalItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
         
         NavigationView {
             List {
@@ -40,23 +46,41 @@ struct ItemDetailForm: View {
                     HStack {
                         Text("Name")
                         Spacer()
-                        TextField("item name", text: $itemName)
+                        TextField("item name",
+                                  text: formState == "New" ?
+                                  $itemName : (logisticType == "group" ?
+                                                $hiking.groupLogistic[indexGroupItem].name :
+                                                $hiking.personalLogistic[indexPersonalItem].name
+                                              )
+                        )
                             .multilineTextAlignment(.trailing)
+                            .disabled(formState == "Display" ? true : false)
                     }
                     
                     HStack {
                         Text("Total")
                         
-                        Stepper(value: $counter1, in: 1...100) {
-                            Text("\(counter1)") .padding(.leading, 180)
+                        Stepper(value: $counter1,
+                                in: 1...100) {
+                            Text("\(counter1)")
+                                
+                                .padding(.leading, 180)
                         }
+                        .disabled(formState == "Display" ? true : false)
                     }
                     
                     HStack {
                         Text("Notes")
                         Spacer()
-                        TextField("notes", text: $notes)
+                        TextField("notes",
+                                  text: formState == "New" ?
+                                  $notes : (logisticType == "group" ?
+                                               $hiking.groupLogistic[indexGroupItem].notes :
+                                                $hiking.personalLogistic[indexPersonalItem].notes
+                                              )
+                        )
                             .multilineTextAlignment(.trailing)
+                            .disabled(formState == "Display" ? true : false)
                     }
                     
 //                    HStack {
@@ -92,6 +116,7 @@ struct ItemDetailForm: View {
                                     }
                                     .cornerRadius(15)
                                 }
+                                .disabled(formState == "Display" ? true : false)
                                 .cornerRadius(15)
                                 .frame(width: 110, height: 35)
                                 .onTapGesture {
@@ -126,23 +151,37 @@ struct ItemDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
-                            if(logisticType == "group") {
-                                globalObj.journeyList[index].groupLogistic.append(GroupItem(
-                                    name: itemName,
-                                    quantity: totalItem,
-                                    notes: notes,
-                                    pic: selectedPIC))
+                            if(formState == "Display") {
+                                formState = "Edit"
+                            } else if(formState == "Edit") {
+                                if(logisticType == "group") {
+                                    globalObj.journeyList[index].groupLogistic[indexGroupItem] = groupItem
+                                }
+                                
+                                dismiss()
                             } else {
-                                globalObj.journeyList[index].personalLogistic.append(PersonalItem(
-                                    name: itemName,
-                                    quantity: totalItem,
-                                    notes: notes))
+                                if(logisticType == "group") {
+                                    globalObj.journeyList[index].groupLogistic.append(GroupItem(
+                                        name: itemName,
+                                        quantity: totalItem,
+                                        notes: notes,
+                                        pic: selectedPIC))
+                                } else {
+                                    globalObj.journeyList[index].personalLogistic.append(PersonalItem(
+                                        name: itemName,
+                                        quantity: totalItem,
+                                        notes: notes))
+                                }
+                                
+                                dismiss()
                             }
-                            
-                            dismiss()
                         },
                         label: {
-                            Text("Save").fontWeight(.bold)
+                            if(formState == "Display") {
+                                Text("Edit").fontWeight(.bold)
+                            } else {
+                                Text("Save").fontWeight(.bold)
+                            }
                         }
                     )
                 }

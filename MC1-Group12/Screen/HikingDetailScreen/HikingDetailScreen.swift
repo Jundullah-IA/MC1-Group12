@@ -11,9 +11,11 @@ struct HikingDetailScreen: View {
     @State private var favoriteColor = 0
     @State private var isSheetOpen = false
     @State private var isSheetMountainOpen = false
+    @State private var isItemDetailOpen = false
     @ObservedObject var globalObj: HikingJourney
     
     @State var currentList: String = "group"
+    @State var itemToOpen: Int = 0
     
     var hikeDetail: Hiking
     
@@ -54,10 +56,13 @@ struct HikingDetailScreen: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         if(favoriteColor == 0) {
-                            ForEach(hikeDetail.groupLogistic) { groupItem in
-                                ItemCardGroup(groupItem: groupItem)
+                            ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
+                                ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
+                                    .onTapGesture {
+                                        itemToOpen = n
+                                        isItemDetailOpen = true
+                                    }
                             }
-
                         } else {
                             ForEach(hikeDetail.personalLogistic) {personalItem in
                                 ItemCardPersonal(personalItem: personalItem)
@@ -73,6 +78,7 @@ struct HikingDetailScreen: View {
         }
         .sheet(isPresented: $isSheetOpen){
             ItemDetailForm(
+                formState: "New",
                 globalObj: globalObj,
                 hiking: hikeDetail,
                 logisticType: favoriteColor == 0 ? "group" : "personal"
@@ -81,6 +87,17 @@ struct HikingDetailScreen: View {
         .sheet(isPresented: $isSheetMountainOpen){
             MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain)
         }
+        
+        .sheet(isPresented: $isItemDetailOpen) {
+            ItemDetailForm(
+                formState: "Display",
+                globalObj: globalObj,
+                hiking: hikeDetail,
+                logisticType: favoriteColor == 0 ? "group" : "personal",
+                groupItem: hikeDetail.groupLogistic[itemToOpen]
+            )
+        }
+        
         .navigationTitle("Rinjani")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
