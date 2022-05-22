@@ -12,6 +12,7 @@ struct HikingCard: View {
     
     @ObservedObject var globalObj: HikingJourney
     @State private var isSheetHikingOpen = false
+    @State private var showAlert = false
     var hiking: Hiking
     
     var body: some View {
@@ -42,7 +43,9 @@ struct HikingCard: View {
                         }) {
                             Label("Edit", systemImage: "square.and.pencil")
                         }
-                        Button(role: .destructive, action: {}) {
+                        Button(role: .destructive, action: {
+                            showAlert.toggle()
+                        }) {
                             Label("Delete", systemImage: "trash")
                         }
                         Button(role: .destructive, action: {
@@ -76,7 +79,18 @@ struct HikingCard: View {
             .foregroundColor(.white)
         }
         .frame(height: height)
-        .sheet(isPresented: $isSheetHikingOpen ) { HikingDetailForm(globalObj: globalObj, mountain: hiking.mountain, hiking: hiking) }
+        .sheet(isPresented: $isSheetHikingOpen ) {
+            HikingDetailForm(globalObj: globalObj, mountain: hiking.mountain, hiking: hiking)
+        }
+        .alert("Would you like to delete this journey?", isPresented: $showAlert, actions: {
+            Button("Delete", role: .destructive, action: {
+                let index = globalObj.journeyList.firstIndex {$0.id == hiking.id} ?? 0
+                
+                globalObj.journeyList.remove(at: index)
+            })
+        }, message: {
+            Text("This action cannot be undone")
+        })
     }
 }
 //
