@@ -37,6 +37,8 @@ struct ItemCardPersonal: View {
                         if isAllPersonalDone && isAllGroupDone {
                             globalObj.journeyList[index].isDone.toggle()
                             globalObj.showCongrats.toggle()
+                        } else if globalObj.journeyList[index].isDone {
+                            globalObj.journeyList[index].isDone.toggle()
                         }
                         
                     }) {

@@ -47,6 +47,8 @@ struct ItemCardGroup: View {
                         if isAllPersonalDone && isAllGroupDone {
                             globalObj.journeyList[index].isDone.toggle()
                             globalObj.showCongrats.toggle()
+                        } else if globalObj.journeyList[index].isDone {
+                            globalObj.journeyList[index].isDone.toggle()
                         }
                     }) {
                         Image(systemName: checked ? "checkmark.circle.fill" : "circle").foregroundColor(.accentColor)
