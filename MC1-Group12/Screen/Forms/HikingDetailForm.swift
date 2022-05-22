@@ -40,8 +40,6 @@ struct HikingDetailForm: View {
                 Section {
                     HStack {
                         Text("Destination")
-                        Text(notEnoughParticipant.description)
-                        Text(presentAlert.description)
                         Spacer()
                         TextField("Destination", text: $mountain.name)
                             .multilineTextAlignment(.trailing)
@@ -73,7 +71,6 @@ struct HikingDetailForm: View {
                     ForEach(0..<participants.count, id: \.self) { n in
                         HStack {
                             TextField("Participant \(n+1)", text: self.$participants[n])
-                            Text((participants.count <= minParticipants).description)
                             Button(
                                 action: {
                                     if(participants.count != 1) { self.participants.remove(at: n)}
@@ -94,7 +91,7 @@ struct HikingDetailForm: View {
             .padding(.top, 57)
             .listStyle(.grouped)
             
-            .navigationTitle(getParticipants ?? "0")
+            .navigationTitle(mountain.name)
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.all)
             .alert("Not enough participants", isPresented: $presentAlert, actions: {
@@ -156,9 +153,6 @@ struct HikingDetailForm: View {
                                 dismiss()
                             }
                             
-//                            if notEnoughParticipant == false {
-//
-//                            }
                         },
                         label: { Text("Save").fontWeight(.bold) }
                     )
