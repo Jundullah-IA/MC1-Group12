@@ -10,6 +10,8 @@ import SwiftUI
 struct ItemCardPersonal: View {
     @State var checked: Bool = false
     
+    
+    
     var personalItem: PersonalItem
     
     var body: some View {
