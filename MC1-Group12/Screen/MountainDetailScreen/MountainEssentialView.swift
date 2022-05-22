@@ -16,14 +16,16 @@ struct EssentialView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Group Logistic")
-                            .font(.title3)
+                            .font(.headline)
                             .bold()
+                            .foregroundColor(Color.darkGreen)
                         Spacer()
                     } .padding(.horizontal)
                     
                     ForEach((mountainEssential?.groupLogistic)!, id: \.self) {logistic in
                         HStack {
                             Text("- \(logistic)")
+                                .font(.callout)
                             Spacer()
                         }.padding(.horizontal)
                     }
@@ -32,14 +34,16 @@ struct EssentialView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Personal Logistic")
-                            .font(.title3)
+                            .font(.headline)
                             .bold()
+                            .foregroundColor(Color.darkGreen)
                         Spacer()
                     } .padding(.horizontal)
                     
                     ForEach((mountainEssential?.personalLogistic)!, id: \.self) {logistic in
                         HStack {
-                            Text(logistic)
+                            Text("- \(logistic)")
+                                .font(.callout)
                             Spacer()
                         }.padding(.horizontal)
                     }

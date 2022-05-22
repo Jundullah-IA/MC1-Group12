@@ -17,7 +17,7 @@ struct HikingCard: View {
     
     var body: some View {
         let mountain = hiking.mountain
-        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+//        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
         
         ZStack {
             Image(mountain.image)
@@ -48,11 +48,11 @@ struct HikingCard: View {
                         }) {
                             Label("Delete", systemImage: "trash")
                         }
-                        Button(role: .destructive, action: {
-                            globalObj.journeyList[index].isDone.toggle()
-                        }) {
-                            Label("test done", systemImage: "trash")
-                        }
+//                        Button(role: .destructive, action: {
+//                            globalObj.journeyList[index].isDone.toggle()
+//                        }) {
+//                            Label("test done", systemImage: "trash")
+//                        }
                     } label: {
                         Image(systemName: "ellipsis")
                             .rotationEffect(.degrees(-90))

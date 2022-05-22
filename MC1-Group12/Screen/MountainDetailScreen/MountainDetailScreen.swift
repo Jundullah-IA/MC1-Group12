@@ -81,7 +81,7 @@ struct MountainDetailScreen: View {
                 VStack {
                     ScrollView {
                         switch currentSubview {
-                        case 0: InformationView(mountainInfo:  mountain.informations)
+                            case 0: InformationView(hikingEstimation: mountain.estimation, mountainInfo:  mountain.informations)
                         case 1: EssentialView(mountainEssential: mountain.essentials)
                         case 2: RequirementView(mountainRequairement: mountain.requirements)
                         default: Text("")

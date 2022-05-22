@@ -30,7 +30,7 @@ struct ItemCardGroup: View {
                             PICButton(color: color, pic: pic, width: 110)
                         }
                         if groupItem.pic.count == 0 {
-                            PICButton(color: .gray, pic: "no PIC")
+                            PICButton(color: .gray, pic: "NO PIC")
                         }
                     }
                 }
@@ -72,7 +72,7 @@ struct PICButton: View {
     var color: Color
     var pic: String
     var width: CGFloat?
-    let defaultWidth: CGFloat = 90
+    let defaultWidth: CGFloat = 95
     
     var body: some View {
         ZStack {
