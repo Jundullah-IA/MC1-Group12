@@ -16,14 +16,16 @@ struct RequirementView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(requirement.title)
-                            .font(.title3)
+                            .font(.headline)
                             .bold()
+                            .foregroundColor(Color.darkGreen)
                         Spacer()
                     } .padding(.horizontal)
                     
                     ForEach(requirement.items, id: \.self) {item in
                         HStack {
                             Text(item)
+                                .font(.callout)
                             Spacer()
                         }.padding(.horizontal)
                     }

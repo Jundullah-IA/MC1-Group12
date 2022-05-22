@@ -110,7 +110,7 @@ struct HikingDetailScreen: View {
             MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain, previewOnly: true)
         }
         
-        .navigationTitle("Rinjani")
+        .navigationTitle(hikeDetail.mountain.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

@@ -64,7 +64,7 @@ struct HikingDetailForm: View {
                                 Image(systemName: "plus.circle")
                                 Text("Add Participant")
                                     .font(.callout)
-                            }.foregroundColor(.blue)
+                            }.foregroundColor(Color.accentColor)
                         }
                     )
                 ) {
@@ -115,7 +115,7 @@ struct HikingDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
-                            if participants.count + 1 <= minParticipants {
+                            if participants.count + 1 <= minParticipants || participants[0] == "" {
                                 notEnoughParticipant = true
                                 presentAlert.toggle()
                             } else {
