@@ -45,7 +45,7 @@ struct HikingEstimation {
 
 let MountainList: [Mountain] = [
     Mountain(
-        name: "Sumeru",
+        name: "Semeru",
         location: "Malang, Indonesia",
         height: 3676,
         image: "semeru",
@@ -57,15 +57,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average Temperature 3˚C - 8˚C"
+                information: "- Average Temperature 3˚C - 8˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Highest mountain in Java island, \nThird most highest mountain in Indonesia"
+                information: "- Highest mountain in Java island, \n- Third most highest mountain in Indonesia"
                 
             ),
         ],
@@ -118,23 +118,23 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Simaksi",
                 items: [
-                    "Weekdays : IDR 19.000",
-                    "Weekend : IDR 24.000"
+                    "- Weekdays : IDR 19.000",
+                    "- Weekend : IDR 24.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 4 Members",
-                    "Maximum : 7 Members"
+                    "- Minimum : 4 Members",
+                    "- Maximum : 7 Members"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate, including a certificate of being free from ISPA"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate, including a certificate of being free from ISPA"
                 ]
             )
         ]
@@ -152,15 +152,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average temperature 6˚C - 10˚C"
+                information: "- Average temperature 6˚C - 10˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Highest mountain in West Java \nLatest Eruption at 1983 \nHave a double crater on west side and east side"
+                information: "- Highest mountain in West Java \nLatest Eruption at 1983 \n- Have a double crater on west side and east side"
                 
             )
         ],
@@ -206,6 +206,7 @@ let MountainList: [Mountain] = [
                 "Private Water Bottle",
                 "Garbage Bag",
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)",
+                "Helmet"
               
             ]
         ),
@@ -213,23 +214,23 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 5.000",
-                    "Weekend : IDR 7.500"
+                    "- Weekeday : IDR 5.000",
+                    "- Weekend : IDR 7.500"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 4 Members",
-                    "Maximum : 8 Members"
+                    "- Minimum : 4 Members",
+                    "- Maximum : 8 Members"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
@@ -251,11 +252,11 @@ let MountainList: [Mountain] = [
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average temperature 4˚C - 9˚C"
+                information: "- Average temperature 4˚C - 9˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "The most extreme track in java \nHas the largest caldera on the island of Java with a width of 2KM \nThere is no water sources along the track path"
+                information: "- The most extreme track in java \n- Has the largest caldera on the island of Java with a width of 2KM \n- There is no water sources along the track path"
                 
             )
         ],
@@ -316,23 +317,23 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 15.000",
-                    "Weekend : IDR 15.000"
+                    "- Weekeday : IDR 15.000",
+                    "- Weekend : IDR 15.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Members + Guide"
+                    "- Minimum : 1 Members + Guide"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate, including a certificate of being free from ISPA",
-                    "Stamp Duty"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate, including a certificate of being free from ISPA",
+                    "- Stamp Duty"
                 ]
             )
         ]
@@ -354,11 +355,11 @@ let MountainList: [Mountain] = [
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average Temperature 9˚C - 11˚C"
+                information: "- Average Temperature 9˚C - 11˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "The most visited mountain in Indonesia \nGunung Gede Pangrango is a two different mountains"
+                information: "- The most visited mountain in Indonesia \n- Gunung Gede Pangrango is a two different mountains"
                 
             )
         ],
@@ -403,30 +404,31 @@ let MountainList: [Mountain] = [
                 "Drinks",
                 "Private Water Bottle",
                 "Garbage Bag",
-                "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
+                "Survival Kit (Multipurpose Folding Knife, Compass, Match)",
+                "Helmet"
             ]
         ),
         reqirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 34.000",
-                    "Weekend : IDR 29.000"
+                    "- Weekeday : IDR 34.000",
+                    "- Weekend : IDR 29.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 3 Members",
-                    "Maximum : 10 Members"
+                    "- Minimum : 3 Members",
+                    "- Maximum : 10 Members"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
@@ -444,15 +446,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Suhu rata-rata 11˚C - 12˚C"
+                information: "- Average Temperature 11˚C - 12˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Highly recommended for a begginer hikers \nThe most iconic thing about papandayan is Dead Forest and Edelweis Park"
+                information: "- Highly recommended for a begginer hikers \n- The most iconic thing about papandayan is Dead Forest and Edelweis Park"
             )
         ],
         essentials: MountainEssential(
@@ -503,22 +505,22 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 30.000",
-                    "Weekend : IDR 20.000"
+                    "- Weekeday : IDR 30.000",
+                    "- Weekend : IDR 20.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Member"
+                    "- Minimum : 1 Member"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
@@ -536,15 +538,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average Temperature 14˚C - 15˚C"
+                information: "- Average Temperature 14˚C - 15˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "There is a wild boar that sometimes steal hikers food. and called by Bagas (Babi Ganas)"
+                information: "- There is a wild boar that sometimes steal hikers food. and called by Bagas (Babi Ganas)"
             )
         ],
         essentials: MountainEssential(
@@ -595,22 +597,22 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 10.000",
-                    "Weekend : IDR 10.000"
+                    "- Weekeday : IDR 10.000",
+                    "- Weekend : IDR 10.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Member"
+                    "- Minimum : 1 Member"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
@@ -628,15 +630,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average Temperature 6˚C - 9˚C"
+                information: "- Average Temperature 6˚C - 9˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Highest mountain in sumatra \nThere is a habitat for sumatran tigers \nHave a clear view to indian ocean"
+                information: "- Highest mountain in sumatra \nThere is a habitat for sumatran tigers \nHave a clear view to indian ocean"
             )
         ],
         essentials: MountainEssential(
@@ -687,22 +689,22 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 10.000",
-                    "Weekend : IDR 10.000"
+                    "- Weekeday : IDR 10.000",
+                    "- Weekend : IDR 10.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Member"
+                    "- Minimum : 1 Member"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
@@ -720,15 +722,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
                 title: "Temp",
-                information: "Average temperature -4˚C - 3˚C"
+                information: "- Average temperature -4˚C - 3˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Eternal snow on the peak of jayawijaya \nHaving a glacier \nSometimes its called by Mounta Cartenz \nIncluded in seven summits of the world \nHighest mountain in Indnesia"
+                information: "- Eternal snow on the peak of jayawijaya \n- Having a glacier \n- Sometimes its called by Mounta Cartenz \n- Included in seven summits of the world \n- Highest mountain in Indnesia"
             )
         ],
         essentials: MountainEssential(
@@ -789,30 +791,30 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Domestic : IDR 40.000.000",
-                    "Foreign: IDR 200.000.000"
+                    "- Domestic : IDR 40.000.000",
+                    "- Foreign: IDR 200.000.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 3 Member + Guide + Porter"
+                    "- Minimum : 3 Member + Guide + Porter"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Permit letter from Menpora",
-                    "permit letter from Kapolri",
-                    "Permit letter from BIA-intelejen Indonesia",
-                    "Permit letter from Menhutbun/PKA",
-                    "Recommendation letter from Federasi Panjat Tebing Indonesia (FPTI)",
-                    "Recommendation letter from Bakorstranasda",
-                    "Recommendation letter from Kapolda",
-                    "Recomendation letter from EPO",
-                    "Permit letter from PT Freeport Indonesia (PTFI)",
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Health Certificate"
+                    "- Permit letter from Menpora",
+                    "- Permit letter from Kapolri",
+                    "- Permit letter from BIA-intelejen Indonesia",
+                    "- Permit letter from Menhutbun/PKA",
+                    "- Recommendation letter from Federasi Panjat Tebing Indonesia (FPTI)",
+                    "- Recommendation letter from Bakorstranasda",
+                    "- Recommendation letter from Kapolda",
+                    "- Recomendation letter from EPO",
+                    "- Permit letter from PT Freeport Indonesia (PTFI)",
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Health Certificate"
                 ]
             )
         ]
