@@ -55,7 +55,7 @@ struct HikingDetailScreen: View {
                     VStack(alignment: .leading) {
                         if(logisticTab == 0) {
                             ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
-                                ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
+                                ItemCardGroup(globalObj: globalObj, hiking: hikeDetail, groupItem: hikeDetail.groupLogistic[n])
                                     .onTapGesture {
                                         activeItem = ActiveItem(calledFrom: n)
                                     }
@@ -73,7 +73,7 @@ struct HikingDetailScreen: View {
                             
                         } else {
                             ForEach(0..<hikeDetail.personalLogistic.count, id: \.self) { n in
-                                ItemCardPersonal(personalItem: hikeDetail.personalLogistic[n])
+                                ItemCardPersonal(globalObj:globalObj, hiking: hikeDetail, personalItem: hikeDetail.personalLogistic[n])
                                     .onTapGesture {
                                         activeItem = ActiveItem(calledFrom: n)
                                     }

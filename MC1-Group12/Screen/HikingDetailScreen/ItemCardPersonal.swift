@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ItemCardPersonal: View {
-    @State var checked: Bool = false
-    
-    
-    
+    @ObservedObject var globalObj: HikingJourney
+    var hiking: Hiking
     var personalItem: PersonalItem
     
     var body: some View {
+        let checked = personalItem.isDone
+        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+        let indexPersonalItem = globalObj.journeyList[index].personalLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
+
         ZStack(alignment: .top) {
             RoundedRectangle(cornerRadius: 20).foregroundColor(checked ? .disabledCardBg : .white).frame(height: 100)
             
@@ -26,7 +28,9 @@ struct ItemCardPersonal: View {
                 HStack{
                     Text("\(personalItem.quantity) Qty").font(.subheadline)
                     Spacer()
-                    Button(action: {checked = !checked}) {
+                    Button(action: {
+                        globalObj.journeyList[index].personalLogistic[indexPersonalItem].isDone.toggle()
+                    }) {
                         Image(systemName: checked ? "checkmark.circle.fill" : "circle").foregroundColor(.accentColor)
                             .font(.title3)
                     }
