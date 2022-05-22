@@ -7,20 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0804005D28368A4D00BC43A2 /* MountainInformation.swift */; };
+		0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0804005F28368CA100BC43A2 /* MountainEssentialView.swift */; };
+		08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08040061283691BA00BC43A2 /* MountainRequirement.swift */; };
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
+		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
+		088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26D12837E53200EA19EF /* ItemCardPersonal.swift */; };
 		08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */; };
 		08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F2282B569E00B0AA72 /* ContentView.swift */; };
 		08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F4282B56A000B0AA72 /* Assets.xcassets */; };
 		08A089F8282B56A000B0AA72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */; };
+		08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */; };
+		08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A923C4282E4A5900862E8A /* ItemDetailForm.swift */; };
+		08D68C612835D7C10021EF0E /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C602835D7C10021EF0E /* Mountain.swift */; };
+		08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C62283616D80021EF0E /* HikingJourney.swift */; };
+		08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F916E9282D09A400463F69 /* TestFormsFile.swift */; };
+		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
+		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
+		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
+		0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B31E2834AEB900D052A0 /* Carousel.swift */; };
+		0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */; };
+		0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B3422834DD1B00D052A0 /* Persistence.swift */; };
+		0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */; };
+		0E75B348283502A700D052A0 /* ItemCardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B347283502A700D052A0 /* ItemCardGroup.swift */; };
+		0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B349283502C800D052A0 /* HikingCard.swift */; };
+		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
+		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
+		0EBE72722837D58F00ECC55A /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Func.swift */; };
+		D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F8E428393A6B002354DD /* LaunchScreen.storyboard */; };
+		D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F8E628393B27002354DD /* CongratulationScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0804005D28368A4D00BC43A2 /* MountainInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInformation.swift; sourceTree = "<group>"; };
+		0804005F28368CA100BC43A2 /* MountainEssentialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainEssentialView.swift; sourceTree = "<group>"; };
+		08040061283691BA00BC43A2 /* MountainRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRequirement.swift; sourceTree = "<group>"; };
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
+		088A26D12837E53200EA19EF /* ItemCardPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardPersonal.swift; sourceTree = "<group>"; };
 		08A089ED282B569E00B0AA72 /* MC1-Group12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Group12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1_Group12App.swift; sourceTree = "<group>"; };
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08A089F4282B56A000B0AA72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailScreen.swift; sourceTree = "<group>"; };
+		08A923C4282E4A5900862E8A /* ItemDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailForm.swift; sourceTree = "<group>"; };
+		08D68C602835D7C10021EF0E /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
+		08D68C62283616D80021EF0E /* HikingJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingJourney.swift; sourceTree = "<group>"; };
+		08F916E9282D09A400463F69 /* TestFormsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFormsFile.swift; sourceTree = "<group>"; };
+		0E67E024282FFFEE00829F52 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
+		0E67E02828300E8900829F52 /* JourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyList.swift; sourceTree = "<group>"; };
+		0E75B31E2834AEB900D052A0 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata.xcdatamodel; sourceTree = "<group>"; };
+		0E75B3422834DD1B00D052A0 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailScreen.swift; sourceTree = "<group>"; };
+		0E75B347283502A700D052A0 /* ItemCardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardGroup.swift; sourceTree = "<group>"; };
+		0E75B349283502C800D052A0 /* HikingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingCard.swift; sourceTree = "<group>"; };
+		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
+		0EBE72712837D58F00ECC55A /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
+		D175F8E428393A6B002354DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D175F8E628393B27002354DD /* CongratulationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +82,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0814729D282C081A0092BFB3 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				0814729B282C08070092BFB3 /* HikingDetailForm.swift */,
+				08A923C4282E4A5900862E8A /* ItemDetailForm.swift */,
+				08F916E9282D09A400463F69 /* TestFormsFile.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		08852CF52834E3C800C7DD59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				08D68C602835D7C10021EF0E /* Mountain.swift */,
+				08D68C62283616D80021EF0E /* HikingJourney.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		08A089E4282B569E00B0AA72 = {
 			isa = PBXGroup;
 			children = (
@@ -54,10 +121,15 @@
 		08A089EF282B569E00B0AA72 /* MC1-Group12 */ = {
 			isa = PBXGroup;
 			children = (
+				08852CF52834E3C800C7DD59 /* Model */,
+				0E777EB7282BFF930090B74D /* Services */,
+				0E777EB1282BFDE20090B74D /* Screen */,
 				08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */,
 				08A089F2282B569E00B0AA72 /* ContentView.swift */,
 				08A089F4282B56A000B0AA72 /* Assets.xcassets */,
 				08A089F6282B56A000B0AA72 /* Preview Content */,
+				D175F8E428393A6B002354DD /* LaunchScreen.storyboard */,
+				D175F8E628393B27002354DD /* CongratulationScreen.swift */,
 			);
 			path = "MC1-Group12";
 			sourceTree = "<group>";
@@ -68,6 +140,70 @@
 				08A089F7282B56A000B0AA72 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		08A923C1282E0B6B00862E8A /* MountainDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				08A923C2282E0B9900862E8A /* MountainDetailScreen.swift */,
+				0804005D28368A4D00BC43A2 /* MountainInformation.swift */,
+				0804005F28368CA100BC43A2 /* MountainEssentialView.swift */,
+				08040061283691BA00BC43A2 /* MountainRequirement.swift */,
+			);
+			path = MountainDetailScreen;
+			sourceTree = "<group>";
+		};
+		0E75B3442834E22000D052A0 /* HikingDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0E75B3452834E23C00D052A0 /* HikingDetailScreen.swift */,
+				0E75B347283502A700D052A0 /* ItemCardGroup.swift */,
+				088A26D12837E53200EA19EF /* ItemCardPersonal.swift */,
+				0E75B349283502C800D052A0 /* HikingCard.swift */,
+			);
+			path = HikingDetailScreen;
+			sourceTree = "<group>";
+		};
+		0E777EB1282BFDE20090B74D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0E75B3442834E22000D052A0 /* HikingDetailScreen */,
+				0E777EB8282C106A0090B74D /* MountainListScreen */,
+				08A923C1282E0B6B00862E8A /* MountainDetailScreen */,
+				0814729D282C081A0092BFB3 /* Forms */,
+				0E777EB3282BFE8F0090B74D /* HomeScreen */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		0E777EB3282BFE8F0090B74D /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0E777EB4282BFF030090B74D /* HomeScreen.swift */,
+				0E67E0262830014B00829F52 /* MountCard.swift */,
+				0E67E02828300E8900829F52 /* JourneyList.swift */,
+				0E75B31E2834AEB900D052A0 /* Carousel.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		0E777EB7282BFF930090B74D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E75B3422834DD1B00D052A0 /* Persistence.swift */,
+				0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */,
+				0E67E024282FFFEE00829F52 /* Colors.swift */,
+				0EBE72712837D58F00ECC55A /* Func.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0E777EB8282C106A0090B74D /* MountainListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0E777EB9282C107F0090B74D /* MountainListScreen.swift */,
+			);
+			path = MountainListScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08147296282B90180092BFB3 /* README.md in Resources */,
+				D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */,
 				08A089F8282B56A000B0AA72 /* Preview Assets.xcassets in Resources */,
 				08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */,
 			);
@@ -142,7 +279,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */,
+				0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */,
+				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
+				0E75B348283502A700D052A0 /* ItemCardGroup.swift in Sources */,
+				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
+				0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */,
+				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
+				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
+				0EBE72722837D58F00ECC55A /* Func.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
+				0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */,
+				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
+				08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */,
+				0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */,
+				08D68C612835D7C10021EF0E /* Mountain.swift in Sources */,
+				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
+				0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */,
+				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,
+				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
+				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
+				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
+				D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */,
+				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
+				088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,14 +431,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1-Group12/Preview Content\"";
-				DEVELOPMENT_TEAM = 5AF35P6885;
+				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,14 +462,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1-Group12/Preview Content\"";
-				DEVELOPMENT_TEAM = 5AF35P6885;
+				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +507,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */,
+			);
+			currentVersion = 0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */;
+			path = coredata.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 08A089E5282B569E00B0AA72 /* Project object */;
 }

@@ -19,8 +19,9 @@ An app that help a group of hikers to prepare their logistic by tracking their l
 6. Mario
 7. Afina
 
-## Commit Messages Rule
+### Commit Messages Rule
 
 (name) - changes has been made
-
 ex: ditcu - refactoring
+
+#### Tambah Readme JIA
