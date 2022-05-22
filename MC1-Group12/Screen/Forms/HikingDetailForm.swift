@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct HikingDetailForm: View {
-
+    
     @Environment(\.dismiss) var dismiss
     @ObservedObject var globalObj: HikingJourney
     @State var mountain: Mountain
+    @State var hiking: Hiking?
     @State var tripDate: Date = Date.now
     @State var participants: [String] = [""]
     
@@ -20,7 +21,7 @@ struct HikingDetailForm: View {
             Text("Participants")
                 .font(.callout)
                 .foregroundColor(.black)
-
+            
             Spacer()
             Text("\(participants.count)")
                 .font(.callout)
@@ -40,7 +41,11 @@ struct HikingDetailForm: View {
                             .disabled(true)
                     }
                     
-                    DatePicker(selection: $tripDate, label: {Text("Date")})
+                    DatePicker(selection: $tripDate, label: {Text("Date")}).onAppear{
+                        if let hiking = hiking {
+                            tripDate = hiking.date
+                        }
+                    }
                 }
                 
                 Section(
@@ -58,10 +63,10 @@ struct HikingDetailForm: View {
                         }
                     )
                 ) {
-                    ForEach(0..<participants.count, id: \.self) {n in
+                    ForEach(0..<participants.count, id: \.self) { n in
                         HStack {
-                            TextField("Particpant \(n+1)", text: self.$participants[n])
-                                
+                            TextField("Participant \(n+1)", text: self.$participants[n])
+                            
                             Button(
                                 action: {
                                     if(participants.count != 1) { self.participants.remove(at: n)}
@@ -71,6 +76,10 @@ struct HikingDetailForm: View {
                                         .foregroundColor(.red)
                                 }
                             )
+                        }
+                    }.onAppear {
+                        if let hiking = hiking {
+                            participants = hiking.hiker
                         }
                     }
                 }
@@ -93,10 +102,36 @@ struct HikingDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
-                            globalObj.journeyList.append(Hiking(
-                                mountain: mountain, date: tripDate, hiker: participants
-                            ))
-
+                            if let hiking = hiking {
+                                let index = globalObj.journeyList.firstIndex {$0.id == hiking.id} ?? 0
+                                
+                                globalObj.journeyList[index].hiker = participants
+                                globalObj.journeyList[index].date = tripDate
+                            } else {
+                                func qtyCount(_ item: String) -> Int {
+                                    switch item {
+                                    case "Flysheet":
+                                        return 3
+                                    case "Portable Gas", "Raffia rope":
+                                        return 2
+                                    default:
+                                        return 1
+                                    }
+                                }
+                                let groupLog = mountain.essentials.groupLogistic.map { items -> GroupItem in
+                                    let list: GroupItem = GroupItem(name: items, quantity: qtyCount(items), notes: items == "Tents" ? "For \(participants.count) people" : "")
+                                    return list
+                                }
+                                let personLog = mountain.essentials.personalLogistic.map { items -> PersonalItem in
+                                    let list: PersonalItem = PersonalItem(name: items, quantity: 1)
+                                    return list
+                                }
+                                
+                                globalObj.journeyList.append(Hiking(
+                                    mountain: mountain, date: tripDate, hiker: participants, groupLogistic: groupLog, personalLogistic: personLog
+                                ))
+                            }
+                            
                             dismiss()
                         },
                         label: { Text("Save").fontWeight(.bold) }

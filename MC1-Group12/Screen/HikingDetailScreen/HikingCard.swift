@@ -11,6 +11,8 @@ struct HikingCard: View {
     let height: CGFloat = 120
     
     @ObservedObject var globalObj: HikingJourney
+    @State private var isSheetHikingOpen = false
+    @State private var showAlert = false
     var hiking: Hiking
     
     var body: some View {
@@ -36,24 +38,20 @@ struct HikingCard: View {
                     }
                     Spacer()
                     Menu {
-                        Button(action: {}) {
+                        Button(action: {
+                            isSheetHikingOpen.toggle()
+                        }) {
                             Label("Edit", systemImage: "square.and.pencil")
                         }
-                        Button(role: .destructive, action: {}) {
+                        Button(role: .destructive, action: {
+                            showAlert.toggle()
+                        }) {
                             Label("Delete", systemImage: "trash")
                         }
                         Button(role: .destructive, action: {
-//                            print(hiking)
-//                            print(globalObj.journeyList.first {$0.id == hiking.id}.isDone = true)
                             globalObj.journeyList[index].isDone.toggle()
-                            if var foo = globalObj.journeyList.first(where: {$0.id == hiking.id}) {
-                                foo.isDone = true
-                            } else {
-                               // item could not be found
-                            }
-                            
                         }) {
-                            Label("test", systemImage: "trash")
+                            Label("test done", systemImage: "trash")
                         }
                     } label: {
                         Image(systemName: "ellipsis")
@@ -79,7 +77,20 @@ struct HikingCard: View {
             }
             .padding(.all, 12)
             .foregroundColor(.white)
-        }.frame(height: height)
+        }
+        .frame(height: height)
+        .sheet(isPresented: $isSheetHikingOpen ) {
+            HikingDetailForm(globalObj: globalObj, mountain: hiking.mountain, hiking: hiking)
+        }
+        .alert("Would you like to delete this journey?", isPresented: $showAlert, actions: {
+            Button("Delete", role: .destructive, action: {
+                let index = globalObj.journeyList.firstIndex {$0.id == hiking.id} ?? 0
+                
+                globalObj.journeyList.remove(at: index)
+            })
+        }, message: {
+            Text("This action cannot be undone")
+        })
     }
 }
 //
