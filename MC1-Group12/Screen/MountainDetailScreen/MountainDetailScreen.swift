@@ -24,13 +24,18 @@ struct MountainDetailScreen: View {
                     Image(mountain.image)
                         .resizable()
                         .scaledToFill()
+                        .overlay(Rectangle().fill(LinearGradient(
+                            colors: [.black.opacity(0.25), .clear],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )))
                         .frame(width: UIScreen.main.bounds.size.width, height: 300)
                     
                     ScrollView {
                         switch currentSubview {
                             case 0: InformationView(mountainInfo:  mountain.informations)
                             case 1: EssentialView(mountainEssential: mountain.essentials)
-                            case 2: RequirementView(mountainRequairement: mountain.reqirements)
+                            case 2: RequirementView(mountainRequairement: mountain.requirements)
                             default: Text("")
                         }
                     }
@@ -41,11 +46,11 @@ struct MountainDetailScreen: View {
                 VStack {
                     HStack {
                         Text(mountain.location)
-                            .font(.title3)
+                            .font(.system(size: 20, weight: .regular, design: .serif))
                             .italic()
                             .foregroundColor(.white)
                         Spacer()
-                    } .padding(.horizontal)
+                    }.padding(.horizontal)
                     
                     HStack {
                         Text("\(mountain.height) mdpl")
@@ -93,23 +98,21 @@ struct MountainDetailScreen: View {
                     Spacer()
                 } .padding(.top, 20)
             } .padding(.top, 100)
-
-            
                 .navigationTitle(mountain.name)
-            .navigationBarTitleDisplayMode(.inline)
-            .edgesIgnoringSafeArea(.all)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(
-                        action: { showSheet.toggle() },
-                        label: {
-                            Text("Start").fontWeight(.bold)
-                        }
-                    )
-                    
-                    .sheet(isPresented: $showSheet) { HikingDetailForm(globalObj: globalObj, mountain: mountain) }
+                .navigationBarTitleDisplayMode(.inline)
+                .edgesIgnoringSafeArea(.all)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(
+                            action: { showSheet.toggle() },
+                            label: {
+                                Text("Start").fontWeight(.bold)
+                            }
+                        )
+                        
+                        .sheet(isPresented: $showSheet) { HikingDetailForm(globalObj: globalObj, mountain: mountain) }
+                    }
                 }
-            }
         }
     }
 }

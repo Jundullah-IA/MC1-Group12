@@ -15,26 +15,29 @@ struct ItemCardPersonal: View {
     var personalItem: PersonalItem
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             RoundedRectangle(cornerRadius: 20).foregroundColor(checked ? .disabledCardBg : .white).frame(height: 100)
             
             VStack(alignment: .leading) {
-                Text(personalItem.name.uppercased()).font(.headline)
+                Text(personalItem.name.uppercased()).font(.headline).lineLimit(1)
                 Text(personalItem.notes).font(.subheadline).foregroundColor(.gray)
+                Spacer()
                 Divider()
                 HStack{
-                    Text("\(personalItem.quantity)").font(.subheadline)
+                    Text("\(personalItem.quantity) Qty").font(.subheadline)
                     Spacer()
                     Button(action: {checked = !checked}) {
                         Image(systemName: checked ? "checkmark.circle.fill" : "circle").foregroundColor(.accentColor)
                             .font(.title3)
                     }
                 }
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 12)
         }.padding(.bottom, 4)
     }
 }
-
+//
 //struct ItemCardGroup_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ItemCardPersonal()

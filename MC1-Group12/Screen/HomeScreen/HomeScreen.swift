@@ -10,11 +10,11 @@ import SwiftUI
 struct HomeScreen: View {
     @State var noPlan = true
     @State var noJourney = true
-//    var hikingJourneyHistory: [Hiking]
-   
     @ObservedObject var globalObj: HikingJourney
 
     var body: some View {
+        let historyList = globalObj.journeyList.filter {$0.isDone}
+        let activeList = globalObj.journeyList.filter {!$0.isDone}
         
         NavigationView {
             ZStack(alignment: .top){
@@ -36,7 +36,7 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if (globalObj.journeyList.count != 0) {
+                    if (activeList.count != 0) {
                         Carousel(globalObj: globalObj)
                             .padding(.bottom, 10)
                     } else {
@@ -62,14 +62,14 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if false {
+                    if historyList.count == 0 {
                         VStack {
                         Image("empty")
                         Text("No journey history")
                             .font(.subheadline)
                             .foregroundColor(.darkGreen)
                             .opacity(0.4)
-                        }.padding(.vertical, 25)
+                        }.padding(.vertical, 100)
                     } else {
                         JourneyList(globalObj: globalObj)
                     }

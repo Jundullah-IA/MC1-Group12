@@ -31,7 +31,11 @@ struct Carousel: View {
         }
         .frame(height: 200)
         .onAppear(
-            perform: {id = list[0].id}
+            perform: {
+                if (list.count != 0) {
+                    id = list[0].id
+                }
+            }
         )
     }
 }

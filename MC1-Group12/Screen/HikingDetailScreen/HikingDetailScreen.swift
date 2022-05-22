@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HikingDetailScreen: View {
-    @State private var favoriteColor = 0
-    @State private var isSheetOpen = false
+    @State private var logisticTab = 0 /// 0 = group, 1 = personal
+    @State private var isSheetItemOpen = false
     @State private var isSheetMountainOpen = false
     @State private var isItemDetailOpen = false
     @ObservedObject var globalObj: HikingJourney
@@ -24,7 +24,7 @@ struct HikingDetailScreen: View {
             VStack {
                 HikingCard(globalObj: globalObj, hiking: hikeDetail)
                 
-                Picker("", selection: $favoriteColor) {
+                Picker("", selection: $logisticTab) {
                     Text("Group").tag(0)
                     Text("Personal").tag(1)
                 }
@@ -32,7 +32,7 @@ struct HikingDetailScreen: View {
                 .padding(.vertical, 5)
                 
                 HStack {
-                    Text("\(favoriteColor == 0 ? "Group" : "Personal") Logistic List")
+                    Text("\(logisticTab == 0 ? "Group" : "Personal") Logistic List")
                         .font(.body)
                         .fontWeight(.semibold)
                     Spacer()
@@ -64,24 +64,24 @@ struct HikingDetailScreen: View {
                                     }
                             }
                         } else {
-                            ForEach(hikeDetail.personalLogistic) {personalItem in
+                            ForEach(hikeDetail.personalLogistic) { personalItem in
                                 ItemCardPersonal(personalItem: personalItem)
                             }
                         }
-                                                
-                        Button(action: {isSheetOpen = true}) {
+                        
+                        Button(action: {isSheetItemOpen = true}) {
                             Label("Add new item", systemImage: "plus.circle").padding(.top, 5)
                         }.padding(.horizontal)
                     }.padding(.vertical)
                 }.padding(.horizontal)
             }
         }
-        .sheet(isPresented: $isSheetOpen){
+        .sheet(isPresented: $isSheetItemOpen){
             ItemDetailForm(
                 formState: "New",
                 globalObj: globalObj,
                 hiking: hikeDetail,
-                logisticType: favoriteColor == 0 ? "group" : "personal"
+                logisticType: logisticTab == 0 ? "group" : "personal"
             )
         }
         .sheet(isPresented: $isSheetMountainOpen){
