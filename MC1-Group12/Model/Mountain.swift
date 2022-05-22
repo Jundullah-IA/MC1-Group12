@@ -532,7 +532,7 @@ let MountainList: [Mountain] = [
         image: "cikuray",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 4
         ),
         informations: [
@@ -715,8 +715,8 @@ let MountainList: [Mountain] = [
         height: 4884,
         image: "jaya-wijaya",
         estimation: HikingEstimation(
-            duration: "2D1N",
-            distance: 200,
+            duration: "14D13N",
+            distance: 96,
             pathways: 1
         ),
         informations: [
@@ -826,7 +826,7 @@ let MountainList: [Mountain] = [
         image: "rinjani",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 6
         ),
         informations: [
@@ -913,7 +913,7 @@ let MountainList: [Mountain] = [
         image: "sumbing",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 4
         ),
         informations: [
@@ -1000,7 +1000,7 @@ let MountainList: [Mountain] = [
         image: "sindoro",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 2
         ),
         informations: [
@@ -1087,7 +1087,7 @@ let MountainList: [Mountain] = [
         image: "lawu",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 6
         ),
         informations: [
@@ -1174,7 +1174,7 @@ let MountainList: [Mountain] = [
         image: "merbabu",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 5
         ),
         informations: [
@@ -1261,7 +1261,7 @@ let MountainList: [Mountain] = [
         image: "latimojong",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 3
         ),
         informations: [
@@ -1348,7 +1348,7 @@ let MountainList: [Mountain] = [
         image: "kelud",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 2
         ),
         informations: [
@@ -1435,7 +1435,7 @@ let MountainList: [Mountain] = [
         image: "arjuno",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 4
         ),
         informations: [
@@ -1522,7 +1522,7 @@ let MountainList: [Mountain] = [
         image: "argopuro",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 2
         ),
         informations: [
@@ -1609,7 +1609,7 @@ let MountainList: [Mountain] = [
         image: "guntur",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 2
         ),
         informations: [
@@ -1696,7 +1696,7 @@ let MountainList: [Mountain] = [
         image: "agung",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 2
         ),
         informations: [
@@ -1783,7 +1783,7 @@ let MountainList: [Mountain] = [
         image: "unggaran",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 3
         ),
         informations: [
@@ -1870,7 +1870,7 @@ let MountainList: [Mountain] = [
         image: "wilis",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 5
         ),
         informations: [
@@ -1957,7 +1957,7 @@ let MountainList: [Mountain] = [
         image: "tambora",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 4
         ),
         informations: [
@@ -2044,7 +2044,7 @@ let MountainList: [Mountain] = [
         image: "geureudong",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 1
         ),
         informations: [
@@ -2131,7 +2131,7 @@ let MountainList: [Mountain] = [
         image: "singgalang",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 4
         ),
         informations: [
@@ -2218,7 +2218,7 @@ let MountainList: [Mountain] = [
         image: "leuseur",
         estimation: HikingEstimation(
             duration: "2D1N",
-            distance: 8700,
+            distance: 10,
             pathways: 3
         ),
         informations: [
