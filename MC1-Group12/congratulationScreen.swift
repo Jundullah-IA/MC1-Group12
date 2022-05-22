@@ -28,12 +28,12 @@ struct CongratulationScreen: View {
                     self.opacity = 1.0
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-                    globalObj.showCongrats.toggle()
+                    globalObj.showCongrats = false
                 }
                 
             }
             .onTapGesture {
-                globalObj.showCongrats.toggle()
+                globalObj.showCongrats = false
             }
         }
     }
