@@ -13,6 +13,7 @@ struct MountainDetailScreen: View {
     
     @ObservedObject var globalObj: HikingJourney
     var mountain: Mountain
+    var previewOnly: Bool = false
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -92,7 +93,7 @@ struct MountainDetailScreen: View {
                 }
                 Spacer()
             } .padding(.top, 20)
-        } .padding(.top, 100)
+        } .padding(.top, previewOnly == true ? 0 : 100)
             .navigationTitle(mountain.name)
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.all)
