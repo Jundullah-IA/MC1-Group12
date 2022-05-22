@@ -36,7 +36,7 @@ struct ItemDetailForm: View {
     var body: some View {
         let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
         let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
-        let indexPersonalItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
+        let indexPersonalItem = globalObj.journeyList[index].personalLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
         
         NavigationView {
             List {
@@ -114,25 +114,28 @@ struct ItemDetailForm: View {
                         LazyVGrid(columns: columns) {
                             ForEach(0..<hiking.hiker.count, id: \.self) {index in
                                 ZStack {
+                                    let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == hiking.hiker[index]} ?? 0]
+                                    
                                     if(formState == "New") {
                                         if(selectedPIC.contains(hiking.hiker[index])) {
-                                            Color.green
+                                            color.opacity(0.1)
                                         } else {
                                             Color.background
                                         }
                                     } else {
                                         if(groupItem.pic.contains(hiking.hiker[index])) {
-                                            Color.green
+                                            color.opacity(0.1)
                                         } else {
                                             Color.background
                                         }
                                     }
                                     
                                     HStack {
-                                        Image(systemName: "person")
-                                        Text(hiking.hiker[index])
+                                        Image(systemName: "person").font(.subheadline)
+                                        Text(hiking.hiker[index]).font(.subheadline)
                                     }
-                                    .cornerRadius(15)
+                                    .padding(.horizontal, 10)
+                                    .foregroundColor(color)
                                 }
                                 .cornerRadius(15)
                                 .frame(width: 110, height: 35)
@@ -166,7 +169,7 @@ struct ItemDetailForm: View {
             .padding(.top, 57)
             .listStyle(.grouped)
             
-            .navigationTitle("Item Details")
+            .navigationTitle(formState == "New" ? "Add Item" : (formState == "Display" ? "Item Detail" : "Edit Item"))
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.all)
             .toolbar {
