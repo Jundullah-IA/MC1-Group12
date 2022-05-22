@@ -36,7 +36,7 @@
 		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
 		0EBE72722837D58F00ECC55A /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Func.swift */; };
 		D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F8E428393A6B002354DD /* LaunchScreen.storyboard */; };
-		D175F8E728393B27002354DD /* congratulationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F8E628393B27002354DD /* congratulationScreen.swift */; };
+		D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F8E628393B27002354DD /* CongratulationScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +70,7 @@
 		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
 		0EBE72712837D58F00ECC55A /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		D175F8E428393A6B002354DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D175F8E628393B27002354DD /* congratulationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = congratulationScreen.swift; sourceTree = "<group>"; };
+		D175F8E628393B27002354DD /* CongratulationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 				08A089F4282B56A000B0AA72 /* Assets.xcassets */,
 				08A089F6282B56A000B0AA72 /* Preview Content */,
 				D175F8E428393A6B002354DD /* LaunchScreen.storyboard */,
-				D175F8E628393B27002354DD /* congratulationScreen.swift */,
+				D175F8E628393B27002354DD /* CongratulationScreen.swift */,
 			);
 			path = "MC1-Group12";
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
 				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
 				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
-				D175F8E728393B27002354DD /* congratulationScreen.swift in Sources */,
+				D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */,
 				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
 				088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */,
 			);

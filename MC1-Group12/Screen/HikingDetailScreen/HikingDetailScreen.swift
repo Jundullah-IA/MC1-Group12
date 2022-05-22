@@ -7,13 +7,20 @@
 
 import SwiftUI
 
+struct ActiveItem : Identifiable {
+    var calledFrom: Int
+    var id: Int { return calledFrom }
+}
+
 struct HikingDetailScreen: View {
     @State private var logisticTab = 0 /// 0 = group, 1 = personal
     @State private var isSheetItemOpen = false
     @State private var isSheetMountainOpen = false
+    @State private var isItemDetailOpen = false
     @ObservedObject var globalObj: HikingJourney
     
     @State var currentList: String = "group"
+    @State var activeItem : ActiveItem?
     
     var hikeDetail: Hiking
     
@@ -54,13 +61,40 @@ struct HikingDetailScreen: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         if(logisticTab == 0) {
-                            ForEach(hikeDetail.groupLogistic) { groupItem in
-                                ItemCardGroup(groupItem: groupItem)
+                            ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
+                                ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
+                                    .onTapGesture {
+                                        activeItem = ActiveItem(calledFrom: n)
+                                    }
+                            }
+                            .sheet(item: $activeItem) { item in
+                                ItemDetailForm(
+                                    formState: "Display",
+                                    globalObj: globalObj,
+                                    hiking: hikeDetail,
+                                    logisticType: logisticTab == 0 ? "group" : "personal",
+                                    groupItem: hikeDetail.groupLogistic[item.calledFrom],
+                                    personalItem: hikeDetail.personalLogistic[item.calledFrom]
+                                )
+                            }
+
+                        } else {
+                            ForEach(0..<hikeDetail.personalLogistic.count, id: \.self) { n in
+                                ItemCardPersonal(personalItem: hikeDetail.personalLogistic[n])
+                                    .onTapGesture {
+                                        activeItem = ActiveItem(calledFrom: n)
+                                    }
                             }
                             
-                        } else {
-                            ForEach(hikeDetail.personalLogistic) { personalItem in
-                                ItemCardPersonal(personalItem: personalItem)
+                            .sheet(item: $activeItem) { item in
+                                ItemDetailForm(
+                                    formState: "Display",
+                                    globalObj: globalObj,
+                                    hiking: hikeDetail,
+                                    logisticType: logisticTab == 0 ? "group" : "personal",
+                                    groupItem: hikeDetail.groupLogistic[item.calledFrom],
+                                    personalItem: hikeDetail.personalLogistic[item.calledFrom]
+                                )
                             }
                         }
                         
@@ -73,14 +107,18 @@ struct HikingDetailScreen: View {
         }
         .sheet(isPresented: $isSheetItemOpen){
             ItemDetailForm(
+                formState: "New",
                 globalObj: globalObj,
                 hiking: hikeDetail,
-                logisticType: logisticTab == 0 ? "group" : "personal"
+                logisticType: logisticTab == 0 ? "group" : "personal",
+                groupItem: GroupItem(),
+                personalItem: PersonalItem()
             )
         }
         .sheet(isPresented: $isSheetMountainOpen){
             MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain)
         }
+        
         .navigationTitle("Rinjani")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

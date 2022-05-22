@@ -14,14 +14,16 @@ struct ItemDetailForm: View {
     @State var totalItem: Int = 1
     @State var notes: String = ""
     @State var dueDate: Date = Date.now
-    @State var counter: Int = 1
-    @State var counter1: Int = 1
     @State var isSelectRemindMe: Bool = false
     @State var reminderDate: Date = Date.now
+    @State var formState: String = "Edit"
     
     @ObservedObject var globalObj: HikingJourney
-    var hiking: Hiking
+    @State var hiking: Hiking
     var logisticType: String = "group"
+    
+    @State var groupItem: GroupItem
+    @State var personalItem: PersonalItem
     
     let columns = [
         GridItem(.flexible()),
@@ -33,6 +35,8 @@ struct ItemDetailForm: View {
     
     var body: some View {
         let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+        let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
+        let indexPersonalItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
         
         NavigationView {
             List {
@@ -40,23 +44,53 @@ struct ItemDetailForm: View {
                     HStack {
                         Text("Name")
                         Spacer()
-                        TextField("item name", text: $itemName)
+                        TextField("item name",
+                                  text: formState == "New" ?
+                                  $itemName : (logisticType == "group" ?
+                                                $groupItem.name :
+                                                $personalItem.name
+                                              )
+                        )
                             .multilineTextAlignment(.trailing)
+                            .disabled(formState == "Display" ? true : false)
                     }
                     
                     HStack {
                         Text("Total")
                         
-                        Stepper(value: $counter1, in: 1...100) {
-                            Text("\(counter1)") .padding(.leading, 180)
+                        Stepper(value: formState == "New" ? $totalItem : (
+                            logisticType == "group" ? $groupItem.quantity : $personalItem.quantity
+                        ),
+                                in: 1...100) {
+                            
+                            if(formState == "New") {
+                                Text("\(totalItem)")
+                                    .padding(.leading, 180)
+                            } else {
+                                if(logisticType == "group") {
+                                    Text("\(groupItem.quantity)")
+                                        .padding(.leading, 180)
+                                } else {
+                                    Text("\(personalItem.quantity)")
+                                        .padding(.leading, 180)
+                                }
+                            }
                         }
+                        .disabled(formState == "Display" ? true : false)
                     }
                     
                     HStack {
                         Text("Notes")
                         Spacer()
-                        TextField("notes", text: $notes)
+                        TextField("notes",
+                                  text: formState == "New" ?
+                                  $notes : (logisticType == "group" ?
+                                               $groupItem.notes :
+                                                $personalItem.notes
+                                              )
+                        )
                             .multilineTextAlignment(.trailing)
+                            .disabled(formState == "Display" ? true : false)
                     }
                     
 //                    HStack {
@@ -80,10 +114,18 @@ struct ItemDetailForm: View {
                         LazyVGrid(columns: columns) {
                             ForEach(0..<hiking.hiker.count, id: \.self) {index in
                                 ZStack {
-                                    if(selectedPIC.contains(hiking.hiker[index])) {
-                                        Color.green
+                                    if(formState == "New") {
+                                        if(selectedPIC.contains(hiking.hiker[index])) {
+                                            Color.green
+                                        } else {
+                                            Color.background
+                                        }
                                     } else {
-                                        Color.background
+                                        if(groupItem.pic.contains(hiking.hiker[index])) {
+                                            Color.green
+                                        } else {
+                                            Color.background
+                                        }
                                     }
                                     
                                     HStack {
@@ -95,14 +137,26 @@ struct ItemDetailForm: View {
                                 .cornerRadius(15)
                                 .frame(width: 110, height: 35)
                                 .onTapGesture {
-                                    if(selectedPIC.contains(hiking.hiker[index])) {
-                                        selectedPIC = selectedPIC.filter() {
-                                            $0 != hiking.hiker[index]
+                                    if(formState == "New") {
+                                        if(selectedPIC.contains(hiking.hiker[index])) {
+                                            selectedPIC = selectedPIC.filter() {
+                                                $0 != hiking.hiker[index]
+                                            }
+                                        } else {
+                                            selectedPIC.append(hiking.hiker[index])
                                         }
                                     } else {
-                                        selectedPIC.append(hiking.hiker[index])
+                                        if(groupItem.pic.contains(hiking.hiker[index])) {
+                                            groupItem.pic = groupItem.pic.filter() {
+                                                $0 != hiking.hiker[index]
+                                            }
+                                        } else {
+                                            groupItem.pic.append(hiking.hiker[index])
+                                        }
                                     }
                                 }
+                                .disabled(formState == "Display" ? true : false)
+
                             }
                         }
                     }
@@ -126,23 +180,39 @@ struct ItemDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
-                            if(logisticType == "group") {
-                                globalObj.journeyList[index].groupLogistic.append(GroupItem(
-                                    name: itemName,
-                                    quantity: totalItem,
-                                    notes: notes,
-                                    pic: selectedPIC))
+                            if(formState == "Display") {
+                                formState = "Edit"
+                            } else if(formState == "Edit") {
+                                if(logisticType == "group") {
+                                    globalObj.journeyList[index].groupLogistic[indexGroupItem] = groupItem
+                                } else {
+                                    globalObj.journeyList[index].personalLogistic[indexPersonalItem] = personalItem
+                                }
+                                
+                                dismiss()
                             } else {
-                                globalObj.journeyList[index].personalLogistic.append(PersonalItem(
-                                    name: itemName,
-                                    quantity: totalItem,
-                                    notes: notes))
+                                if(logisticType == "group") {
+                                    globalObj.journeyList[index].groupLogistic.append(GroupItem(
+                                        name: itemName,
+                                        quantity: totalItem,
+                                        notes: notes,
+                                        pic: selectedPIC))
+                                } else {
+                                    globalObj.journeyList[index].personalLogistic.append(PersonalItem(
+                                        name: itemName,
+                                        quantity: totalItem,
+                                        notes: notes))
+                                }
+                                
+                                dismiss()
                             }
-                            
-                            dismiss()
                         },
                         label: {
-                            Text("Save").fontWeight(.bold)
+                            if(formState == "Display") {
+                                Text("Edit").fontWeight(.bold)
+                            } else {
+                                Text("Save").fontWeight(.bold)
+                            }
                         }
                     )
                 }

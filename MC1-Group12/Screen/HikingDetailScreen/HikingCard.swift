@@ -65,13 +65,13 @@ struct HikingCard: View {
                 HStack {
                     HStack{
                         Image(systemName: "calendar")
-                        Text("18 June 2022")
+                        Text(dateToString(hiking.date))
                             .font(.subheadline)
                     }
                     Spacer()
                     HStack {
                         Image(systemName: "person.3.fill")
-                        Text("10")
+                        Text(hiking.hiker.count.description)
                     }
                 }
             }

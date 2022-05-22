@@ -86,7 +86,8 @@ struct MountainDetailScreen: View {
                         default: Text("")
                         }
                     }
-                    
+                    .background(Color.background)
+                    .animation(.linear, value: currentSubview)
                     Spacer()
                 }
                 Spacer()
