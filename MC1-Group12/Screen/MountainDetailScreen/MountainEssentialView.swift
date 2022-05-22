@@ -23,7 +23,7 @@ struct EssentialView: View {
                     
                     ForEach((mountainEssential?.groupLogistic)!, id: \.self) {logistic in
                         HStack {
-                            Text(logistic)
+                            Text("- \(logistic)")
                             Spacer()
                         }.padding(.horizontal)
                     }
