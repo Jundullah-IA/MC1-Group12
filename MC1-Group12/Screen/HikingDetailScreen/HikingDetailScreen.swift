@@ -108,7 +108,7 @@ struct HikingDetailScreen: View {
             )
         }
         .sheet(isPresented: $isSheetMountainOpen){
-            MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain)
+            MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain, previewOnly: true)
         }
         
         .navigationTitle("Rinjani")
