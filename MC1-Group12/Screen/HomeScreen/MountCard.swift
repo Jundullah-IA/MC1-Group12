@@ -32,7 +32,7 @@ struct MountCard: View {
                     .scaledToFill()
                     .frame(height: cardHeight)
                     .overlay(Rectangle().fill(LinearGradient(
-                        colors: [.clear, .black.opacity(0.25)],
+                        colors: [.clear, .black.opacity(0.4)],
                         startPoint: .top,
                         endPoint: .bottom
                     )))

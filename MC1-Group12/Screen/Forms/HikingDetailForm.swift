@@ -88,7 +88,7 @@ struct HikingDetailForm: View {
                     }
                 }
             }
-            .padding(.top, 57)
+            .padding(.top, 30)
             .listStyle(.grouped)
             
             .navigationTitle(mountain.name)

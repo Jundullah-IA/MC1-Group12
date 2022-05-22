@@ -21,7 +21,7 @@ struct MountainDetailScreen: View {
                 .resizable()
                 .scaledToFill()
                 .overlay(Rectangle().fill(LinearGradient(
-                    colors: [.black.opacity(0.25), .clear],
+                    colors: [.black.opacity(0.4), .clear],
                     startPoint: .top,
                     endPoint: .bottom
                 )))
