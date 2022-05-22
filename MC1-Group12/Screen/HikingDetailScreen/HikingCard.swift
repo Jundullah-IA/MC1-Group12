@@ -11,6 +11,7 @@ struct HikingCard: View {
     let height: CGFloat = 120
     
     @ObservedObject var globalObj: HikingJourney
+    @State private var isSheetHikingOpen = false
     var hiking: Hiking
     
     var body: some View {
@@ -36,24 +37,18 @@ struct HikingCard: View {
                     }
                     Spacer()
                     Menu {
-                        Button(action: {}) {
+                        Button(action: {
+                            isSheetHikingOpen.toggle()
+                        }) {
                             Label("Edit", systemImage: "square.and.pencil")
                         }
                         Button(role: .destructive, action: {}) {
                             Label("Delete", systemImage: "trash")
                         }
                         Button(role: .destructive, action: {
-//                            print(hiking)
-//                            print(globalObj.journeyList.first {$0.id == hiking.id}.isDone = true)
                             globalObj.journeyList[index].isDone.toggle()
-                            if var foo = globalObj.journeyList.first(where: {$0.id == hiking.id}) {
-                                foo.isDone = true
-                            } else {
-                               // item could not be found
-                            }
-                            
                         }) {
-                            Label("test", systemImage: "trash")
+                            Label("test done", systemImage: "trash")
                         }
                     } label: {
                         Image(systemName: "ellipsis")
@@ -79,7 +74,9 @@ struct HikingCard: View {
             }
             .padding(.all, 12)
             .foregroundColor(.white)
-        }.frame(height: height)
+        }
+        .frame(height: height)
+        .sheet(isPresented: $isSheetHikingOpen ) { HikingDetailForm(globalObj: globalObj, mountain: hiking.mountain, hiking: hiking) }
     }
 }
 //
