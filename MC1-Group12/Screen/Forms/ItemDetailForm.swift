@@ -114,10 +114,18 @@ struct ItemDetailForm: View {
                         LazyVGrid(columns: columns) {
                             ForEach(0..<hiking.hiker.count, id: \.self) {index in
                                 ZStack {
-                                    if(selectedPIC.contains(hiking.hiker[index])) {
-                                        Color.green
+                                    if(formState == "New") {
+                                        if(selectedPIC.contains(hiking.hiker[index])) {
+                                            Color.green
+                                        } else {
+                                            Color.background
+                                        }
                                     } else {
-                                        Color.background
+                                        if(groupItem.pic.contains(hiking.hiker[index])) {
+                                            Color.green
+                                        } else {
+                                            Color.background
+                                        }
                                     }
                                     
                                     HStack {
@@ -126,20 +134,29 @@ struct ItemDetailForm: View {
                                     }
                                     .cornerRadius(15)
                                 }
-                                
-                                
-                                .disabled(formState == "Display" ? true : false)
                                 .cornerRadius(15)
                                 .frame(width: 110, height: 35)
                                 .onTapGesture {
-                                    if(selectedPIC.contains(hiking.hiker[index])) {
-                                        selectedPIC = selectedPIC.filter() {
-                                            $0 != hiking.hiker[index]
+                                    if(formState == "New") {
+                                        if(selectedPIC.contains(hiking.hiker[index])) {
+                                            selectedPIC = selectedPIC.filter() {
+                                                $0 != hiking.hiker[index]
+                                            }
+                                        } else {
+                                            selectedPIC.append(hiking.hiker[index])
                                         }
                                     } else {
-                                        selectedPIC.append(hiking.hiker[index])
+                                        if(groupItem.pic.contains(hiking.hiker[index])) {
+                                            groupItem.pic = groupItem.pic.filter() {
+                                                $0 != hiking.hiker[index]
+                                            }
+                                        } else {
+                                            groupItem.pic.append(hiking.hiker[index])
+                                        }
                                     }
                                 }
+                                .disabled(formState == "Display" ? true : false)
+
                             }
                         }
                     }
