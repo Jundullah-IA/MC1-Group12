@@ -42,7 +42,7 @@ struct HikingDetailScreen: View {
                         .fontWeight(.semibold)
                     Spacer()
                     Button(action: {isSheetItemOpen = true}) {
-                        Label("Add Item", systemImage: "plus")
+                        Label("Add Item", systemImage: "plus").labelStyle(.titleOnly)
                     }
                 }
                 
