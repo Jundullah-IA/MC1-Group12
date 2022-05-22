@@ -15,87 +15,84 @@ struct MountainDetailScreen: View {
     var mountain: Mountain
     
     var body: some View {
-        VStack {
-            ZStack {
-                Color.background
-                    .padding(.top, 200)
+        ZStack(alignment: .top) {
+            Image(mountain.image)
+                .resizable()
+                .scaledToFill()
+                .overlay(Rectangle().fill(LinearGradient(
+                    colors: [.black.opacity(0.25), .clear],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )))
+                .frame(width: UIScreen.main.bounds.size.width, height: 300)
+            
+            VStack {
+                HStack {
+                    Text(mountain.location)
+                        .font(.system(size: 20, weight: .regular, design: .serif))
+                        .italic()
+                        .foregroundColor(.white)
+                    Spacer()
+                }.padding(.horizontal)
                 
-                VStack {
-                    Image(mountain.image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.size.width, height: 300)
+                HStack {
+                    Text("\(mountain.height) mdpl")
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 160)
+                
+                HStack {
+                    Spacer()
+                    VStack {
+                        Image(systemName: "info.circle.fill")
+                        Text("Information")
+                            .font(.callout)
+                    }
+                    .padding()
+                    .onTapGesture(perform: {currentSubview = 0})
+                    .foregroundColor(currentSubview == 0 ? Color.mountainDetailButton : .gray)
                     
+                    VStack {
+                        Image(systemName: "wand.and.stars")
+                        Text("Esssential")
+                            .font(.callout)
+                    }
+                    .padding()
+                    .onTapGesture(perform: {currentSubview = 1})
+                    .foregroundColor(currentSubview == 1 ? Color.mountainDetailButton : .gray)
+                    
+                    VStack {
+                        Image(systemName: "newspaper.fill")
+                        Text("Requirement")
+                            .font(.callout)
+                    }
+                    .padding()
+                    .onTapGesture(perform: {currentSubview = 2})
+                    .foregroundColor(currentSubview == 2 ? Color.mountainDetailButton : .gray)
+                    
+                    Spacer()
+                }
+                .frame(height: 70)
+                .foregroundColor(.gray)
+                .background(.white)
+                VStack {
                     ScrollView {
                         switch currentSubview {
-                            case 0: InformationView(mountainInfo:  mountain.informations)
-                            case 1: EssentialView(mountainEssential: mountain.essentials)
-                            case 2: RequirementView(mountainRequairement: mountain.reqirements)
-                            default: Text("")
+                        case 0: InformationView(mountainInfo:  mountain.informations)
+                        case 1: EssentialView(mountainEssential: mountain.essentials)
+                        case 2: RequirementView(mountainRequairement: mountain.requirements)
+                        default: Text("")
                         }
                     }
                     
                     Spacer()
                 }
-                
-                VStack {
-                    HStack {
-                        Text(mountain.location)
-                            .font(.title3)
-                            .italic()
-                            .foregroundColor(.white)
-                        Spacer()
-                    } .padding(.horizontal)
-                    
-                    HStack {
-                        Text("\(mountain.height) mdpl")
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom, 160)
-                    
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Image(systemName: "info.circle.fill")
-                            Text("Information")
-                                .font(.callout)
-                        }
-                        .padding()
-                        .onTapGesture(perform: {currentSubview = 0})
-                        .foregroundColor(currentSubview == 0 ? Color.mountainDetailButton : .gray)
-                        
-                        VStack {
-                            Image(systemName: "wand.and.stars")
-                            Text("Esssential")
-                                .font(.callout)
-                        }
-                        .padding()
-                        .onTapGesture(perform: {currentSubview = 1})
-                        .foregroundColor(currentSubview == 1 ? Color.mountainDetailButton : .gray)
-                        
-                        VStack {
-                            Image(systemName: "newspaper.fill")
-                            Text("Requirement")
-                                .font(.callout)
-                        }
-                        .padding()
-                        .onTapGesture(perform: {currentSubview = 2})
-                        .foregroundColor(currentSubview == 2 ? Color.mountainDetailButton : .gray)
-                        
-                        Spacer()
-                    }
-                    .frame(height: 70)
-                    .foregroundColor(.gray)
-                    .background(.white)
-                    
-                    Spacer()
-                } .padding(.top, 20)
-            } .padding(.top, 100)
-
-            
-                .navigationTitle(mountain.name)
+                Spacer()
+            } .padding(.top, 20)
+        } .padding(.top, 100)
+            .navigationTitle(mountain.name)
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.all)
             .toolbar {
@@ -110,7 +107,6 @@ struct MountainDetailScreen: View {
                     .sheet(isPresented: $showSheet) { HikingDetailForm(globalObj: globalObj, mountain: mountain) }
                 }
             }
-        }
     }
 }
 

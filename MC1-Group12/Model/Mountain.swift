@@ -15,8 +15,8 @@ struct Mountain: Identifiable {
     var image: String = ""
     var estimation: HikingEstimation?
     var informations: [MountainInfo]?
-    var essentials: MountainEssential?
-    var reqirements: [MountainRequirement]?
+    var essentials: MountainEssential
+    var requirements: [MountainRequirement]?
 }
 
 struct MountainInfo: Identifiable {
@@ -45,7 +45,7 @@ struct HikingEstimation {
 
 let MountainList: [Mountain] = [
     Mountain(
-        name: "Sumeru",
+        name: "Semeru",
         location: "Malang, Indonesia",
         height: 3676,
         image: "semeru",
@@ -57,15 +57,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu malam hari 3˚C - 8˚C \n Suhu siang hari 15˚C - 20˚C "
+                title: "Temp",
+                information: "- Average Temperature 3˚C - 8˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Gunung tertinggi di pulau jawa, \n Gunung ketiga tertinggi di indonesia \n Dijadikan latar shooting film 5cm "
+                information: "- Highest mountain in Java island, \n- Third most highest mountain in Indonesia"
                 
             ),
         ],
@@ -94,7 +94,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -114,34 +114,34 @@ let MountainList: [Mountain] = [
                 "Helmet"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Simaksi",
                 items: [
-                    "Weekdays : IDR 19.000",
-                    "Weekend : IDR 24.000"
+                    "- Weekdays : IDR 19.000",
+                    "- Weekend : IDR 24.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 4 Members",
-                    "Maximum : 7 Members"
+                    "- Minimum : 4 Members",
+                    "- Maximum : 7 Members"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate, including a certificate of being free from ISPA"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate, including a certificate of being free from ISPA"
                 ]
             )
         ]
     ), // Sumeru
     Mountain(
         name: "Ciremai",
-        location: "Kuningan, West java, Indonesia",
+        location: "Kuningan, Indonesia",
         height: 3078,
         image: "ciremai",
         estimation: HikingEstimation(
@@ -152,15 +152,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu malam hari 6˚C - 10˚C"
+                title: "Temp",
+                information: "- Average temperature 6˚C - 10˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Gunung tertinggi di Jawa Barat \n Letusan Terakhir tahun 1938 \n Mempunyai kawah ganda di sisi barat dan sisi timur "
+                information: "- Highest mountain in West Java \nLatest Eruption at 1983 \n- Have a double crater on west side and east side"
                 
             )
         ],
@@ -189,7 +189,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -206,37 +206,38 @@ let MountainList: [Mountain] = [
                 "Private Water Bottle",
                 "Garbage Bag",
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)",
+                "Helmet"
               
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 5.000",
-                    "Weekend : IDR 7.500"
+                    "- Weekeday : IDR 5.000",
+                    "- Weekend : IDR 7.500"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 4 Members",
-                    "Maximum : 8 Members"
+                    "- Minimum : 4 Members",
+                    "- Maximum : 8 Members"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
     ), // Ciremai
     Mountain(
         name: "Raung",
-        location: "Bondowoso, East java, Indonesia",
+        location: "Bondowoso, Indonesia",
         height: 3344,
         image: "raung",
         estimation: HikingEstimation(
@@ -250,12 +251,12 @@ let MountainList: [Mountain] = [
                 information: "Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu rata-rata 4˚C - 9˚C"
+                title: "Temp",
+                information: "- Average temperature 4˚C - 9˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Jalur paling ekstrem di pulau jawa \n Mempunyai kaldera terbesar di pulau jawa selebar 2KM \n Tidak ada sumber mata air selama pendakian"
+                information: "- The most extreme track in java \n- Has the largest caldera on the island of Java with a width of 2KM \n- There is no water sources along the track path"
                 
             )
         ],
@@ -285,7 +286,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -308,39 +309,38 @@ let MountainList: [Mountain] = [
                 "Harnezt",
                 "Ascender",
                 "Helm",
-                "Jumar",
-                "Tali Prusik"
+                "Prusic Rope"
             
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 15.000",
-                    "Weekend : IDR 15.000"
+                    "- Weekeday : IDR 15.000",
+                    "- Weekend : IDR 15.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Members + Guide"
+                    "- Minimum : 1 Members + Guide"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate, including a certificate of being free from ISPA",
-                    "4. Stamp Duty"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate, including a certificate of being free from ISPA",
+                    "- Stamp Duty"
                 ]
             )
         ]
     ), // Raung
     Mountain(
         name: "Gede Pangrango",
-        location: "Cianjur, West java, Indonesia",
+        location: "Cianjur, Indonesia",
         height: 2958,
         image: "gede-pangrango",
         estimation: HikingEstimation(
@@ -354,12 +354,12 @@ let MountainList: [Mountain] = [
                 information: "Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu rata-rata 9˚C - 11˚C"
+                title: "Temp",
+                information: "- Average Temperature 9˚C - 11˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Gunung yang paling banyak dikunjungi \n Gunung Gede Pangrango adalah dua gunung berbeda"
+                information: "- The most visited mountain in Indonesia \n- Gunung Gede Pangrango is a two different mountains"
                 
             )
         ],
@@ -388,7 +388,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -404,37 +404,38 @@ let MountainList: [Mountain] = [
                 "Drinks",
                 "Private Water Bottle",
                 "Garbage Bag",
-                "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
+                "Survival Kit (Multipurpose Folding Knife, Compass, Match)",
+                "Helmet"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 34.000",
-                    "Weekend : IDR 29.000"
+                    "- Weekeday : IDR 34.000",
+                    "- Weekend : IDR 29.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 3 Members",
-                    "Maximum : 10 Members"
+                    "- Minimum : 3 Members",
+                    "- Maximum : 10 Members"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
     ), // Gede
     Mountain(
         name: "Papandayan",
-        location: "Garut, West java, Indonesia",
+        location: "Garut, Indonesia",
         height: 2665,
         image: "papandayan",
         estimation: HikingEstimation(
@@ -445,15 +446,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu rata-rata 11˚C - 12˚C"
+                title: "Temp",
+                information: "- Average Temperature 11˚C - 12˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Sangat direkomendasikan untuk pendaki pemula \n Terdapat hutan mati"
+                information: "- Highly recommended for a begginer hikers \n- The most iconic thing about papandayan is Dead Forest and Edelweis Park"
             )
         ],
         essentials: MountainEssential(
@@ -481,7 +482,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -500,33 +501,33 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 30.000",
-                    "Weekend : IDR 20.000"
+                    "- Weekeday : IDR 30.000",
+                    "- Weekend : IDR 20.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Member"
+                    "- Minimum : 1 Member"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
     ), // Papandayan
     Mountain(
         name: "Cikuray",
-        location: "Garut, West java, Indonesia",
+        location: "Garut, Indonesia",
         height: 2821,
         image: "cikuray",
         estimation: HikingEstimation(
@@ -537,15 +538,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu rata-rata 14˚C - 15˚C"
+                title: "Temp",
+                information: "- Average Temperature 14˚C - 15˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Disebut sebagai gerang kerajaan Padjajaran \n Terdapat babi ganas penghuni cikuray yang dipanggil Bagas oleh para pendaki"
+                information: "- There is a wild boar that sometimes steal hikers food. and called by Bagas (Babi Ganas)"
             )
         ],
         essentials: MountainEssential(
@@ -573,7 +574,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -592,33 +593,33 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 10.000",
-                    "Weekend : IDR 10.000"
+                    "- Weekeday : IDR 10.000",
+                    "- Weekend : IDR 10.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Member"
+                    "- Minimum : 1 Member"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
     ), // Cikuray---------------------------------
     Mountain(
         name: "Kerinci",
-        location: "Jambi, West Sumatra, Indonesia",
+        location: "Jambi, Indonesia",
         height: 3805,
         image: "kerinci",
         estimation: HikingEstimation(
@@ -629,15 +630,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu rata-rata 6˚C - 9˚C"
+                title: "Temp",
+                information: "- Average Temperature 6˚C - 9˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Gunung Tertinggi Disumatra \n Dilereng gunung kerinci masih ada harimau sumatra yang berkeliaran \n Mempunya pemandangan samudra hindia"
+                information: "- Highest mountain in sumatra \nThere is a habitat for sumatran tigers \nHave a clear view to indian ocean"
             )
         ],
         essentials: MountainEssential(
@@ -665,7 +666,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -684,33 +685,33 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Weekeday : IDR 10.000",
-                    "Weekend : IDR 10.000"
+                    "- Weekeday : IDR 10.000",
+                    "- Weekend : IDR 10.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 1 Member"
+                    "- Minimum : 1 Member"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Parental/Guardian Permission to climb for hiker under 17 years old",
-                    "3. Health Certificate"
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Parental/Guardian Permission to climb for hiker under 17 years old",
+                    "- Health Certificate"
                 ]
             )
         ]
     ), // Kerinci
     Mountain(
         name: "Jayawijaya",
-        location: "Papua, Papua, Indonesia",
+        location: "Papua, Indonesia",
         height: 4884,
         image: "jaya-wijaya",
         estimation: HikingEstimation(
@@ -721,15 +722,15 @@ let MountainList: [Mountain] = [
         informations: [
             MountainInfo(
                 title: "Mountain Status",
-                information: "Active"
+                information: "- Active"
             ),
             MountainInfo(
-                title: "Weather",
-                information: "Suhu rata-rata -4˚C - 3˚C"
+                title: "Temp",
+                information: "- Average temperature -4˚C - 3˚C"
             ),
             MountainInfo(
                 title: "Mountain Fun Fact",
-                information: "Memiliki salju abadi \n Memiliki gletser \n Mempunya nama lain Cartenz \n Masuk kedalam Seven Summits Dunia \n Gunung tertinggi di Indonesia \n Disebut sebagai pendakian dengan biaya termahal di dunia"
+                information: "- Eternal snow on the peak of jayawijaya \n- Having a glacier \n- Sometimes its called by Mounta Cartenz \n- Included in seven summits of the world \n- Highest mountain in Indnesia"
             )
         ],
         essentials: MountainEssential(
@@ -755,11 +756,11 @@ let MountainList: [Mountain] = [
                 "Oil"
             ],
             personalLogistic: [
-                "Sepatu es climbing",
+                "Mountaineering boots",
                 "Fully insulated boots",
                 "Crampoon",
                 "Gaiter",
-                "Kapak es",
+                "Ice Axe",
                 "Carabiner",
                 "Ascender",
                 "Pellon",
@@ -767,7 +768,7 @@ let MountainList: [Mountain] = [
                 "Climbing Harness",
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -786,41 +787,41 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
-                    "Domestic : IDR 40.000.000",
-                    "Foreign: IDR 200.000.000"
+                    "- Domestic : IDR 40.000.000",
+                    "- Foreign: IDR 200.000.000"
                 ]
             ),
             MountainRequirement(
                 title: "Group Members",
                 items: [
-                    "Minimum : 3 Member + Guide + Porter"
+                    "- Minimum : 3 Member + Guide + Porter"
                 ]
             ),
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "Surat dari kantor Menpora",
-                    "Surat dari Kapolri",
-                    "Surat dari BIA-intelejen Indonesia",
-                    "Surat dari Menhutbun/PKA",
-                    "Federasi Panjat Tebing Indonesia (FPTI)",
-                    "Surat rekomendasi dari Bakorstranasda",
-                    "Surat rekomendasi dari Kapolda",
-                    "Surat rekomendasi EPO",
-                    "Surat dari PT Freeport Indonesia (PTFI)",
-                    "Identity Card (KTP, Student Card, SIM, etc.)",
-                    "Health Certificate"
+                    "- Permit letter from Menpora",
+                    "- Permit letter from Kapolri",
+                    "- Permit letter from BIA-intelejen Indonesia",
+                    "- Permit letter from Menhutbun/PKA",
+                    "- Recommendation letter from Federasi Panjat Tebing Indonesia (FPTI)",
+                    "- Recommendation letter from Bakorstranasda",
+                    "- Recommendation letter from Kapolda",
+                    "- Recomendation letter from EPO",
+                    "- Permit letter from PT Freeport Indonesia (PTFI)",
+                    "- Identity Card (KTP, Student Card, SIM, etc.)",
+                    "- Health Certificate"
                 ]
             )
         ]
     ), // Jayawijaya
     Mountain(
         name: "Rinjani",
-        location: "Lombok, West Nusa Tenggara, Indonesia",
+        location: "Lombok, Indonesia",
         height: 3726,
         image: "rinjani",
         estimation: HikingEstimation(
@@ -863,7 +864,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -882,7 +883,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -899,15 +900,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Rinjani
     Mountain(
         name: "Sumbing",
-        location: "Magelang, Central Java, Indonesia",
+        location: "Magelang, Indonesia",
         height: 3371,
         image: "sumbing",
         estimation: HikingEstimation(
@@ -950,7 +951,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -969,7 +970,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -986,15 +987,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Sumbing
     Mountain(
         name: "Sindoro",
-        location: "Temanggung, Central Java, Indonesia",
+        location: "Temanggung, Indonesia",
         height: 3136,
         image: "sindoro",
         estimation: HikingEstimation(
@@ -1037,7 +1038,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1056,7 +1057,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1073,15 +1074,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Sundoro
     Mountain(
         name: "Lawu",
-        location: "Karanganyar, Central Java, Indonesia",
+        location: "Karanganyar, Indonesia",
         height: 3265,
         image: "lawu",
         estimation: HikingEstimation(
@@ -1124,7 +1125,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1143,7 +1144,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1160,15 +1161,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Lawu
     Mountain(
         name: "Merbabu",
-        location: "Boyolali, Central Java, Indonesia",
+        location: "Boyolali, Indonesia",
         height: 3145,
         image: "merbabu",
         estimation: HikingEstimation(
@@ -1211,7 +1212,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1230,7 +1231,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1247,15 +1248,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Merbabu
     Mountain(
         name: "Latimojong",
-        location: "Enrekan, South Sulawesi, Indonesia",
+        location: "Enrekan, Indonesia",
         height: 3478,
         image: "latimojong",
         estimation: HikingEstimation(
@@ -1298,7 +1299,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1317,7 +1318,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1334,15 +1335,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Latimojong
     Mountain(
         name: "Kelud",
-        location: "Kediri, East Java, Indonesia",
+        location: "Kediri, Indonesia",
         height: 1731,
         image: "kelud",
         estimation: HikingEstimation(
@@ -1385,7 +1386,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1404,7 +1405,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1421,15 +1422,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Kelud
     Mountain(
         name: "Arjuno-Welirang",
-        location: "Malang, East Java, Indonesia",
+        location: "Malang, Indonesia",
         height: 3339,
         image: "arjuno",
         estimation: HikingEstimation(
@@ -1472,7 +1473,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1491,7 +1492,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1508,15 +1509,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Arjuno-Welirang
     Mountain(
         name: "Argopuro",
-        location: "Probolinggo, East Java, Indonesia",
+        location: "Probolinggo, Indonesia",
         height: 3088,
         image: "argopuro",
         estimation: HikingEstimation(
@@ -1559,7 +1560,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1578,7 +1579,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1595,15 +1596,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Argopuro
     Mountain(
         name: "Guntur",
-        location: "Garut, West Java, Indonesia",
+        location: "Garut, Indonesia",
         height: 2249,
         image: "guntur",
         estimation: HikingEstimation(
@@ -1646,7 +1647,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1665,7 +1666,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1682,15 +1683,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Guntur
     Mountain(
         name: "Agung",
-        location: "Bali, Bali, Indonesia",
+        location: "Bali, Indonesia",
         height: 3142,
         image: "agung",
         estimation: HikingEstimation(
@@ -1733,7 +1734,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1752,7 +1753,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1769,15 +1770,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Agung
     Mountain(
         name: "Ungaran",
-        location: "Semarang, Central Java, Indonesia",
+        location: "Semarang, Indonesia",
         height: 2050,
         image: "unggaran",
         estimation: HikingEstimation(
@@ -1820,7 +1821,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1839,7 +1840,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1856,15 +1857,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Ungaran
     Mountain(
         name: "Wilis",
-        location: "Kediri, East Java, Indonesia",
+        location: "Kediri, Indonesia",
         height: 2563,
         image: "wilis",
         estimation: HikingEstimation(
@@ -1907,7 +1908,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -1926,7 +1927,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -1943,15 +1944,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Wilis
     Mountain(
         name: "Tambora",
-        location: "Sumbawa, West Nusa Tenggara, Indonesia",
+        location: "Sumbawa, Indonesia",
         height: 2850,
         image: "tambora",
         estimation: HikingEstimation(
@@ -1994,7 +1995,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -2013,7 +2014,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2030,15 +2031,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Tambora
     Mountain(
         name: "Geureudong",
-        location: "Aceh, Aceh, Indonesia",
+        location: "Aceh, Indonesia",
         height: 2885,
         image: "geureudong",
         estimation: HikingEstimation(
@@ -2081,7 +2082,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -2100,7 +2101,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2117,15 +2118,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Geureudong
     Mountain(
         name: "Singgalang",
-        location: "Agam, West Sumatra, Indonesia",
+        location: "Agam, Indonesia",
         height: 2877,
         image: "singgalang",
         estimation: HikingEstimation(
@@ -2168,7 +2169,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -2187,7 +2188,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2204,15 +2205,15 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
     ), // Singgalang
     Mountain(
         name: "Leuser",
-        location: "Aceh, Aceh, Indonesia",
+        location: "Aceh, Indonesia",
         height: 3404,
         image: "leuseur",
         estimation: HikingEstimation(
@@ -2255,7 +2256,7 @@ let MountainList: [Mountain] = [
             personalLogistic: [
                 "Carrier Bag 40 50 L",
                 "Mountain Jacket",
-                "Mountain Shoes",
+                "Hiking Boots",
                 "Sleeping Bag",
                 "Mattress",
                 "Raincoat",
@@ -2274,7 +2275,7 @@ let MountainList: [Mountain] = [
                 "Survival Kit (Multipurpose Folding Knife, Compass, Match)"
             ]
         ),
-        reqirements: [
+        requirements: [
             MountainRequirement(
                 title: "Minimum Cost",
                 items: [
@@ -2291,8 +2292,8 @@ let MountainList: [Mountain] = [
             MountainRequirement(
                 title: "Document",
                 items: [
-                    "1. Identity Card (KTP, Student Card, SIM, etc.)",
-                    "2. Health Certificate"
+                    "Identity Card (KTP, Student Card, SIM, etc.)",
+                    "Health Certificate"
                 ]
             )
         ]
