@@ -41,15 +41,8 @@ struct HikingDetailScreen: View {
                         .font(.body)
                         .fontWeight(.semibold)
                     Spacer()
-                    Menu {
-                        Button(action: {currentList = "group"}) {
-                            Label("Sort by PIC", systemImage: "").labelStyle(.titleOnly)
-                        }
-                        Button(action: {currentList = "personal"}) {
-                            Label("Sort by Completed", systemImage: "").labelStyle(.titleOnly)
-                        }
-                    } label: {
-                        Label("", systemImage: "arrow.up.arrow.down").labelStyle(.iconOnly)
+                    Button(action: {isSheetItemOpen = true}) {
+                        Label("Add Item", systemImage: "plus")
                     }
                 }
                 
@@ -77,16 +70,13 @@ struct HikingDetailScreen: View {
                                     personalItem: hikeDetail.personalLogistic[item.calledFrom]
                                 )
                             }
-
+                            
                         } else {
                             ForEach(hikeDetail.personalLogistic) { personalItem in
                                 ItemCardPersonal(personalItem: personalItem)
                             }
                         }
                         
-                        Button(action: {isSheetItemOpen = true}) {
-                            Label("Add new item", systemImage: "plus.circle").padding(.top, 5)
-                        }.padding(.horizontal)
                     }.padding(.vertical)
                 }.padding(.horizontal)
             }
