@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+struct ActiveItem : Identifiable {
+    var calledFrom: Int
+    var id: Int { return calledFrom }
+}
+
 struct HikingDetailScreen: View {
     @State private var logisticTab = 0 /// 0 = group, 1 = personal
     @State private var isSheetItemOpen = false
@@ -15,7 +20,7 @@ struct HikingDetailScreen: View {
     @ObservedObject var globalObj: HikingJourney
     
     @State var currentList: String = "group"
-    @State var itemToOpen: Int = 0
+    @State var activeItem : ActiveItem?
     
     var hikeDetail: Hiking
     
@@ -59,10 +64,20 @@ struct HikingDetailScreen: View {
                             ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
                                 ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
                                     .onTapGesture {
-                                        itemToOpen = n
-                                        isItemDetailOpen = true
+                                        activeItem = ActiveItem(calledFrom: n)
                                     }
                             }
+                            .sheet(item: $activeItem) { item in
+                                ItemDetailForm(
+                                    formState: "Display",
+                                    globalObj: globalObj,
+                                    hiking: hikeDetail,
+                                    logisticType: logisticTab == 0 ? "group" : "personal",
+                                    groupItem: hikeDetail.groupLogistic[item.calledFrom],
+                                    personalItem: hikeDetail.personalLogistic[item.calledFrom]
+                                )
+                            }
+
                         } else {
                             ForEach(hikeDetail.personalLogistic) { personalItem in
                                 ItemCardPersonal(personalItem: personalItem)
@@ -88,17 +103,6 @@ struct HikingDetailScreen: View {
         }
         .sheet(isPresented: $isSheetMountainOpen){
             MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain)
-        }
-        
-        .sheet(isPresented: $isItemDetailOpen) {
-            ItemDetailForm(
-                formState: "Display",
-                globalObj: globalObj,
-                hiking: hikeDetail,
-                logisticType: logisticTab == 0 ? "group" : "personal",
-                groupItem: hikeDetail.groupLogistic[itemToOpen],
-                personalItem: hikeDetail.personalLogistic[itemToOpen]
-            )
         }
         
         .navigationTitle("Rinjani")
