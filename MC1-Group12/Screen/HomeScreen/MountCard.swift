@@ -31,7 +31,11 @@ struct MountCard: View {
                     .resizable()
                     .scaledToFill()
                     .frame(height: cardHeight)
-                    .overlay(Rectangle().opacity(0.2))
+                    .overlay(Rectangle().fill(LinearGradient(
+                        colors: [.clear, .black.opacity(0.25)],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 HStack(alignment: .bottom) {

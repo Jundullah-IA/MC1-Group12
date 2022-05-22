@@ -24,6 +24,11 @@ struct MountainDetailScreen: View {
                     Image(mountain.image)
                         .resizable()
                         .scaledToFill()
+                        .overlay(Rectangle().fill(LinearGradient(
+                            colors: [.black.opacity(0.25), .clear],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )))
                         .frame(width: UIScreen.main.bounds.size.width, height: 300)
                     
                     ScrollView {
@@ -41,11 +46,11 @@ struct MountainDetailScreen: View {
                 VStack {
                     HStack {
                         Text(mountain.location)
-                            .font(.title3)
+                            .font(.system(size: 20, weight: .regular, design: .serif))
                             .italic()
                             .foregroundColor(.white)
                         Spacer()
-                    } .padding(.horizontal)
+                    }.padding(.horizontal)
                     
                     HStack {
                         Text("\(mountain.height) mdpl")
