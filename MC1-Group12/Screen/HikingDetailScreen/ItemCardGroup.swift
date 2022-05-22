@@ -22,19 +22,10 @@ struct ItemCardGroup: View {
                 HStack{
                     ForEach(groupItem.pic, id: \.self) {pic in
                        let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == pic} ?? 0]
-                        ZStack {
-                            color.opacity(0.1)
-                            HStack {
-                                Image(systemName: "person").font(.subheadline)
-                                Text(pic).font(.subheadline)
-                            }
-                            .cornerRadius(15)
-                            .padding(.horizontal, 10)
-                            .foregroundColor(color)
-                        }
-                        .cornerRadius(15)
-                        .frame(minWidth: 110)
-                        .frame(height: 22)
+                        PICButton(color: color, pic: pic, width: 110)
+                    }
+                    if groupItem.pic.count == 0 {
+                        PICButton(color: .gray, pic: "no PIC")
                     }
                 }
                 Spacer()
@@ -54,9 +45,26 @@ struct ItemCardGroup: View {
         }.padding(.bottom, 4)
     }
 }
-//
-//struct ItemCardGroup_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ItemCardGroup()
-//    }
-//}
+
+struct PICButton: View {
+    var color: Color
+    var pic: String
+    var width: CGFloat?
+    let defaultWidth: CGFloat = 90
+
+    var body: some View {
+        ZStack {
+            color.opacity(0.1)
+            HStack {
+                Image(systemName: "person").font(.subheadline)
+                Text(pic).font(.subheadline)
+            }
+            .padding(.horizontal, 10)
+            .foregroundColor(color)
+        }
+        .cornerRadius(15)
+        .frame(maxWidth: width ?? defaultWidth)
+        .frame(width: defaultWidth)
+        .frame(height: 22)
+    }
+}
