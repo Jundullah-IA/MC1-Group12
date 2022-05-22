@@ -115,8 +115,7 @@ struct ItemDetailForm: View {
                             ForEach(0..<hiking.hiker.count, id: \.self) {index in
                                 ZStack {
                                     let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == hiking.hiker[index]} ?? 0]
-                                    var isChoose:Bool = false
-                                    
+
                                     if(formState == "New") {
                                         if(selectedPIC.contains(hiking.hiker[index])) {
                                             color.opacity(0.1)
