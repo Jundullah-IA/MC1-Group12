@@ -30,6 +30,10 @@ struct ItemCardPersonal: View {
                     Spacer()
                     Button(action: {
                         globalObj.journeyList[index].personalLogistic[indexPersonalItem].isDone.toggle()
+                        withAnimation(.spring()) {
+                            globalObj.journeyList[index].personalLogistic.sort {!$0.isDone && $1.isDone}
+                        }
+                        
                         
                         let isAllPersonalDone = globalObj.journeyList[index].personalLogistic.map{$0.isDone}.allSatisfy {$0 == true}
                         let isAllGroupDone = globalObj.journeyList[index].groupLogistic.map{$0.isDone}.allSatisfy {$0 == true}

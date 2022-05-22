@@ -92,7 +92,6 @@ struct HikingDetailScreen: View {
                                 )
                             }
                         }
-                        
                     }.padding(.vertical)
                 }.padding(.horizontal)
             }
