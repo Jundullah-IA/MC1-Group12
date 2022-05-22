@@ -37,4 +37,6 @@ struct PersonalItem: Identifiable {
 
 class HikingJourney: ObservableObject {
     @Published var journeyList: [Hiking] = []
+    
+    @Published var showCongrats: Bool = false
 }

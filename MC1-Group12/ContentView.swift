@@ -17,24 +17,28 @@ struct ContentView: View {
     @StateObject var globalObj = HikingJourney()
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            HomeScreen(globalObj: globalObj)
-                .tabItem {
-                    Label("Home", systemImage: "globe.asia.australia.fill")
-                }
-                .tag(Tabs.home)
-            
-            MountainListScreen(globalObj: globalObj)
-                .tabItem {
-                    Label("Mountains", systemImage: "triangle.tophalf.filled")
-                }
-                .tag(Tabs.mountains)
-        }
-        .onAppear {
-            // correct the transparency bug for Tab bars
-            let tabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.configureWithOpaqueBackground()
-            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        if globalObj.showCongrats {
+            CongratulationScreen(globalObj: globalObj)
+        } else {
+            TabView(selection: $selectedTab) {
+                HomeScreen(globalObj: globalObj)
+                    .tabItem {
+                        Label("Home", systemImage: "globe.asia.australia.fill")
+                    }
+                    .tag(Tabs.home)
+                
+                MountainListScreen(globalObj: globalObj)
+                    .tabItem {
+                        Label("Mountains", systemImage: "triangle.tophalf.filled")
+                    }
+                    .tag(Tabs.mountains)
+            }
+            .onAppear {
+                // correct the transparency bug for Tab bars
+                let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.configureWithOpaqueBackground()
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
         }
     }
 }

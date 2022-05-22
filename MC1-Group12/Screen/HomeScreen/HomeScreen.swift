@@ -11,7 +11,7 @@ struct HomeScreen: View {
     @State var noPlan = true
     @State var noJourney = true
     @ObservedObject var globalObj: HikingJourney
-
+    
     var body: some View {
         let historyList = globalObj.journeyList.filter {$0.isDone}
         let activeList = globalObj.journeyList.filter {!$0.isDone}
@@ -64,11 +64,11 @@ struct HomeScreen: View {
                     
                     if historyList.count == 0 {
                         VStack {
-                        Image("empty")
-                        Text("No journey history")
-                            .font(.subheadline)
-                            .foregroundColor(.darkGreen)
-                            .opacity(0.4)
+                            Image("empty")
+                            Text("No journey history")
+                                .font(.subheadline)
+                                .foregroundColor(.darkGreen)
+                                .opacity(0.4)
                         }.padding(.vertical, 100)
                     } else {
                         JourneyList(globalObj: globalObj)
@@ -87,7 +87,6 @@ struct HomeScreen: View {
             
             .navigationTitle("Hi, Hikers!")
         }
-        
     }
 }
 

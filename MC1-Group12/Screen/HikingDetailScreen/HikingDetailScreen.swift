@@ -13,16 +13,18 @@ struct ActiveItem : Identifiable {
 }
 
 struct HikingDetailScreen: View {
+    @ObservedObject var globalObj: HikingJourney
+    var hikeDetail: Hiking
+    
     @State private var logisticTab = 0 /// 0 = group, 1 = personal
     @State private var isSheetItemOpen = false
     @State private var isSheetMountainOpen = false
     @State private var isItemDetailOpen = false
-    @ObservedObject var globalObj: HikingJourney
-    
     @State var currentList: String = "group"
     @State var activeItem : ActiveItem?
     
-    var hikeDetail: Hiking
+    @State var loading = false
+    @State var moveToHome = false
     
     var body: some View {
         VStack {
