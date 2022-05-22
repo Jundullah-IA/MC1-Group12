@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ItemCardGroup: View {
-    @State var checked: Bool = false
+    @ObservedObject var globalObj: HikingJourney
+    var hiking: Hiking
     var groupItem: GroupItem
     
     var body: some View {
+        let checked = groupItem.isDone
+        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+        let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
         
         ZStack {
             RoundedRectangle(cornerRadius: 20).foregroundColor(checked ? .disabledCardBg : .white).frame(height: 140)
@@ -21,7 +25,7 @@ struct ItemCardGroup: View {
                 
                 HStack{
                     ForEach(groupItem.pic, id: \.self) {pic in
-                       let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == pic} ?? 0]
+                        let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == pic} ?? 0]
                         PICButton(color: color, pic: pic, width: 110)
                     }
                     if groupItem.pic.count == 0 {
@@ -34,7 +38,19 @@ struct ItemCardGroup: View {
                 HStack{
                     Text("\(groupItem.quantity) Qty").font(.subheadline)
                     Spacer()
-                    Button(action: {checked = !checked}) {
+                    Button(action: {
+                        globalObj.journeyList[index].groupLogistic[indexGroupItem].isDone.toggle()
+                        
+                        let isAllPersonalDone = globalObj.journeyList[index].personalLogistic.map{$0.isDone}.allSatisfy {$0 == true}
+                        let isAllGroupDone = globalObj.journeyList[index].groupLogistic.map{$0.isDone}.allSatisfy {$0 == true}
+                        
+                        if isAllPersonalDone && isAllGroupDone {
+                            globalObj.journeyList[index].isDone.toggle()
+                            globalObj.showCongrats.toggle()
+                        } else if globalObj.journeyList[index].isDone {
+                            globalObj.journeyList[index].isDone.toggle()
+                        }
+                    }) {
                         Image(systemName: checked ? "checkmark.circle.fill" : "circle").foregroundColor(.accentColor)
                             .font(.title3)
                     }
@@ -51,7 +67,7 @@ struct PICButton: View {
     var pic: String
     var width: CGFloat?
     let defaultWidth: CGFloat = 90
-
+    
     var body: some View {
         ZStack {
             color.opacity(0.1)

@@ -13,16 +13,18 @@ struct ActiveItem : Identifiable {
 }
 
 struct HikingDetailScreen: View {
+    @ObservedObject var globalObj: HikingJourney
+    var hikeDetail: Hiking
+    
     @State private var logisticTab = 0 /// 0 = group, 1 = personal
     @State private var isSheetItemOpen = false
     @State private var isSheetMountainOpen = false
     @State private var isItemDetailOpen = false
-    @ObservedObject var globalObj: HikingJourney
-    
     @State var currentList: String = "group"
     @State var activeItem : ActiveItem?
     
-    var hikeDetail: Hiking
+    @State var loading = false
+    @State var moveToHome = false
     
     var body: some View {
         VStack {
@@ -41,15 +43,8 @@ struct HikingDetailScreen: View {
                         .font(.body)
                         .fontWeight(.semibold)
                     Spacer()
-                    Menu {
-                        Button(action: {currentList = "group"}) {
-                            Label("Sort by PIC", systemImage: "").labelStyle(.titleOnly)
-                        }
-                        Button(action: {currentList = "personal"}) {
-                            Label("Sort by Completed", systemImage: "").labelStyle(.titleOnly)
-                        }
-                    } label: {
-                        Label("", systemImage: "arrow.up.arrow.down").labelStyle(.iconOnly)
+                    Button(action: {isSheetItemOpen = true}) {
+                        Label("Add Item", systemImage: "plus").labelStyle(.titleOnly)
                     }
                 }
                 
@@ -62,7 +57,7 @@ struct HikingDetailScreen: View {
                     VStack(alignment: .leading) {
                         if(logisticTab == 0) {
                             ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
-                                ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
+                                ItemCardGroup(globalObj: globalObj, hiking: hikeDetail, groupItem: hikeDetail.groupLogistic[n])
                                     .onTapGesture {
                                         activeItem = ActiveItem(calledFrom: n)
                                     }
@@ -77,10 +72,10 @@ struct HikingDetailScreen: View {
                                     personalItem: hikeDetail.personalLogistic[item.calledFrom]
                                 )
                             }
-
+                            
                         } else {
                             ForEach(0..<hikeDetail.personalLogistic.count, id: \.self) { n in
-                                ItemCardPersonal(personalItem: hikeDetail.personalLogistic[n])
+                                ItemCardPersonal(globalObj:globalObj, hiking: hikeDetail, personalItem: hikeDetail.personalLogistic[n])
                                     .onTapGesture {
                                         activeItem = ActiveItem(calledFrom: n)
                                     }
@@ -98,9 +93,6 @@ struct HikingDetailScreen: View {
                             }
                         }
                         
-                        Button(action: {isSheetItemOpen = true}) {
-                            Label("Add new item", systemImage: "plus.circle").padding(.top, 5)
-                        }.padding(.horizontal)
                     }.padding(.vertical)
                 }.padding(.horizontal)
             }

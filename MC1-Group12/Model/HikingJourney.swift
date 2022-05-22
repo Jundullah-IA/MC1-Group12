@@ -24,6 +24,7 @@ struct GroupItem: Identifiable {
     var quantity: Int = 0
     var notes: String = ""
     var pic: [String] = []
+    var isDone: Bool = false
 }
 
 struct PersonalItem: Identifiable {
@@ -31,8 +32,11 @@ struct PersonalItem: Identifiable {
     var name: String = "lala"
     var quantity: Int = 0
     var notes: String = ""
+    var isDone: Bool = false
 }
 
 class HikingJourney: ObservableObject {
     @Published var journeyList: [Hiking] = []
+    
+    @Published var showCongrats: Bool = false
 }
