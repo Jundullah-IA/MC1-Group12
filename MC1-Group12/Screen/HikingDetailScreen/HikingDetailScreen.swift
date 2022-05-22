@@ -55,7 +55,7 @@ struct HikingDetailScreen: View {
                 
                 ScrollView {
                     VStack(alignment: .leading) {
-                        if(favoriteColor == 0) {
+                        if(logisticTab == 0) {
                             ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
                                 ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
                                     .onTapGesture {
@@ -81,7 +81,9 @@ struct HikingDetailScreen: View {
                 formState: "New",
                 globalObj: globalObj,
                 hiking: hikeDetail,
-                logisticType: logisticTab == 0 ? "group" : "personal"
+                logisticType: logisticTab == 0 ? "group" : "personal",
+                groupItem: GroupItem(),
+                personalItem: PersonalItem()
             )
         }
         .sheet(isPresented: $isSheetMountainOpen){
@@ -93,8 +95,9 @@ struct HikingDetailScreen: View {
                 formState: "Display",
                 globalObj: globalObj,
                 hiking: hikeDetail,
-                logisticType: favoriteColor == 0 ? "group" : "personal",
-                groupItem: hikeDetail.groupLogistic[itemToOpen]
+                logisticType: logisticTab == 0 ? "group" : "personal",
+                groupItem: hikeDetail.groupLogistic[itemToOpen],
+                personalItem: hikeDetail.personalLogistic[itemToOpen]
             )
         }
         

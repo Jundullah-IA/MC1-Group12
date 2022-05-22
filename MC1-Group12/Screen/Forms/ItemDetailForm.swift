@@ -14,8 +14,6 @@ struct ItemDetailForm: View {
     @State var totalItem: Int = 1
     @State var notes: String = ""
     @State var dueDate: Date = Date.now
-    @State var counter: Int = 1
-    @State var counter1: Int = 1
     @State var isSelectRemindMe: Bool = false
     @State var reminderDate: Date = Date.now
     @State var formState: String = "Edit"
@@ -24,8 +22,8 @@ struct ItemDetailForm: View {
     @State var hiking: Hiking
     var logisticType: String = "group"
     
-    var groupItem: GroupItem = GroupItem()
-    var personalItem: PersonalItem = PersonalItem()
+    @State var groupItem: GroupItem
+    @State var personalItem: PersonalItem
     
     let columns = [
         GridItem(.flexible()),
@@ -49,8 +47,8 @@ struct ItemDetailForm: View {
                         TextField("item name",
                                   text: formState == "New" ?
                                   $itemName : (logisticType == "group" ?
-                                                $hiking.groupLogistic[indexGroupItem].name :
-                                                $hiking.personalLogistic[indexPersonalItem].name
+                                                $groupItem.name :
+                                                $personalItem.name
                                               )
                         )
                             .multilineTextAlignment(.trailing)
@@ -60,11 +58,23 @@ struct ItemDetailForm: View {
                     HStack {
                         Text("Total")
                         
-                        Stepper(value: $counter1,
+                        Stepper(value: formState == "New" ? $totalItem : (
+                            logisticType == "group" ? $groupItem.quantity : $personalItem.quantity
+                        ),
                                 in: 1...100) {
-                            Text("\(counter1)")
-                                
-                                .padding(.leading, 180)
+                            
+                            if(formState == "New") {
+                                Text("\(totalItem)")
+                                    .padding(.leading, 180)
+                            } else {
+                                if(logisticType == "group") {
+                                    Text("\(groupItem.quantity)")
+                                        .padding(.leading, 180)
+                                } else {
+                                    Text("\(personalItem.quantity)")
+                                        .padding(.leading, 180)
+                                }
+                            }
                         }
                         .disabled(formState == "Display" ? true : false)
                     }
@@ -75,8 +85,8 @@ struct ItemDetailForm: View {
                         TextField("notes",
                                   text: formState == "New" ?
                                   $notes : (logisticType == "group" ?
-                                               $hiking.groupLogistic[indexGroupItem].notes :
-                                                $hiking.personalLogistic[indexPersonalItem].notes
+                                               $groupItem.notes :
+                                                $personalItem.notes
                                               )
                         )
                             .multilineTextAlignment(.trailing)
@@ -116,6 +126,8 @@ struct ItemDetailForm: View {
                                     }
                                     .cornerRadius(15)
                                 }
+                                
+                                
                                 .disabled(formState == "Display" ? true : false)
                                 .cornerRadius(15)
                                 .frame(width: 110, height: 35)
@@ -156,6 +168,8 @@ struct ItemDetailForm: View {
                             } else if(formState == "Edit") {
                                 if(logisticType == "group") {
                                     globalObj.journeyList[index].groupLogistic[indexGroupItem] = groupItem
+                                } else {
+                                    globalObj.journeyList[index].personalLogistic[indexPersonalItem] = personalItem
                                 }
                                 
                                 dismiss()
