@@ -79,8 +79,22 @@ struct HikingDetailScreen: View {
                             }
 
                         } else {
-                            ForEach(hikeDetail.personalLogistic) { personalItem in
-                                ItemCardPersonal(personalItem: personalItem)
+                            ForEach(0..<hikeDetail.personalLogistic.count, id: \.self) { n in
+                                ItemCardPersonal(personalItem: hikeDetail.personalLogistic[n])
+                                    .onTapGesture {
+                                        activeItem = ActiveItem(calledFrom: n)
+                                    }
+                            }
+                            
+                            .sheet(item: $activeItem) { item in
+                                ItemDetailForm(
+                                    formState: "Display",
+                                    globalObj: globalObj,
+                                    hiking: hikeDetail,
+                                    logisticType: logisticTab == 0 ? "group" : "personal",
+                                    groupItem: hikeDetail.groupLogistic[item.calledFrom],
+                                    personalItem: hikeDetail.personalLogistic[item.calledFrom]
+                                )
                             }
                         }
                         
