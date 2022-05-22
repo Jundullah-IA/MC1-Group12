@@ -47,12 +47,12 @@ struct ItemDetailForm: View {
                         TextField("item name",
                                   text: formState == "New" ?
                                   $itemName : (logisticType == "group" ?
-                                                $groupItem.name :
+                                               $groupItem.name :
                                                 $personalItem.name
                                               )
                         )
-                            .multilineTextAlignment(.trailing)
-                            .disabled(formState == "Display" ? true : false)
+                        .multilineTextAlignment(.trailing)
+                        .disabled(formState == "Display" ? true : false)
                     }
                     
                     HStack {
@@ -76,7 +76,7 @@ struct ItemDetailForm: View {
                                 }
                             }
                         }
-                        .disabled(formState == "Display" ? true : false)
+                                .disabled(formState == "Display" ? true : false)
                     }
                     
                     HStack {
@@ -85,25 +85,25 @@ struct ItemDetailForm: View {
                         TextField("notes",
                                   text: formState == "New" ?
                                   $notes : (logisticType == "group" ?
-                                               $groupItem.notes :
+                                            $groupItem.notes :
                                                 $personalItem.notes
-                                              )
+                                           )
                         )
-                            .multilineTextAlignment(.trailing)
-                            .disabled(formState == "Display" ? true : false)
+                        .multilineTextAlignment(.trailing)
+                        .disabled(formState == "Display" ? true : false)
                     }
                     
-//                    HStack {
-//                        Text("Remind Me")
-//                        Spacer()
-//                        Toggle("", isOn: $isSelectRemindMe)
-//                    }
-//
-//                    if(isSelectRemindMe) {
-//                        HStack {
-//                            DatePicker(selection: $reminderDate, label: {Text("Date")})
-//                        }
-//                    }
+                    //                    HStack {
+                    //                        Text("Remind Me")
+                    //                        Spacer()
+                    //                        Toggle("", isOn: $isSelectRemindMe)
+                    //                    }
+                    //
+                    //                    if(isSelectRemindMe) {
+                    //                        HStack {
+                    //                            DatePicker(selection: $reminderDate, label: {Text("Date")})
+                    //                        }
+                    //                    }
                     
                     if(logisticType == "group") {
                         HStack {
@@ -159,14 +159,26 @@ struct ItemDetailForm: View {
                                     }
                                 }
                                 .disabled(formState == "Display" ? true : false)
-
+                                
                             }
                         }
                     }
+                    
+                    
+                }
+                Button(role: .destructive, action: {
+                    if logisticType == "group" {
+                        globalObj.journeyList[index].groupLogistic.remove(at: indexGroupItem)
+                    } else {
+                        globalObj.journeyList[index].personalLogistic.remove(at: indexPersonalItem)
+                    }
+                    dismiss()
+                }) {
+                    Label("Delete item", systemImage: "trash").foregroundColor(.red)
                 }
             }
             
-            .padding(.top, 57)
+            .padding(.top, 30)
             .listStyle(.grouped)
             
             .navigationTitle(formState == "New" ? "Add Item" : (formState == "Display" ? "Item Detail" : "Edit Item"))
