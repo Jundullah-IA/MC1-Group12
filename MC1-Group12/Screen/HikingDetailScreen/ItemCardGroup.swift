@@ -19,15 +19,18 @@ struct ItemCardGroup: View {
             VStack(alignment: .leading) {
                 Text(groupItem.name.uppercased()).font(.headline).lineLimit(1)
                 
-                HStack{
-                    ForEach(groupItem.pic, id: \.self) {pic in
-                       let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == pic} ?? 0]
-                        PICButton(color: color, pic: pic, width: 110)
-                    }
-                    if groupItem.pic.count == 0 {
-                        PICButton(color: .gray, pic: "no PIC")
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack{
+                        ForEach(groupItem.pic, id: \.self) {pic in
+                            let color =  colorsPIC[groupItem.pic.firstIndex{$0.self == pic} ?? 0]
+                            PICButton(color: color, pic: pic, width: 110)
+                        }
+                        if groupItem.pic.count == 0 {
+                            PICButton(color: .gray, pic: "no PIC")
+                        }
                     }
                 }
+                
                 Spacer()
                 Text(groupItem.notes).font(.subheadline).foregroundColor(.gray)
                 Divider()

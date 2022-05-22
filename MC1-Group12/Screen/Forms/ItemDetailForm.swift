@@ -36,7 +36,7 @@ struct ItemDetailForm: View {
     var body: some View {
         let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
         let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
-        let indexPersonalItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
+        let indexPersonalItem = globalObj.journeyList[index].personalLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
         
         NavigationView {
             List {
@@ -169,7 +169,7 @@ struct ItemDetailForm: View {
             .padding(.top, 57)
             .listStyle(.grouped)
             
-            .navigationTitle("Item Details")
+            .navigationTitle(formState == "New" ? "Add Item" : (formState == "Display" ? "Item Detail" : "Edit Item"))
             .navigationBarTitleDisplayMode(.inline)
             .edgesIgnoringSafeArea(.all)
             .toolbar {
