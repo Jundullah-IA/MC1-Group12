@@ -45,7 +45,7 @@
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
 		088A26D12837E53200EA19EF /* ItemCardPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardPersonal.swift; sourceTree = "<group>"; };
-		08A089ED282B569E00B0AA72 /* MC1-Group12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MC1-Group12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A089ED282B569E00B0AA72 /* HiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1_Group12App.swift; sourceTree = "<group>"; };
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08A089F4282B56A000B0AA72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		08A089EE282B569E00B0AA72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08A089ED282B569E00B0AA72 /* MC1-Group12.app */,
+				08A089ED282B569E00B0AA72 /* HiKit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		08A089EC282B569E00B0AA72 /* MC1-Group12 */ = {
+		08A089EC282B569E00B0AA72 /* HiKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08A089FB282B56A000B0AA72 /* Build configuration list for PBXNativeTarget "MC1-Group12" */;
+			buildConfigurationList = 08A089FB282B56A000B0AA72 /* Build configuration list for PBXNativeTarget "HiKit" */;
 			buildPhases = (
 				08A089E9282B569E00B0AA72 /* Sources */,
 				08A089EA282B569E00B0AA72 /* Frameworks */,
@@ -221,9 +221,9 @@
 			);
 			dependencies = (
 			);
-			name = "MC1-Group12";
+			name = HiKit;
 			productName = "MC1-Group12";
-			productReference = 08A089ED282B569E00B0AA72 /* MC1-Group12.app */;
+			productReference = 08A089ED282B569E00B0AA72 /* HiKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -241,7 +241,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 08A089E8282B569E00B0AA72 /* Build configuration list for PBXProject "MC1-Group12" */;
+			buildConfigurationList = 08A089E8282B569E00B0AA72 /* Build configuration list for PBXProject "HiKit" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -254,7 +254,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				08A089EC282B569E00B0AA72 /* MC1-Group12 */,
+				08A089EC282B569E00B0AA72 /* HiKit */,
 			);
 		};
 /* End PBXProject section */
@@ -447,7 +447,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NOMAD.MC1-Group12";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HiKit;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,7 +478,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NOMAD.MC1-Group12";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HiKit;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08A089E8282B569E00B0AA72 /* Build configuration list for PBXProject "MC1-Group12" */ = {
+		08A089E8282B569E00B0AA72 /* Build configuration list for PBXProject "HiKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08A089F9282B56A000B0AA72 /* Debug */,
@@ -497,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08A089FB282B56A000B0AA72 /* Build configuration list for PBXNativeTarget "MC1-Group12" */ = {
+		08A089FB282B56A000B0AA72 /* Build configuration list for PBXNativeTarget "HiKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08A089FC282B56A000B0AA72 /* Debug */,
