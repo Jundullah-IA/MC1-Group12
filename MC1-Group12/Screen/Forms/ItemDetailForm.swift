@@ -18,7 +18,7 @@ struct ItemDetailForm: View {
     @State var reminderDate: Date = Date.now
     @State var formState: String = "Edit"
     
-    @ObservedObject var globalObj: HikingJourney
+//    @ObservedObject var globalObj: HikingJourney
     @State var hiking: Hiking
     var logisticType: String = "group"
     

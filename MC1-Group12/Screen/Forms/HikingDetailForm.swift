@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct HikingDetailForm: View {
-    
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var globalObj: HikingJourney
+    @Environment(\.managedObjectContext) var moc
+
+//    @ObservedObject var globalObj: HikingJourney
     @State var mountain: Mountain
     @State var hiking: Hiking?
     @State var tripDate: Date = Date.now
@@ -119,36 +120,71 @@ struct HikingDetailForm: View {
                                 notEnoughParticipant = true
                                 presentAlert.toggle()
                             } else {
-                                
-                                if let hiking = hiking {
-                                    let index = globalObj.journeyList.firstIndex {$0.id == hiking.id} ?? 0
-                                    
-                                    globalObj.journeyList[index].hiker = participants
-                                    globalObj.journeyList[index].date = tripDate
-                                } else {
-                                    func qtyCount(_ item: String) -> Int {
-                                        switch item {
-                                        case "Flysheet":
-                                            return 3
-                                        case "Portable Gas", "Raffia rope":
-                                            return 2
-                                        default:
-                                            return 1
-                                        }
-                                    }
-                                    let groupLog = mountain.essentials.groupLogistic.map { items -> GroupItem in
-                                        let list: GroupItem = GroupItem(name: items, quantity: qtyCount(items), notes: items == "Tents" ? "For \(participants.count) people" : "")
-                                        return list
-                                    }
-                                    let personLog = mountain.essentials.personalLogistic.map { items -> PersonalItem in
-                                        let list: PersonalItem = PersonalItem(name: items, quantity: 1)
-                                        return list
-                                    }
-                                    
-                                    globalObj.journeyList.append(Hiking(
-                                        mountain: mountain, date: tripDate, hiker: participants, groupLogistic: groupLog, personalLogistic: personLog
-                                    ))
+                                let newJourney = Journey(context: moc)
+                                newJourney.mountain = mountain.name
+                                newJourney.date = tripDate
+
+                                participants.forEach {participant in
+                                    let newParticipant = User(context: moc)
+                                    newParticipant.name = participant
+                                    newParticipant.journeys?.insert(newJourney)
                                 }
+                                
+                                mountain.essentials.personalLogistic.forEach {item in
+                                    let newPersonalLogistic = PersonalItemDB(context: moc)
+                                    newPersonalLogistic.journey = newJourney
+                                    newPersonalLogistic.name = item
+                                }
+                                
+                                mountain.essentials.groupLogistic.forEach {item in
+                                    let newGroupLogistic = GroupItemDB(context: moc)
+                                    newGroupLogistic.journey = newJourney
+                                    newGroupLogistic.name = item
+                                    
+                                    switch item {
+                                        case "Flysheet":
+                                            newGroupLogistic.total = 3
+                                        case "Portable Gas", "Raffia rope":
+                                            newGroupLogistic.total = 2
+                                        case "Tents":
+                                            newGroupLogistic.note = "For \(participants.count) people"
+                                        default:
+                                            newGroupLogistic.total = 1
+                                            newGroupLogistic.note = ""
+                                    }
+                                }
+                                
+                                try? moc.save()
+                                
+//                                if let hiking = hiking {
+//                                    let index = globalObj.journeyList.firstIndex {$0.id == hiking.id} ?? 0
+//
+//                                    globalObj.journeyList[index].hiker = participants
+//                                    globalObj.journeyList[index].date = tripDate
+//                                } else {
+//                                    func qtyCount(_ item: String) -> Int {
+//                                        switch item {
+//                                        case "Flysheet":
+//                                            return 3
+//                                        case "Portable Gas", "Raffia rope":
+//                                            return 2
+//                                        default:
+//                                            return 1
+//                                        }
+//                                    }
+//                                    let groupLog = mountain.essentials.groupLogistic.map { items -> GroupItem in
+//                                        let list: GroupItem = GroupItem(name: items, quantity: qtyCount(items), notes: items == "Tents" ? "For \(participants.count) people" : "")
+//                                        return list
+//                                    }
+//                                    let personLog = mountain.essentials.personalLogistic.map { items -> PersonalItem in
+//                                        let list: PersonalItem = PersonalItem(name: items, quantity: 1)
+//                                        return list
+//                                    }
+//
+//                                    globalObj.journeyList.append(Hiking(
+//                                        mountain: mountain, date: tripDate, hiker: participants, groupLogistic: groupLog, personalLogistic: personLog
+//                                    ))
+//                                }
                                 
                                 dismiss()
                             }

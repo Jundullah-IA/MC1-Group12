@@ -13,6 +13,14 @@
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
 		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
 		088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26D12837E53200EA19EF /* ItemCardPersonal.swift */; };
+		08993EF5289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EED289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift */; };
+		08993EF6289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EEE289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift */; };
+		08993EF7289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EEF289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift */; };
+		08993EF8289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EF0289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift */; };
+		08993EF9289AB8150082ADFD /* Journey+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EF1289AB8150082ADFD /* Journey+CoreDataClass.swift */; };
+		08993EFA289AB8150082ADFD /* Journey+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EF2289AB8150082ADFD /* Journey+CoreDataProperties.swift */; };
+		08993EFB289AB8150082ADFD /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EF3289AB8150082ADFD /* User+CoreDataClass.swift */; };
+		08993EFC289AB8150082ADFD /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08993EF4289AB8150082ADFD /* User+CoreDataProperties.swift */; };
 		08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */; };
 		08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A089F2282B569E00B0AA72 /* ContentView.swift */; };
 		08A089F5282B56A000B0AA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A089F4282B56A000B0AA72 /* Assets.xcassets */; };
@@ -45,6 +53,14 @@
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
 		088A26D12837E53200EA19EF /* ItemCardPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardPersonal.swift; sourceTree = "<group>"; };
+		08993EED289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalItemDB+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		08993EEE289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonalItemDB+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		08993EEF289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupItemDB+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		08993EF0289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupItemDB+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		08993EF1289AB8150082ADFD /* Journey+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journey+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		08993EF2289AB8150082ADFD /* Journey+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journey+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		08993EF3289AB8150082ADFD /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		08993EF4289AB8150082ADFD /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		08A089ED282B569E00B0AA72 /* HiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC1_Group12App.swift; sourceTree = "<group>"; };
 		08A089F2282B569E00B0AA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,9 +108,25 @@
 			path = Forms;
 			sourceTree = "<group>";
 		};
+		083B5407289A7DBD00891BDF /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				08993EED289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift */,
+				08993EEE289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift */,
+				08993EEF289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift */,
+				08993EF0289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift */,
+				08993EF1289AB8150082ADFD /* Journey+CoreDataClass.swift */,
+				08993EF2289AB8150082ADFD /* Journey+CoreDataProperties.swift */,
+				08993EF3289AB8150082ADFD /* User+CoreDataClass.swift */,
+				08993EF4289AB8150082ADFD /* User+CoreDataProperties.swift */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		08852CF52834E3C800C7DD59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				083B5407289A7DBD00891BDF /* CoreDataModel */,
 				08D68C602835D7C10021EF0E /* Mountain.swift */,
 				08D68C62283616D80021EF0E /* HikingJourney.swift */,
 			);
@@ -279,27 +311,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				08993EF8289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift in Sources */,
 				08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */,
 				0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */,
+				08993EFA289AB8150082ADFD /* Journey+CoreDataProperties.swift in Sources */,
 				0E67E025282FFFEE00829F52 /* Colors.swift in Sources */,
 				0E75B348283502A700D052A0 /* ItemCardGroup.swift in Sources */,
 				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
 				0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */,
 				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
+				08993EF9289AB8150082ADFD /* Journey+CoreDataClass.swift in Sources */,
 				0EBE72722837D58F00ECC55A /* Func.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
 				0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */,
+				08993EF7289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift in Sources */,
 				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
 				08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */,
 				0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */,
 				08D68C612835D7C10021EF0E /* Mountain.swift in Sources */,
 				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
 				0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */,
+				08993EFB289AB8150082ADFD /* User+CoreDataClass.swift in Sources */,
+				08993EF5289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift in Sources */,
 				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,
 				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
 				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
+				08993EF6289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift in Sources */,
 				0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */,
+				08993EFC289AB8150082ADFD /* User+CoreDataProperties.swift in Sources */,
 				D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */,
 				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
 				088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */,
