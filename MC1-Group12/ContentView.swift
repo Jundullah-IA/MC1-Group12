@@ -14,20 +14,16 @@ enum Tabs: String, CaseIterable, Identifiable {
 
 struct ContentView: View {
     @State private var selectedTab: Tabs = .home
-    @StateObject var globalObj = HikingJourney()
     
     var body: some View {
-        if globalObj.showCongrats {
-            CongratulationScreen(globalObj: globalObj)
-        } else {
             TabView(selection: $selectedTab) {
-                HomeScreen(globalObj: globalObj)
+                HomeScreen()
                     .tabItem {
                         Label("Home", systemImage: "globe.asia.australia.fill")
                     }
                     .tag(Tabs.home)
                 
-                MountainListScreen(globalObj: globalObj)
+                MountainListScreen()
                     .tabItem {
                         Label("Mountains", systemImage: "triangle.tophalf.filled")
                     }
@@ -39,7 +35,6 @@ struct ContentView: View {
                 tabBarAppearance.configureWithOpaqueBackground()
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
-        }
     }
 }
 struct ContentView_Previews: PreviewProvider {

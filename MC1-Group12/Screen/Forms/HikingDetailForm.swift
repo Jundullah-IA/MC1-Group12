@@ -11,7 +11,6 @@ struct HikingDetailForm: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
 
-//    @ObservedObject var globalObj: HikingJourney
     @State var mountain: Mountain
     @State var hiking: Hiking?
     @State var tripDate: Date = Date.now
@@ -130,13 +129,13 @@ struct HikingDetailForm: View {
                                     newParticipant.journeys?.insert(newJourney)
                                 }
                                 
-                                mountain.essentials.personalLogistic.forEach {item in
+                                mountain.essentials!.personalLogistic.forEach {item in
                                     let newPersonalLogistic = PersonalItemDB(context: moc)
                                     newPersonalLogistic.journey = newJourney
                                     newPersonalLogistic.name = item
                                 }
                                 
-                                mountain.essentials.groupLogistic.forEach {item in
+                                mountain.essentials!.groupLogistic.forEach {item in
                                     let newGroupLogistic = GroupItemDB(context: moc)
                                     newGroupLogistic.journey = newJourney
                                     newGroupLogistic.name = item

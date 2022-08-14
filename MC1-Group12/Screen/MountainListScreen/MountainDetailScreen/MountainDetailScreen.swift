@@ -11,7 +11,6 @@ struct MountainDetailScreen: View {
     @State private var currentSubview:Int = 0
     @State private var showSheet: Bool = false
     
-    @ObservedObject var globalObj: HikingJourney
     var mountain: Mountain
     var previewOnly: Bool = false
     
@@ -106,7 +105,7 @@ struct MountainDetailScreen: View {
                         }
                     )
                     
-                    .sheet(isPresented: $showSheet) { HikingDetailForm(globalObj: globalObj, mountain: mountain) }
+                    .sheet(isPresented: $showSheet) { HikingDetailForm(mountain: mountain) }
                 }
             }
     }

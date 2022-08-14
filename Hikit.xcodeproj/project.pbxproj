@@ -185,6 +185,13 @@
 			path = MountainDetailScreen;
 			sourceTree = "<group>";
 		};
+		08B41EFE28A8DBDE00EB1D45 /* MountainScreen_V2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MountainScreen_V2;
+			sourceTree = "<group>";
+		};
 		0E75B3442834E22000D052A0 /* HikingDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,10 +206,10 @@
 		0E777EB1282BFDE20090B74D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				0E75B3442834E22000D052A0 /* HikingDetailScreen */,
-				0E777EB8282C106A0090B74D /* MountainListScreen */,
-				08A923C1282E0B6B00862E8A /* MountainDetailScreen */,
+				08B41EFE28A8DBDE00EB1D45 /* MountainScreen_V2 */,
 				0814729D282C081A0092BFB3 /* Forms */,
+				0E777EB8282C106A0090B74D /* MountainListScreen */,
+				0E75B3442834E22000D052A0 /* HikingDetailScreen */,
 				0E777EB3282BFE8F0090B74D /* HomeScreen */,
 			);
 			path = Screen;
@@ -212,9 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				0E777EB4282BFF030090B74D /* HomeScreen.swift */,
+				0E75B31E2834AEB900D052A0 /* Carousel.swift */,
 				0E67E0262830014B00829F52 /* MountCard.swift */,
 				0E67E02828300E8900829F52 /* JourneyList.swift */,
-				0E75B31E2834AEB900D052A0 /* Carousel.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 		0E777EB8282C106A0090B74D /* MountainListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				08A923C1282E0B6B00862E8A /* MountainDetailScreen */,
 				0E777EB9282C107F0090B74D /* MountainListScreen.swift */,
 			);
 			path = MountainListScreen;

@@ -10,12 +10,12 @@ import Foundation
 struct Mountain: Identifiable {
     let id = UUID()
     var name: String = ""
-    var location: String
-    var height: Int
+    var location: String = ""
+    var height: Int = 0
     var image: String = ""
     var estimation: HikingEstimation?
     var informations: [MountainInfo]?
-    var essentials: MountainEssential
+    var essentials: MountainEssential?
     var requirements: [MountainRequirement]?
 }
 

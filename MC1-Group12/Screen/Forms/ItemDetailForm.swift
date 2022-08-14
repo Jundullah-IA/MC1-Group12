@@ -18,7 +18,6 @@ struct ItemDetailForm: View {
     @State var reminderDate: Date = Date.now
     @State var formState: String = "Edit"
     
-//    @ObservedObject var globalObj: HikingJourney
     @State var hiking: Hiking
     var logisticType: String = "group"
     
@@ -34,9 +33,9 @@ struct ItemDetailForm: View {
     @State var selectedPIC: [String] = []
     
     var body: some View {
-        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
-        let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
-        let indexPersonalItem = globalObj.journeyList[index].personalLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
+//        let index = globalObj.journeyList.firstIndex(where: {$0.id == hiking.id}) ?? 0
+//        let indexGroupItem = globalObj.journeyList[index].groupLogistic.firstIndex(where: {$0.id == groupItem.id}) ?? 0
+//        let indexPersonalItem = globalObj.journeyList[index].personalLogistic.firstIndex(where: {$0.id == personalItem.id}) ?? 0
         
         NavigationView {
             List {
@@ -168,9 +167,9 @@ struct ItemDetailForm: View {
                 }
                 Button(role: .destructive, action: {
                     if logisticType == "group" {
-                        globalObj.journeyList[index].groupLogistic.remove(at: indexGroupItem)
+//                        globalObj.journeyList[index].groupLogistic.remove(at: indexGroupItem)
                     } else {
-                        globalObj.journeyList[index].personalLogistic.remove(at: indexPersonalItem)
+//                        globalObj.journeyList[index].personalLogistic.remove(at: indexPersonalItem)
                     }
                     dismiss()
                 }) {
@@ -195,32 +194,32 @@ struct ItemDetailForm: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(
                         action: {
-                            if(formState == "Display") {
-                                formState = "Edit"
-                            } else if(formState == "Edit") {
-                                if(logisticType == "group") {
-                                    globalObj.journeyList[index].groupLogistic[indexGroupItem] = groupItem
-                                } else {
-                                    globalObj.journeyList[index].personalLogistic[indexPersonalItem] = personalItem
-                                }
-                                
-                                dismiss()
-                            } else {
-                                if(logisticType == "group") {
-                                    globalObj.journeyList[index].groupLogistic.append(GroupItem(
-                                        name: itemName,
-                                        quantity: totalItem,
-                                        notes: notes,
-                                        pic: selectedPIC))
-                                } else {
-                                    globalObj.journeyList[index].personalLogistic.append(PersonalItem(
-                                        name: itemName,
-                                        quantity: totalItem,
-                                        notes: notes))
-                                }
-                                
-                                dismiss()
-                            }
+//                            if(formState == "Display") {
+//                                formState = "Edit"
+//                            } else if(formState == "Edit") {
+//                                if(logisticType == "group") {
+//                                    globalObj.journeyList[index].groupLogistic[indexGroupItem] = groupItem
+//                                } else {
+//                                    globalObj.journeyList[index].personalLogistic[indexPersonalItem] = personalItem
+//                                }
+//
+//                                dismiss()
+//                            } else {
+//                                if(logisticType == "group") {
+//                                    globalObj.journeyList[index].groupLogistic.append(GroupItem(
+//                                        name: itemName,
+//                                        quantity: totalItem,
+//                                        notes: notes,
+//                                        pic: selectedPIC))
+//                                } else {
+//                                    globalObj.journeyList[index].personalLogistic.append(PersonalItem(
+//                                        name: itemName,
+//                                        quantity: totalItem,
+//                                        notes: notes))
+//                                }
+//
+//                                dismiss()
+//                            }
                         },
                         label: {
                             if(formState == "Display") {

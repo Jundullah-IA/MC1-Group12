@@ -13,7 +13,6 @@ struct ActiveItem : Identifiable {
 }
 
 struct HikingDetailScreen: View {
-    @ObservedObject var globalObj: HikingJourney
     var hikeDetail: Hiking
     
     @State private var logisticTab = 0 /// 0 = group, 1 = personal
@@ -29,7 +28,7 @@ struct HikingDetailScreen: View {
     var body: some View {
         VStack {
             VStack {
-                HikingCard(globalObj: globalObj, hiking: hikeDetail)
+//                HikingCard(hiking: hikeDetail)
                 
                 Picker("", selection: $logisticTab) {
                     Text("Group").tag(0)
@@ -57,15 +56,14 @@ struct HikingDetailScreen: View {
                     VStack(alignment: .leading) {
                         if(logisticTab == 0) {
                             ForEach(0..<hikeDetail.groupLogistic.count, id: \.self) { n in
-                                ItemCardGroup(globalObj: globalObj, hiking: hikeDetail, groupItem: hikeDetail.groupLogistic[n])
-                                    .onTapGesture {
-                                        activeItem = ActiveItem(calledFrom: n)
-                                    }
+//                                ItemCardGroup(groupItem: hikeDetail.groupLogistic[n])
+//                                    .onTapGesture {
+//                                        activeItem = ActiveItem(calledFrom: n)
+//                                    }
                             }
                             .sheet(item: $activeItem) { item in
                                 ItemDetailForm(
                                     formState: "Display",
-                                    globalObj: globalObj,
                                     hiking: hikeDetail,
                                     logisticType: logisticTab == 0 ? "group" : "personal",
                                     groupItem: hikeDetail.groupLogistic[item.calledFrom],
@@ -75,16 +73,15 @@ struct HikingDetailScreen: View {
                             
                         } else {
                             ForEach(0..<hikeDetail.personalLogistic.count, id: \.self) { n in
-                                ItemCardPersonal(globalObj:globalObj, hiking: hikeDetail, personalItem: hikeDetail.personalLogistic[n])
-                                    .onTapGesture {
-                                        activeItem = ActiveItem(calledFrom: n)
-                                    }
+//                                ItemCardPersonal(hiking: hikeDetail, personalItem: hikeDetail.personalLogistic[n])
+//                                    .onTapGesture {
+//                                        activeItem = ActiveItem(calledFrom: n)
+//                                    }
                             }
                             
                             .sheet(item: $activeItem) { item in
                                 ItemDetailForm(
                                     formState: "Display",
-                                    globalObj: globalObj,
                                     hiking: hikeDetail,
                                     logisticType: logisticTab == 0 ? "group" : "personal",
                                     groupItem: hikeDetail.groupLogistic[item.calledFrom],
@@ -99,7 +96,6 @@ struct HikingDetailScreen: View {
         .sheet(isPresented: $isSheetItemOpen){
             ItemDetailForm(
                 formState: "New",
-                globalObj: globalObj,
                 hiking: hikeDetail,
                 logisticType: logisticTab == 0 ? "group" : "personal",
                 groupItem: GroupItem(),
@@ -107,7 +103,7 @@ struct HikingDetailScreen: View {
             )
         }
         .sheet(isPresented: $isSheetMountainOpen){
-            MountainDetailScreen(globalObj: globalObj, mountain: hikeDetail.mountain, previewOnly: true)
+            MountainDetailScreen(mountain: hikeDetail.mountain, previewOnly: true)
         }
         
         .navigationTitle(hikeDetail.mountain.name)

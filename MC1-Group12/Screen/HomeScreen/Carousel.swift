@@ -8,23 +8,22 @@
 import SwiftUI
 
 struct Carousel: View {
-    @State private var id: UUID = UUID()
-    @ObservedObject var globalObj: HikingJourney
+    @State private var id: String = ""
+    var journeySet: [Journey]
     
     var body: some View {
-        let list = globalObj.journeyList.filter {!$0.isDone}
-        
         VStack(spacing: 0) {
             TabView(selection: $id) {
-                ForEach(list) { hiking in
-                    MountCard(globalObj: globalObj, hikeDetail: hiking, mountain: hiking.mountain)
+                ForEach(journeySet) { journey in
+                    let getMountain: Mountain = MountainList.first(where: {$0.name == journey.wrapMountain}) ?? Mountain()
+                    MountCard(mountain: getMountain, journey: journey)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             HStack(spacing: 5) {
-                ForEach(list, id: \.id) { item in
+                ForEach(journeySet, id: \.id) { item in
                     Circle()
-                        .fill(id == item.id ? Color.darkGreen : Color.gray.opacity(0.4))
+                        .fill(id == item.wrapMountain ? Color.darkGreen : Color.gray.opacity(0.4))
                         .frame(width: 10, height: 10)
                 }
             }
@@ -32,8 +31,8 @@ struct Carousel: View {
         .frame(height: 200)
         .onAppear(
             perform: {
-                if (list.count != 0) {
-                    id = list[0].id
+                if (journeySet.count != 0) {
+                    id = journeySet[0].wrapMountain
                 }
             }
         )

@@ -10,11 +10,12 @@ import SwiftUI
 struct HomeScreen: View {
     @State var noPlan = true
     @State var noJourney = true
-    @ObservedObject var globalObj: HikingJourney
+    
+    @FetchRequest(sortDescriptors: []) private var journeySet: FetchedResults<Journey>
     
     var body: some View {
-        let historyList = globalObj.journeyList.filter {$0.isDone}
-        let activeList = globalObj.journeyList.filter {!$0.isDone}
+        
+        let journeyList = journeySet.map{$0}
         
         NavigationView {
             ZStack(alignment: .top){
@@ -29,15 +30,14 @@ struct HomeScreen: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.darkGreen)
                             .onTapGesture {
-                                print(globalObj.journeyList)
                             }
                         Divider()
                     }
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if (activeList.count != 0) {
-                        Carousel(globalObj: globalObj)
+                    if (journeySet.count != 0) {
+                        Carousel(journeySet: journeyList)
                             .padding(.bottom, 10)
                     } else {
                         Text("No ongoing plan")
@@ -46,7 +46,7 @@ struct HomeScreen: View {
                             .opacity(0.4)
                             .padding(.vertical, 25)
                             .onTapGesture {
-                                print(globalObj.journeyList)
+//                                print(globalObj.journeyList)
                             }
                     }
                     
@@ -62,7 +62,7 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     .background(.white.opacity(0.8))
                     
-                    if historyList.count == 0 {
+                    if journeySet.count == 0 {
                         VStack {
                             Image("empty")
                             Text("No journey history")
@@ -71,15 +71,21 @@ struct HomeScreen: View {
                                 .opacity(0.4)
                         }.padding(.vertical, 100)
                     } else {
-                        JourneyList(globalObj: globalObj)
+                        JourneyList(journeySet: journeyList)
                     }
                     
                 }
                 
             }
+            
+            .onAppear {
+                journeyList.forEach {item in
+                    print(item.wrapMountain)
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: MountainListScreen(textOnly: true, globalObj: globalObj)) {
+                    NavigationLink(destination: MountainListScreen(textOnly: true)) {
                         Image(systemName: "plus")
                     }
                 }
