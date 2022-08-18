@@ -17,9 +17,9 @@ struct ContentView: View {
     
     var body: some View {
             TabView(selection: $selectedTab) {
-                HomeScreen()
+                JourneyScreen()
                     .tabItem {
-                        Label("Home", systemImage: "globe.asia.australia.fill")
+                        Label("Journey", systemImage: "figure.walk")
                     }
                     .tag(Tabs.home)
                 
@@ -28,6 +28,11 @@ struct ContentView: View {
                         Label("Mountains", systemImage: "triangle.tophalf.filled")
                     }
                     .tag(Tabs.mountains)
+                
+                ProfileScreen()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.text.rectangle")
+                    }
             }
             .onAppear {
                 // correct the transparency bug for Tab bars
