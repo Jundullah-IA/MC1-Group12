@@ -10,7 +10,8 @@ import SwiftUI
 struct MountainListScreen: View {
     @State private var searchText = ""
     var textOnly: Bool?
-    @ObservedObject var globalObj: HikingJourney
+    
+    var journey: Journey = Journey()
     
     var searchResults: [Mountain] {
         if searchText.isEmpty {
@@ -24,7 +25,7 @@ struct MountainListScreen: View {
         if textOnly ?? false {
             List {
                 ForEach(searchResults) {mountain in
-                    NavigationLink(destination: MountainDetailScreen(globalObj: globalObj, mountain: mountain)) {
+                    NavigationLink(destination: MountainDetailScreen(mountain: mountain)) {
                         Text(mountain.name).foregroundColor(.accentColor)
                     }
                 }
@@ -37,7 +38,7 @@ struct MountainListScreen: View {
             NavigationView {
                 ScrollView {
                     ForEach(searchResults) { mountain in
-                        MountCard(globalObj: globalObj, mountain: mountain).padding(.vertical, 2)
+                        MountCard(mountain: mountain, journey: journey).padding(.vertical, 2)
                     }
                 }
                 .animation(.spring(), value: searchResults.count)

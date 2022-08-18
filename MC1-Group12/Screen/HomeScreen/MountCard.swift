@@ -11,19 +11,20 @@ struct MountCard: View {
     let cardHeight: CGFloat = 165
     var planCard: Bool?
     
-    @ObservedObject var globalObj: HikingJourney
-    var hikeDetail: Hiking?
+//    @ObservedObject var globalObj: HikingJourney
     var mountain: Mountain
+    var journey: Journey
+    
     
     var body: some View {
-        let mountain: Mountain = hikeDetail?.mountain ?? mountain
+//        let mountain: Mountain = hikeDetail?.mountain ?? mountain
         
         NavigationLink(destination: {
-            if hikeDetail != nil {
-                HikingDetailScreen(globalObj: globalObj, hikeDetail: hikeDetail!)
-            } else {
-                MountainDetailScreen(globalObj: globalObj, mountain: mountain)
-            }
+//            if hikeDetail != nil {
+//                HikingDetailScreen(hikeDetail: hikeDetail!)
+//            } else {
+                MountainDetailScreen(mountain: mountain)
+//            }
         }) {
             ZStack(alignment: .bottom) {
                 
@@ -51,9 +52,9 @@ struct MountCard: View {
                         if planCard ?? false {
                             Spacer()
                             HStack{
-                                Image(systemName: "calendar")
-                                Text(dateToString(hikeDetail?.date ?? Date.now))
-                                    .font(.subheadline)
+//                                Image(systemName: "calendar")
+//                                Text(dateToString(hikeDetail?.date ?? Date.now))
+//                                    .font(.subheadline)
                             }
                         }
                     }
