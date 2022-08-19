@@ -22,12 +22,7 @@ struct JourneyScreen: View {
                         Text("Hello world")
                     }
                 }
-            }.background {
-                Image("bg")
-                    .scaledToFill()
-                    .padding(.bottom, 350)
-                    .opacity(0.4)
-            }
+            }.background()
             
             .navigationTitle("Let's Hike")
             .navigationBarTitleDisplayMode(.large)
