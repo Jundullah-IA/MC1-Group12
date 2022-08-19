@@ -14,7 +14,7 @@ struct JourneyCard: View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color.black.opacity(0.5), lineWidth: 1)
-                .foregroundColor(.white)
+                .background(Color.white)
             
             VStack(alignment: .leading) {
                 HStack {

@@ -13,16 +13,85 @@ struct JourneyScreen: View {
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView {
-                    if(journeySet.count > 0) {
+                if(journeySet.count > 0) {
+                    ScrollView {
                         ForEach(journeySet) {journey in
                             JourneyCard(journey: journey)
                         }
-                    } else {
-                        Text("Hello world")
                     }
+                    .background( Color.background)
+                } else {
+                    VStack {
+                        VStack {
+                            VStack(alignment: .leading) {
+                                Text("INSERT CODE")
+                                    .bold()
+                                    .font(.title3)
+                                    .foregroundColor(Color.darkGreen)
+                                    .padding(.top)
+                                
+                                Text("Do you have the code? Ask your team leader so you can jouin the journey")
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.top, 4)
+                            }.padding(.horizontal)
+                            
+                            HStack(alignment: .center) {
+                                RoundedRectangle(cornerRadius: 10).frame(width: 40, height: 60).padding(.horizontal, 3)
+                                RoundedRectangle(cornerRadius: 10).frame(width: 40, height: 60).padding(.horizontal, 3)
+                                RoundedRectangle(cornerRadius: 10).frame(width: 40, height: 60).padding(.horizontal, 3)
+                                RoundedRectangle(cornerRadius: 10).frame(width: 40, height: 60).padding(.horizontal, 3)
+                                RoundedRectangle(cornerRadius: 10).frame(width: 40, height: 60).padding(.horizontal, 3)
+                            }
+                            .foregroundColor(Color.accentColor.opacity(0.5))
+                            .padding(.vertical)
+                            
+                            Button {
+                                
+                            } label: {
+                                Text("Join Journey")
+                                    .font(.title3)
+                                    .bold()
+                                    .foregroundColor(.white)
+                            }
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(Color.darkGreen)
+                                    .frame(width: 150, height: 45)
+                            )
+                            .frame(width: 150, height: 45)
+                            .padding(.top)
+                            
+                            Text("or").foregroundColor(Color.darkGreen).padding()
+                            
+                            Button {
+                                
+                            } label: {
+                                Text("Create Journey")
+                                    .font(.title3)
+                            }
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.darkGreen.opacity(0.5), lineWidth: 2)
+                                    .background(Color.white)
+                                    .frame(width: 150, height: 45)
+                            )
+                            .frame(width: 150, height: 45)
+                            .padding(.bottom)
+                        }
+                        .background(
+                            RoundedRectangle(cornerRadius: 20, style: .continuous).fill(.white)
+                        )
+                        .padding()
+                    } .background(
+                        Image("bg")
+                            .scaledToFit()
+                            .padding(.bottom, 370)
+                            .opacity(0.4)
+                    )
+                    
+                    Spacer()
                 }
-            }.background()
+            }
             
             .navigationTitle("Let's Hike")
             .navigationBarTitleDisplayMode(.large)
