@@ -30,6 +30,10 @@ extension User {
             $0.wrapName > $1.wrapName
         }
     }
+    
+    public func getName() -> String {
+        return wrapName
+    }
 }
 
 // MARK: Generated accessors for groupItems
