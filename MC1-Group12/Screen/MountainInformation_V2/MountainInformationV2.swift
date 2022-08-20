@@ -13,7 +13,7 @@ struct SwiftUIView: View {
         NavigationView {
             ZStack {
                 Rectangle()
-                    .fill(Color.white)
+                    .fill(Color("bg"))
                     .edgesIgnoringSafeArea(.all)
                 
                 //### Layer 1 CITY/PROVINCE + MDPL ###
