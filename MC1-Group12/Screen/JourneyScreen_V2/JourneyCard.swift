@@ -19,7 +19,7 @@ struct JourneyCard: View {
             VStack(alignment: .leading) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("\(formatDate(inDate: journey.wrapDate))")
+                        Text("\(formatDate(journey.wrapDate))")
                             .foregroundColor(Color.accentColor)
                         .font(.footnote)
                         
@@ -101,11 +101,6 @@ struct JourneyCard: View {
         }.padding(.horizontal, 13).padding(.bottom, 9)
     }
     
-    func formatDate(inDate: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, d MMMM yyyy"
-        return formatter.string(from: inDate)
-    }
 }
 
 struct JourneyCard_Previews: PreviewProvider {

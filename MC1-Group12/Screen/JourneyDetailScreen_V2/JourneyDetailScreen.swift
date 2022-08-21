@@ -10,6 +10,7 @@ import SwiftUI
 struct JourneyDetailScreen: View {
     @State var selection: Int = 0
     @State var scrolled: Bool = false
+    var journey: Journey = Journey()
     
     let items: [String] =
     [
@@ -17,52 +18,9 @@ struct JourneyDetailScreen: View {
         "Personal Logistics"
     ]
     
-    var body: some View {
-        
-        NavigationView {
-            VStack {
-                
-                VStack {
-                    if !scrolled {
-                        JourneyBrief()
-                    }
-                    
-                    SegmentedPicker(items: self.items, selection: self.$selection).padding(.top, 8)
-                }.padding(.horizontal)
-                
-                
-                List {
-                    ForEach(0..<10) {_ in
-                        ItemCard()
-                    }
-                    
-                    .onDelete { indexSet in
-                        print(indexSet)
-                    }
-                    
-                    
-                }.listStyle(.plain)
-//                    .simultaneousGesture(DragGesture().onChanged({ _ in
-//                        scrolled.toggle()
-//                    }))
-                    
-                
-            }
-            .navigationTitle("Mahameru Trip")
-        }
-    }
-}
-
-struct JourneyDetailScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        JourneyDetailScreen()
-    }
-}
-
-struct JourneyBrief: View {
-    var body: some View {
-        let halfWidth = UIScreen.main.bounds.width / 2
-        
+    let halfWidth = UIScreen.main.bounds.width / 2
+    
+    var viewJourneyBrief: some View {
         VStack {
             HStack {
                 Image("rinjani")
@@ -72,8 +30,8 @@ struct JourneyBrief: View {
                 VStack(alignment: .center) {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("Mahameru").font(.subheadline)
-                            Text("17 Agustus 2022").font(.caption).foregroundColor(.accentColor)
+                            Text("\(journey.wrapMountain)").font(.subheadline)
+                            Text("\(formatDate(journey.wrapDate))").font(.caption).foregroundColor(.accentColor)
                         }
                         Spacer()
                     }
@@ -100,5 +58,52 @@ struct JourneyBrief: View {
             .frame(maxWidth: .infinity, maxHeight: 170)
             
         }
+    }
+    
+    var body: some View {
+        
+            VStack {
+                
+                VStack {
+                    if !scrolled {
+                        viewJourneyBrief
+                    }
+                    
+                    SegmentedPicker(items: self.items, selection: self.$selection).padding(.top, 8)
+                }.padding(.horizontal)
+                
+                
+                List {
+                    if selection == 0 {
+                        ForEach<[GroupItemDB], GroupItemDB, GroupItemCard>(journey.wrapGroupItems, id: \.self) {item in
+                            GroupItemCard(itemDetail: item)
+                        }
+                        .onDelete { indexSet in
+                            print(indexSet)
+                        }
+                    } else {
+                        ForEach<[PersonalItemDB], PersonalItemDB, PersonalItemCard>(journey.wrapPersonalItems, id: \.self) {item in
+                            PersonalItemCard(itemDetail: item)
+                        }
+                        .onDelete { indexSet in
+                            print(indexSet)
+                        }
+                    }
+
+                    
+
+                    
+                    
+                }.listStyle(.plain)
+
+            }
+            .navigationTitle("\(journey.wrapMountain) Trip")
+        
+    }
+}
+
+struct JourneyDetailScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        JourneyDetailScreen(journey: Journey())
     }
 }

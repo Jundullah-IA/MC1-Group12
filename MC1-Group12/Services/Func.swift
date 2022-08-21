@@ -13,3 +13,9 @@ func dateToString(_ date: Date) -> String {
     let someDateTime = formatter.string(from: date)
     return someDateTime
 }
+
+func formatDate(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "EEEE, d MMM yyyy"
+    return formatter.string(from: date)
+}

@@ -13,6 +13,7 @@ extension Color {
     static let disabledCardBg = Color("disabled-card-bg")
     static let mountainDetailButton = Color("mount-detail-color")
     static let estimation = Color("estimation")
+    static let emptyCheckmark = Color("empty-checkmark")
 }
 
 var colorsPIC: [Color] = [Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.indigo]
