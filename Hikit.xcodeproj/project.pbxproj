@@ -11,6 +11,7 @@
 		0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0804005F28368CA100BC43A2 /* MountainEssentialView.swift */; };
 		08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08040061283691BA00BC43A2 /* MountainRequirement.swift */; };
 		080EB59828AE31F700007F39 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB59728AE31F700007F39 /* ProfileScreen.swift */; };
+		080EB59C28AE57D300007F39 /* ProfilePic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB59B28AE57D300007F39 /* ProfilePic.swift */; };
 		08147296282B90180092BFB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08147295282B90180092BFB3 /* README.md */; };
 		0814729C282C08070092BFB3 /* HikingDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814729B282C08070092BFB3 /* HikingDetailForm.swift */; };
 		088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A26D12837E53200EA19EF /* ItemCardPersonal.swift */; };
@@ -48,6 +49,7 @@
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
 		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
 		0EBE72722837D58F00ECC55A /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Func.swift */; };
+		D1674B2028AE41B2003FAFD1 /* MountainInformationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */; };
 		D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F8E428393A6B002354DD /* LaunchScreen.storyboard */; };
 		D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F8E628393B27002354DD /* CongratulationScreen.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,7 @@
 		0804005F28368CA100BC43A2 /* MountainEssentialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainEssentialView.swift; sourceTree = "<group>"; };
 		08040061283691BA00BC43A2 /* MountainRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRequirement.swift; sourceTree = "<group>"; };
 		080EB59728AE31F700007F39 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		080EB59B28AE57D300007F39 /* ProfilePic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePic.swift; sourceTree = "<group>"; };
 		08147295282B90180092BFB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0814729B282C08070092BFB3 /* HikingDetailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingDetailForm.swift; sourceTree = "<group>"; };
 		088A26D12837E53200EA19EF /* ItemCardPersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCardPersonal.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		0E777EB4282BFF030090B74D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		0E777EB9282C107F0090B74D /* MountainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListScreen.swift; sourceTree = "<group>"; };
 		0EBE72712837D58F00ECC55A /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
+		D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInformationV2.swift; sourceTree = "<group>"; };
 		D175F8E428393A6B002354DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D175F8E628393B27002354DD /* CongratulationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +214,7 @@
 			children = (
 				08B41EFF28A8DCCF00EB1D45 /* JourneyScreen.swift */,
 				08B41F0128A8E29A00EB1D45 /* JourneyCard.swift */,
+				080EB59B28AE57D300007F39 /* ProfilePic.swift */,
 			);
 			path = JourneyScreen_V2;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				0E6F191A28AE4CD8006E910D /* JourneyDetailScreen_V2 */,
 				080EB59628AE31DA00007F39 /* ProfileScreen_V2 */,
 				08B41EFE28A8DBDE00EB1D45 /* JourneyScreen_V2 */,
+				D1674B1E28AE40FE003FAFD1 /* MountainInformation_V2 */,
 				0814729D282C081A0092BFB3 /* Forms */,
 				0E777EB8282C106A0090B74D /* MountainListScreen */,
 				0E75B3442834E22000D052A0 /* HikingDetailScreen */,
@@ -278,6 +284,14 @@
 				0E777EB9282C107F0090B74D /* MountainListScreen.swift */,
 			);
 			path = MountainListScreen;
+			sourceTree = "<group>";
+		};
+		D1674B1E28AE40FE003FAFD1 /* MountainInformation_V2 */ = {
+			isa = PBXGroup;
+			children = (
+				D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */,
+			);
+			path = MountainInformation_V2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080EB59C28AE57D300007F39 /* ProfilePic.swift in Sources */,
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
 				0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */,
 				08993EF8289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift in Sources */,
@@ -389,6 +404,7 @@
 				080EB59828AE31F700007F39 /* ProfileScreen.swift in Sources */,
 				08993EFC289AB8150082ADFD /* User+CoreDataProperties.swift in Sources */,
 				D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */,
+				D1674B2028AE41B2003FAFD1 /* MountainInformationV2.swift in Sources */,
 				0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */,
 				088A26D22837E53200EA19EF /* ItemCardPersonal.swift in Sources */,
 			);

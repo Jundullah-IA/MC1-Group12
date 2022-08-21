@@ -11,74 +11,94 @@ struct JourneyCard: View {
     var journey: Journey = Journey()
     
     var body: some View {
-        HStack {
-            VStack {
+        ZStack {
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(Color.black.opacity(0.5), lineWidth: 1)
+                .background(Color.white)
+            
+            VStack(alignment: .leading) {
                 HStack {
-                    Text("\(formatDate(inDate: journey.wrapDate))")
+                    VStack(alignment: .leading) {
+                        Text("\(formatDate(inDate: journey.wrapDate))")
+                            .foregroundColor(Color.accentColor)
+                        .font(.footnote)
+                        
+                        Text("\(journey.wrapMountain)")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(Color.darkGreen)
+                    }
                     
                     Spacer()
                     
                     Text("In 8d")
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 7)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(Color.red.opacity(0.3))
+                        )
                 }
                 
-                HStack {
-                    Text("\(journey.wrapMountain)")
-                    Spacer()
-                }
+//                ProfilePic(name: journey.wrapMembers[0].getName(), colorCode: .indigo)
                 
                 HStack {
                     if(journey.wrapMembers.count < 3) {
                         ForEach(journey.wrapMembers) {pic in
-                            Text("\(pic.wrapName)")
+                            ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal].randomElement()!)
                         }
                     } else {
-                        Text("\(journey.wrapMembers[0].wrapName)")
-                        Text("\(journey.wrapMembers[1].wrapName)")
-                        Text("\(journey.wrapMembers[2].wrapName)")
-                        Text("+\(journey.wrapMembers.count - 3)")
+                        ProfilePic(name: journey.wrapMembers[0].getName(), colorCode: .indigo)
+                        ProfilePic(name: journey.wrapMembers[1].getName(), colorCode: .cyan)
+                        ProfilePic(name: journey.wrapMembers[2].getName(), colorCode: .mint)
+                        ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray)
                     }
-                    
-                    Spacer()
                 }
                 
-                VStack(alignment: .leading) {
-                    Text("Group progress")
-                    
+                Text("Group progress")
+                    .foregroundColor(Color.darkGreen)
+                    .font(.body)
+                
+                ZStack {
                     ZStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 10, style: .circular)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.gray)
-                            .opacity(0.5)
+                            .opacity(0.1)
                         
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 10, style: .circular)
                             .frame(maxWidth: 70)
-                        
-                        Text("45%")
+                            .foregroundColor(Color.accentColor)
                     }
                     
-                    Text("Individual progress")
-                    
-                    ZStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.gray)
-                            .opacity(0.5)
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(maxWidth: 70)
-                        
+                    HStack {
                         Text("45%")
                     }
                 }
-            }.padding(5)
-        }
-        .background {
-            RoundedRectangle(cornerRadius: 25)
-                .foregroundColor(.white)
-                .opacity(0.1)
-                .border(Color.gray)
-        }
-        .padding(.horizontal)
+                
+                Text("Individual progress")
+                    .foregroundColor(Color.darkGreen)
+                    .font(.body)
+                
+                ZStack {
+                    ZStack(alignment: .leading) {
+                        RoundedRectangle(cornerRadius: 10, style: .circular)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.gray)
+                            .opacity(0.1)
+                        
+                        RoundedRectangle(cornerRadius: 10, style: .circular)
+                            .frame(maxWidth: 70)
+                            .foregroundColor(Color.accentColor)
+                    }
+                    
+                    HStack {
+                        Text("45%")
+                    }
+                }
+
+            }.padding(12)
+        }.padding(.horizontal, 13).padding(.bottom, 9)
     }
     
     func formatDate(inDate: Date) -> String {
