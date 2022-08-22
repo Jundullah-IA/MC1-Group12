@@ -37,7 +37,6 @@
 		0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E118AD328AF3CA4004BC185 /* CustomSegmentedControl.swift */; };
 		0E118AD628AF79CA004BC185 /* GroupItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E118AD528AF79CA004BC185 /* GroupItemCard.swift */; };
 		0E36A7C128B26B1E00A70566 /* PersonalItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */; };
-		0E36A7C328B2734800A70566 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36A7C228B2734800A70566 /* CoreDataManager.swift */; };
 		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
 		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
 		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
@@ -88,7 +87,7 @@
 		0E118AD328AF3CA4004BC185 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		0E118AD528AF79CA004BC185 /* GroupItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemCard.swift; sourceTree = "<group>"; };
 		0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalItemCard.swift; sourceTree = "<group>"; };
-		0E36A7C228B2734800A70566 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata2.xcdatamodel; sourceTree = "<group>"; };
 		0E67E024282FFFEE00829F52 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
 		0E67E02828300E8900829F52 /* JourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyList.swift; sourceTree = "<group>"; };
@@ -278,7 +277,6 @@
 				0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */,
 				0E67E024282FFFEE00829F52 /* Colors.swift */,
 				0EBE72712837D58F00ECC55A /* Func.swift */,
-				0E36A7C228B2734800A70566 /* CoreDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -394,7 +392,6 @@
 				08993EF7289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift in Sources */,
 				0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */,
 				08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */,
-				0E36A7C328B2734800A70566 /* CoreDataManager.swift in Sources */,
 				0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */,
 				08B41F0228A8E29A00EB1D45 /* JourneyCard.swift in Sources */,
 				0E118AD628AF79CA004BC185 /* GroupItemCard.swift in Sources */,
@@ -624,9 +621,10 @@
 		0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */,
 				0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */,
 			);
-			currentVersion = 0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */;
+			currentVersion = 0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */;
 			path = coredata.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

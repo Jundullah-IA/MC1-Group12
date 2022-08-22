@@ -10,7 +10,8 @@ import SwiftUI
 struct JourneyDetailScreen: View {
     @State var selection: Int = 0
     @State var scrolled: Bool = false
-    var journey: Journey = Journey()
+    @ObservedObject var journey: Journey = Journey()
+    @Environment(\.managedObjectContext) var moc
     
     let items: [String] =
     [
@@ -43,7 +44,16 @@ struct JourneyDetailScreen: View {
                     Spacer()
                     
                     HStack {
-                        Text("OOO")
+                        HStack {
+                            ForEach(Array(journey.wrapMembers.prefix(3).enumerated()), id: \.element) {index, pic in
+                                ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal][(index + 1) % 3])
+                                        .offset(x: index > 0 ? CGFloat(index * -12) : 0, y: 0)
+                                        .zIndex(Double(journey.wrapMembers.count - index))
+                                }
+                            if (journey.wrapMembers.count > 3) {
+                                ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray).offset(x: -45)
+                            }
+                        }
                         Spacer()
                         Button(action: {}) {
                             Label("Add Item", systemImage: "square.and.arrow.up").labelStyle(.iconOnly)
@@ -62,42 +72,43 @@ struct JourneyDetailScreen: View {
     
     var body: some View {
         
+        VStack {
             VStack {
-                
-                VStack {
-                    if !scrolled {
-                        viewJourneyBrief
-                    }
-                    
-                    SegmentedPicker(items: self.items, selection: self.$selection).padding(.top, 8)
-                }.padding(.horizontal)
-                
-                
-                List {
-                    if selection == 0 {
-                        ForEach<[GroupItemDB], GroupItemDB, GroupItemCard>(journey.wrapGroupItems, id: \.self) {item in
-                            GroupItemCard(itemDetail: item)
-                        }
-                        .onDelete { indexSet in
-                            print(indexSet)
-                        }
-                    } else {
-                        ForEach<[PersonalItemDB], PersonalItemDB, PersonalItemCard>(journey.wrapPersonalItems, id: \.self) {item in
-                            PersonalItemCard(itemDetail: item)
-                        }
-                        .onDelete { indexSet in
-                            print(indexSet)
-                        }
-                    }
-
-                    
-
-                    
-                    
-                }.listStyle(.plain)
-
+                if !scrolled {
+                    viewJourneyBrief
+                }
+                SegmentedPicker(items: self.items, selection: self.$selection)
+                    .padding(.top, 8)
             }
-            .navigationTitle("\(journey.wrapMountain) Trip")
+            .padding(.horizontal)
+            .animation(.linear(duration: 0.25), value: scrolled)
+            
+            List {
+                let groupList = journey.wrapGroupItems
+                let personalList = journey.wrapPersonalItems
+                let isGroup = selection == 0
+                
+                if isGroup {
+                    ForEach(groupList, id: \.self) {item in
+                        GroupItemCard(itemDetail: item)
+                    }
+                    .onDelete {indexSet in
+                        journey.removeFromGroupItems(groupList[indexSet.first ?? 0])
+                        try? moc.save()
+                    }
+                } else {
+                    ForEach(personalList, id: \.self) {item in
+                        PersonalItemCard(itemDetail: item)
+                    }
+                    .onDelete {indexSet in
+                        journey.removeFromPersonalItems(personalList[indexSet.first ?? 0])
+                        try? moc.save()
+                    }
+                }
+            }.listStyle(.plain)
+            
+        }
+        .navigationTitle("\(journey.wrapMountain) Trip")
         
     }
 }

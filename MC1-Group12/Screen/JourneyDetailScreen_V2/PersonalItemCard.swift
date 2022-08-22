@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PersonalItemCard: View {
-    var itemDetail: PersonalItemDB
+    @ObservedObject var itemDetail: PersonalItemDB
+    
+    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         HStack {
@@ -24,11 +26,15 @@ struct PersonalItemCard: View {
             .padding(.vertical, 8)
             .padding(.trailing, 16)
             Spacer()
-            Button(action: {}) {
-                Label("Add Item", systemImage: itemDetail.isDone ? "checkmark.square.fill" : "square.fill").labelStyle(.iconOnly)
-                    .font(.custom("", size: 35))
-            }.foregroundColor(itemDetail.isDone ? Color.orange : Color.emptyCheckmark)
-            .padding(5)
+            Image(systemName: itemDetail.isDone ? "checkmark.square.fill" : "square.fill")
+                .font(.custom("", size: 35))
+                .foregroundColor(itemDetail.isDone ? Color.orange : Color.emptyCheckmark)
+                .padding(5)
+                .animation(.linear, value: itemDetail.isDone)
+                .onTapGesture {
+                    itemDetail.isDone.toggle()
+                    try? moc.save()
+                }
         }
         
     }

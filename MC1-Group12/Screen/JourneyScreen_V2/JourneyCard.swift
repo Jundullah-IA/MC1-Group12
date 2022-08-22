@@ -39,19 +39,15 @@ struct JourneyCard: View {
                                 .foregroundColor(Color.red.opacity(0.3))
                         )
                 }
-                
-//                ProfilePic(name: journey.wrapMembers[0].getName(), colorCode: .indigo)
-                
+                    
                 HStack {
-                    if(journey.wrapMembers.count < 3) {
-                        ForEach(journey.wrapMembers) {pic in
-                            ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal].randomElement()!)
+                    ForEach(Array(journey.wrapMembers.prefix(3).enumerated()), id: \.element) {index, pic in
+                        ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal][(index + 1) % 3])
+                                .offset(x: index > 0 ? CGFloat(index * -12) : 0, y: 0)
+                                .zIndex(Double(journey.wrapMembers.count - index))
                         }
-                    } else {
-                        ProfilePic(name: journey.wrapMembers[0].getName(), colorCode: .indigo)
-                        ProfilePic(name: journey.wrapMembers[1].getName(), colorCode: .cyan)
-                        ProfilePic(name: journey.wrapMembers[2].getName(), colorCode: .mint)
-                        ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray)
+                    if (journey.wrapMembers.count > 3) {
+                        ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray).offset(x: -45)
                     }
                 }
                 
@@ -102,9 +98,9 @@ struct JourneyCard: View {
     }
     
 }
-
-struct JourneyCard_Previews: PreviewProvider {
-    static var previews: some View {
-        JourneyCard()
-    }
-}
+//
+//struct JourneyCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        JourneyCard()
+//    }
+//}

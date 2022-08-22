@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GroupItemDB" representedClassName="GroupItemDB" syncable="YES">
+        <attribute name="isDone" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="journey" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journey" inverseName="groupItems" inverseEntity="Journey"/>
+        <relationship name="pic" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="groupItems" inverseEntity="User"/>
+    </entity>
+    <entity name="Journey" representedClassName="Journey" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="journeyID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mountain" optional="YES" attributeType="String"/>
+        <relationship name="groupItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroupItemDB" inverseName="journey" inverseEntity="GroupItemDB"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="journeys" inverseEntity="User"/>
+        <relationship name="personalItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PersonalItemDB" inverseName="journey" inverseEntity="PersonalItemDB"/>
+    </entity>
+    <entity name="PersonalItemDB" representedClassName="PersonalItemDB" syncable="YES">
+        <attribute name="isDone" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="journey" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journey" inverseName="personalItems" inverseEntity="Journey"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="groupItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroupItemDB" inverseName="pic" inverseEntity="GroupItemDB"/>
+        <relationship name="journeys" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journey" inverseName="members" inverseEntity="Journey"/>
+    </entity>
+    <elements>
+        <element name="GroupItemDB" positionX="408.1953125" positionY="94.40625" width="128" height="134"/>
+        <element name="Journey" positionX="-105.5625" positionY="-137.28515625" width="128" height="134"/>
+        <element name="PersonalItemDB" positionX="106.86328125" positionY="33.16796875" width="128" height="119"/>
+        <element name="User" positionX="-61.765625" positionY="175.45703125" width="128" height="89"/>
+    </elements>
+</model>

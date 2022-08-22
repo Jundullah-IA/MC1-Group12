@@ -19,3 +19,13 @@ func formatDate(_ date: Date) -> String {
     formatter.dateFormat = "EEEE, d MMM yyyy"
     return formatter.string(from: date)
 }
+//
+//extension Color {
+//    static var random: Color {
+//        return Color(
+//            red: .random(in: 0...1),
+//            green: .random(in: 0...1),
+//            blue: .random(in: 0...1)
+//        )
+//    }
+//}

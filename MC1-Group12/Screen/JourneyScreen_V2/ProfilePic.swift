@@ -19,9 +19,9 @@ struct ProfilePic: View {
             .background(
                 Circle()
                     .fill(colorCode)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 25, height: 25)
             )
-            .frame(width: 30, height: 30)
+            .frame(width: 25, height: 25)
     }
 }
 
