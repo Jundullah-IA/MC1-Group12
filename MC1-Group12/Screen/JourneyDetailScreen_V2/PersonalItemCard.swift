@@ -16,11 +16,10 @@ struct PersonalItemCard: View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
                 HStack {
-                    Text("\(itemDetail.wrapName)").font(.title3).fontWeight(.bold)
+                    Text("\(itemDetail.wrapName)").font(.headline).fontWeight(.bold)
                     Spacer()
                     Text("\(itemDetail.total)").font(.footnote)
                 }
-                Divider()
                 Text("\(itemDetail.wrapNote)").font(.caption)
             }
             .padding(.vertical, 8)

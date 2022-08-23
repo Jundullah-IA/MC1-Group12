@@ -13,6 +13,10 @@ struct JourneyDetailScreen: View {
     @ObservedObject var journey: Journey = Journey()
     @Environment(\.managedObjectContext) var moc
     
+    @State var showOptions: Bool = false
+    @State private var selectedGroupItem: GroupItemDB? = nil
+    @State private var selectedPersonalItem: PersonalItemDB? = nil
+    
     let items: [String] =
     [
         "Group Logistics",
@@ -39,7 +43,10 @@ struct JourneyDetailScreen: View {
                     
                     Spacer()
                     
-                    Text("14045").font(.custom("", size: 38)).foregroundColor(.darkGreen).tracking(5)
+                    Text("14045")
+                        .font(.custom("", size: 38))
+                        .foregroundColor(.darkGreen)
+                        .tracking(5)
                     
                     Spacer()
                     
@@ -47,9 +54,9 @@ struct JourneyDetailScreen: View {
                         HStack {
                             ForEach(Array(journey.wrapMembers.prefix(3).enumerated()), id: \.element) {index, pic in
                                 ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal][(index + 1) % 3])
-                                        .offset(x: index > 0 ? CGFloat(index * -12) : 0, y: 0)
-                                        .zIndex(Double(journey.wrapMembers.count - index))
-                                }
+                                    .offset(x: index > 0 ? CGFloat(index * -12) : 0, y: 0)
+                                    .zIndex(Double(journey.wrapMembers.count - index))
+                            }
                             if (journey.wrapMembers.count > 3) {
                                 ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray).offset(x: -45)
                             }
@@ -71,6 +78,9 @@ struct JourneyDetailScreen: View {
     }
     
     var body: some View {
+        let groupList = journey.wrapGroupItems
+        let personalList = journey.wrapPersonalItems
+        let isGroup = selection == 0
         
         VStack {
             VStack {
@@ -84,30 +94,65 @@ struct JourneyDetailScreen: View {
             .animation(.linear(duration: 0.25), value: scrolled)
             
             List {
-                let groupList = journey.wrapGroupItems
-                let personalList = journey.wrapPersonalItems
-                let isGroup = selection == 0
-                
                 if isGroup {
                     ForEach(groupList, id: \.self) {item in
                         GroupItemCard(itemDetail: item)
+                            .onTapGesture {
+                                selectedGroupItem = item
+                            }
                     }
                     .onDelete {indexSet in
                         journey.removeFromGroupItems(groupList[indexSet.first ?? 0])
                         try? moc.save()
                     }
+                    
                 } else {
                     ForEach(personalList, id: \.self) {item in
                         PersonalItemCard(itemDetail: item)
+                            .onTapGesture {
+                                selectedPersonalItem = item
+                            }
                     }
                     .onDelete {indexSet in
                         journey.removeFromPersonalItems(personalList[indexSet.first ?? 0])
                         try? moc.save()
                     }
                 }
-            }.listStyle(.plain)
-            
+            }
+            .listStyle(.plain)
+            .sheet(item: $selectedGroupItem) {item in
+                ItemDetailFormV2(journey: journey, logisticType: .group, groupItem: item)
+            }
+            .sheet(item: $selectedPersonalItem) {item in
+                ItemDetailFormV2(journey: journey, logisticType: .personal, personalItem: item)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Button("Add New Item", action: {})
+                        Button {
+                            
+                        } label: {
+                            Label("Add", systemImage: "add")
+                        }
+
+                        Divider()
+                        Menu("Sort By") {
+                            Button("Created Date", action: {})
+                            Button("Adjust Order", action: {})
+                            Button("Cancel", action: {})
+                        }
+                        Divider()
+                        Button("Edit Trip", action: {})
+                        Button("Leave Trip", action: {})
+                        Button("Delete Trip", role: .destructive, action: {})
+                    } label: {
+                        Label("Options", systemImage: "ellipsis.circle")
+                    }
+                }
+            }
         }
+        
         .navigationTitle("\(journey.wrapMountain) Trip")
         
     }

@@ -37,6 +37,7 @@
 		0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E118AD328AF3CA4004BC185 /* CustomSegmentedControl.swift */; };
 		0E118AD628AF79CA004BC185 /* GroupItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E118AD528AF79CA004BC185 /* GroupItemCard.swift */; };
 		0E36A7C128B26B1E00A70566 /* PersonalItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */; };
+		0E36A7C828B35F6000A70566 /* ItemDetailFormV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36A7C728B35F6000A70566 /* ItemDetailFormV2.swift */; };
 		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
 		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
 		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
@@ -88,6 +89,7 @@
 		0E118AD528AF79CA004BC185 /* GroupItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemCard.swift; sourceTree = "<group>"; };
 		0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalItemCard.swift; sourceTree = "<group>"; };
 		0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata2.xcdatamodel; sourceTree = "<group>"; };
+		0E36A7C728B35F6000A70566 /* ItemDetailFormV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailFormV2.swift; sourceTree = "<group>"; };
 		0E67E024282FFFEE00829F52 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
 		0E67E02828300E8900829F52 /* JourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyList.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				0814729B282C08070092BFB3 /* HikingDetailForm.swift */,
 				08A923C4282E4A5900862E8A /* ItemDetailForm.swift */,
 				08F916E9282D09A400463F69 /* TestFormsFile.swift */,
+				0E36A7C728B35F6000A70566 /* ItemDetailFormV2.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				08993EFB289AB8150082ADFD /* User+CoreDataClass.swift in Sources */,
 				08993EF5289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift in Sources */,
 				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,
+				0E36A7C828B35F6000A70566 /* ItemDetailFormV2.swift in Sources */,
 				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
 				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
 				08993EF6289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift in Sources */,
@@ -624,7 +628,7 @@
 				0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */,
 				0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */,
 			);
-			currentVersion = 0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */;
+			currentVersion = 0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */;
 			path = coredata.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -13,34 +13,34 @@ struct GroupItemCard: View {
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 5) {
-                HStack {
-                    Image(systemName: "plus.circle").font(.title3).foregroundColor(.red)
-                    Spacer()
+        Group {
+            HStack {
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack {
+                        Image(systemName: "plus.circle").font(.title3).foregroundColor(.red)
+                        Spacer()
+                    }
+                    HStack {
+                        Text("\(itemDetail.wrapName)").font(.headline).fontWeight(.bold)
+                        Spacer()
+                        Text("x\(itemDetail.total)").font(.footnote)
+                    }
+                    Text("\(itemDetail.wrapNote)").font(.caption)
                 }
-                HStack {
-                    Text("\(itemDetail.wrapName)").font(.title3).fontWeight(.bold)
-                    Spacer()
-                    Text("x\(itemDetail.total)").font(.footnote)
-                }
-                Divider()
-                Text("\(itemDetail.wrapNote)").font(.caption)
+                .padding(.vertical, 8)
+                .padding(.trailing, 16)
+                Spacer()
+                Image(systemName: itemDetail.isDone ? "checkmark.square.fill" : "square.fill")
+                    .font(.custom("", size: 35))
+                    .foregroundColor(itemDetail.isDone ? Color.orange : Color.emptyCheckmark)
+                    .padding(5)
+                    .animation(.linear, value: itemDetail.isDone)
+                    .onTapGesture {
+                        itemDetail.isDone.toggle()
+                        try? moc.save()
+                    }
             }
-            .padding(.vertical, 8)
-            .padding(.trailing, 16)
-            Spacer()
-            Image(systemName: itemDetail.isDone ? "checkmark.square.fill" : "square.fill")
-                .font(.custom("", size: 35))
-                .foregroundColor(itemDetail.isDone ? Color.orange : Color.emptyCheckmark)
-                .padding(5)
-                .animation(.linear, value: itemDetail.isDone)
-                .onTapGesture {
-                    itemDetail.isDone.toggle()
-                    try? moc.save()
-                }
         }
-        
     }
 }
 //
