@@ -23,7 +23,7 @@ struct MountainInformationScreen: View {
         NavigationView {
             ZStack {
                 Rectangle()
-                    .fill(Color.white)
+                    .fill(Color("bg"))
                     .edgesIgnoringSafeArea(.all)
                 
                 //### Layer 1 CITY/PROVINCE + MDPL ###
@@ -119,6 +119,7 @@ struct MountainInformationScreen: View {
                 
                 
                 //### Layer 4 FUN FACT ###
+                ScrollView(.horizontal) {
                 VStack (alignment: .leading, spacing: 10) {
                     
                     Text("Safety Fun Fact")
@@ -137,8 +138,9 @@ struct MountainInformationScreen: View {
                    
                     
                 }
-                .padding(EdgeInsets(top: 300, leading: 18, bottom: 0, trailing: 18))
+                .padding(EdgeInsets(top: 430, leading: 18, bottom: 0, trailing: 18))
                 Spacer()
+                }
                 
                 
                 //### Layer 5 CREATE JOURNEY BUTTON ###
