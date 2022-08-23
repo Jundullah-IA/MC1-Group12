@@ -19,60 +19,62 @@ struct MountCard: View {
     var body: some View {
 //        let mountain: Mountain = hikeDetail?.mountain ?? mountain
         
-        NavigationLink(destination: {
-//            if hikeDetail != nil {
-//                HikingDetailScreen(hikeDetail: hikeDetail!)
-//            } else {
-                MountainDetailScreen(mountain: mountain)
-//            }
-        }) {
-            ZStack(alignment: .bottom) {
-                
-                Image(mountain.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: cardHeight)
-                    .overlay(Rectangle().fill(LinearGradient(
-                        colors: [.clear, .black.opacity(0.4)],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                
-                HStack(alignment: .bottom) {
-                    VStack(alignment: .leading) {
-                        VStack(alignment: .leading){
-                            Text(mountain.name)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                            Text(mountain.location)
-                                .font(.system(size: 16, weight: .regular, design: .serif))
-                                .italic()
-                        }
-                        if planCard ?? false {
-                            Spacer()
-                            HStack{
-//                                Image(systemName: "calendar")
-//                                Text(dateToString(hikeDetail?.date ?? Date.now))
-//                                    .font(.subheadline)
-                            }
-                        }
+        ZStack(alignment: .bottom) {
+            
+            Image(mountain.image)
+                .resizable()
+                .scaledToFill()
+                .frame(height: cardHeight)
+                .overlay(Rectangle().fill(LinearGradient(
+                    colors: [.clear, .black.opacity(0.4)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            
+            HStack(alignment: .bottom) {
+                VStack(alignment: .leading) {
+                    VStack(alignment: .leading){
+                        Text(mountain.name)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Text(mountain.location)
+                            .font(.system(size: 16, weight: .regular, design: .serif))
+                            .italic()
                     }
-                    Spacer()
-                    HStack{
-                        Image(systemName: "triangle.tophalf.filled")
-                        Text("\(mountain.height) mdpl")
-                            .font(.subheadline)
+                    if planCard ?? false {
+                        Spacer()
+                        HStack{
+                            //                                Image(systemName: "calendar")
+                            //                                Text(dateToString(hikeDetail?.date ?? Date.now))
+                            //                                    .font(.subheadline)
+                        }
                     }
                 }
-                .foregroundColor(.white)
-                .padding()
-                
+                Spacer()
+                HStack{
+                    Image(systemName: "triangle.tophalf.filled")
+                    Text("\(mountain.height) mdpl")
+                        .font(.subheadline)
+                }
             }
-            .frame(height: cardHeight)
-            .padding(.horizontal)
+            .foregroundColor(.white)
+            .padding()
             
         }
+        .frame(height: cardHeight)
+        .padding(.horizontal)
+        
+//        NavigationLink(destination: {
+////            if hikeDetail != nil {
+////                HikingDetailScreen(hikeDetail: hikeDetail!)
+////            } else {
+//                MountainDetailScreen(mountain: mountain)
+////            }
+//        }) {
+//
+//
+//        }
     }
 }
 

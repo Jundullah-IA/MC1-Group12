@@ -8,7 +8,17 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct MountainInformationScreen: View {
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var showSheet: Bool = false
+    
+    var mountain: Mountain
+    
+//    init(mountain: Mountain) {
+//        self.mountain = mountain
+//    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,9 +29,9 @@ struct SwiftUIView: View {
                 //### Layer 1 CITY/PROVINCE + MDPL ###
                 VStack {
                     HStack(spacing: 200) {
-                        Text("Lombok")
+                        Text(mountain.name)
                             .font(.system(size: 18, weight: .light, design: .default))
-                        Text("3000mdpl")
+                        Text("\(mountain.height)mdpl")
                             .font(.system(size: 18, weight: .light, design: .default))
                     }
                     .padding(EdgeInsets(top: 5, leading: 18, bottom: 478, trailing: 18))
@@ -29,7 +39,7 @@ struct SwiftUIView: View {
                 }
                 
                 //### Layer 2 MOUNTAIN IMAGE ###
-                Image("agung")
+                Image(mountain.image)
                     .resizable()
                     .cornerRadius(20)
                     .frame(width: 350, height: 180, alignment: .center)
@@ -39,20 +49,29 @@ struct SwiftUIView: View {
                 VStack (alignment: .center, spacing: 10) {
                     HStack (alignment: .center, spacing: 40){
                         VStack(spacing: 10) {
-                            Image(systemName: "person.3.fill")
-                                .font(.system(size: 22, weight: .light, design: .default))
+                            HStack {
+                                Image(systemName: "person.3.fill")
+                                    .font(.system(size: 22, weight: .light, design: .default))
+                                Text("4").font(.title3)
+                            }
                             Text("Min Hikers")
                                 .font(.system(size: 14, weight: .light, design: .default))
                         }
                         VStack(spacing: 10) {
-                            Image(systemName: "hourglass")
-                                .font(.system(size: 22, weight: .light, design: .default))
+                            HStack {
+                                Image(systemName: "hourglass")
+                                    .font(.system(size: 22, weight: .light, design: .default))
+                                Text("3D2N").font(.title3)
+                            }
                             Text("Max Hike Duration")
                                 .font(.system(size: 14, weight: .light, design: .default))
                         }
                         VStack(spacing: 10) {
-                            Image(systemName: "capsule.portrait.fill")
-                                .font(.system(size: 22, weight: .light, design: .default))
+                            HStack {
+                                Image(systemName: "capsule.portrait.fill")
+                                    .font(.system(size: 22, weight: .light, design: .default))
+                                Text("Open").font(.title3)
+                            }
                             Text("For Hiking")
                                 .font(.system(size: 14, weight: .light, design: .default))
                         }
@@ -63,31 +82,39 @@ struct SwiftUIView: View {
                     .cornerRadius(20)
                     .padding(EdgeInsets(top: 10, leading: 18, bottom: 10, trailing: 18))
                     .modifier(ShadowModifier())
+                    .foregroundColor(Color.darkGreen)
                     
                     //### Layer 3.2 Slight Mountain Information  ###
                     HStack (alignment: .center, spacing: 80){
                         VStack(spacing: 10) {
-                            Image(systemName: "tag")
-                                .font(.system(size: 22, weight: .light, design: .default))
+                            HStack {
+                                Image(systemName: "tag")
+                                    .font(.system(size: 22, weight: .light, design: .default))
+                                Text("Rp 100,00").font(.title3)
+                            }
                             Text("Locals")
                         }
-                        .frame(width: 120, height: 80)
+                        .frame(width: 150, height: 80)
                         .background(Color.white)
                         .cornerRadius(20)
                         .modifier(ShadowModifier())
                         
                         VStack(spacing: 10) {
-                            Image(systemName: "tag.fill")
-                                .font(.system(size: 22, weight: .light, design: .default))
+                            HStack {
+                                Image(systemName: "tag.fill")
+                                    .font(.system(size: 22, weight: .light, design: .default))
+                                Text("Rp 100,00").font(.title3)
+                            }
                             Text("Tourist")
                         }
-                        .frame(width: 120, height: 80)
+                        .frame(width: 150, height: 80)
                         .background(Color.white)
                         .cornerRadius(20)
                         .modifier(ShadowModifier())
                         
                     }
                     .padding(EdgeInsets(top: 0, leading: 18, bottom: 50, trailing: 18))
+                    .foregroundColor(Color.darkGreen)
                 }
                 
                 
@@ -118,7 +145,9 @@ struct SwiftUIView: View {
                 Button {
                     print("test")
                 } label : {
-                    Text ("Create Journey")
+                    Button ("Create Journey") {
+                        showSheet = true
+                    }
                         .foregroundColor(Color("button-text-color"))
                         .font(.system(size: 16, weight: .semibold, design: .default))
                         .frame(width: 280, height: 50, alignment: .center)
@@ -129,9 +158,20 @@ struct SwiftUIView: View {
                 Spacer()
                 
             } .padding(.top)
-                .navigationTitle("Semeru")
+                .navigationTitle(mountain.name)
                 .navigationBarTitleDisplayMode(.automatic)
+                .sheet(isPresented: $showSheet, onDismiss: {showSheet = false}) { HikingDetailForm(mountain: mountain) }
             
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            Image(systemName: "chevron.left")
+                            Text("Mountains")
+                        })
+                    }
+                }
         }
         
         
@@ -148,8 +188,8 @@ struct ShadowModifier: ViewModifier {
 }
 
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIView()
-    }
-}
+//struct SwiftUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SwiftUIView(mountain: MountainList[0])
+//    }
+//}
