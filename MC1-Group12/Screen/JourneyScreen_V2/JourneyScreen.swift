@@ -9,17 +9,19 @@ import SwiftUI
 
 struct JourneyScreen: View {
     @FetchRequest(sortDescriptors: []) private var journeySet: FetchedResults<Journey>
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 if(journeySet.count > 0) {
                     ScrollView {
                         ForEach(journeySet) {journey in
-                            JourneyCard(journey: journey)
+                            NavigationLink(destination: JourneyDetailScreen(journey: journey)) {
+                                JourneyCard(journey: journey)
+                            }
                         }
                     }
-                    .background( Color.background)
+                    .background(Color.background)
                 } else {
                     VStack {
                         VStack {

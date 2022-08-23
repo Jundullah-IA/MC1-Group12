@@ -34,9 +34,14 @@
 		08D68C612835D7C10021EF0E /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C602835D7C10021EF0E /* Mountain.swift */; };
 		08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D68C62283616D80021EF0E /* HikingJourney.swift */; };
 		08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F916E9282D09A400463F69 /* TestFormsFile.swift */; };
+		0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E118AD328AF3CA4004BC185 /* CustomSegmentedControl.swift */; };
+		0E118AD628AF79CA004BC185 /* GroupItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E118AD528AF79CA004BC185 /* GroupItemCard.swift */; };
+		0E36A7C128B26B1E00A70566 /* PersonalItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */; };
+		0E36A7C828B35F6000A70566 /* ItemDetailFormV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36A7C728B35F6000A70566 /* ItemDetailFormV2.swift */; };
 		0E67E025282FFFEE00829F52 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E024282FFFEE00829F52 /* Colors.swift */; };
 		0E67E0272830014B00829F52 /* MountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E0262830014B00829F52 /* MountCard.swift */; };
 		0E67E02928300E8900829F52 /* JourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67E02828300E8900829F52 /* JourneyList.swift */; };
+		0E6F191C28AE4D15006E910D /* JourneyDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F191B28AE4D15006E910D /* JourneyDetailScreen.swift */; };
 		0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B31E2834AEB900D052A0 /* Carousel.swift */; };
 		0E75B3412834DD1100D052A0 /* coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */; };
 		0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E75B3422834DD1B00D052A0 /* Persistence.swift */; };
@@ -80,9 +85,15 @@
 		08D68C602835D7C10021EF0E /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 		08D68C62283616D80021EF0E /* HikingJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikingJourney.swift; sourceTree = "<group>"; };
 		08F916E9282D09A400463F69 /* TestFormsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFormsFile.swift; sourceTree = "<group>"; };
+		0E118AD328AF3CA4004BC185 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		0E118AD528AF79CA004BC185 /* GroupItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemCard.swift; sourceTree = "<group>"; };
+		0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalItemCard.swift; sourceTree = "<group>"; };
+		0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata2.xcdatamodel; sourceTree = "<group>"; };
+		0E36A7C728B35F6000A70566 /* ItemDetailFormV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailFormV2.swift; sourceTree = "<group>"; };
 		0E67E024282FFFEE00829F52 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0E67E0262830014B00829F52 /* MountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountCard.swift; sourceTree = "<group>"; };
 		0E67E02828300E8900829F52 /* JourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyList.swift; sourceTree = "<group>"; };
+		0E6F191B28AE4D15006E910D /* JourneyDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyDetailScreen.swift; sourceTree = "<group>"; };
 		0E75B31E2834AEB900D052A0 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata.xcdatamodel; sourceTree = "<group>"; };
 		0E75B3422834DD1B00D052A0 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -122,6 +133,7 @@
 				0814729B282C08070092BFB3 /* HikingDetailForm.swift */,
 				08A923C4282E4A5900862E8A /* ItemDetailForm.swift */,
 				08F916E9282D09A400463F69 /* TestFormsFile.swift */,
+				0E36A7C728B35F6000A70566 /* ItemDetailFormV2.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -213,6 +225,17 @@
 			path = JourneyScreen_V2;
 			sourceTree = "<group>";
 		};
+		0E6F191A28AE4CD8006E910D /* JourneyDetailScreen_V2 */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F191B28AE4D15006E910D /* JourneyDetailScreen.swift */,
+				0E118AD528AF79CA004BC185 /* GroupItemCard.swift */,
+				0E118AD328AF3CA4004BC185 /* CustomSegmentedControl.swift */,
+				0E36A7C028B26B1E00A70566 /* PersonalItemCard.swift */,
+			);
+			path = JourneyDetailScreen_V2;
+			sourceTree = "<group>";
+		};
 		0E75B3442834E22000D052A0 /* HikingDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +250,7 @@
 		0E777EB1282BFDE20090B74D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0E6F191A28AE4CD8006E910D /* JourneyDetailScreen_V2 */,
 				080EB59628AE31DA00007F39 /* ProfileScreen_V2 */,
 				08B41EFE28A8DBDE00EB1D45 /* JourneyScreen_V2 */,
 				D1674B1E28AE40FE003FAFD1 /* MountainInformation_V2 */,
@@ -351,6 +375,7 @@
 			files = (
 				080EB59C28AE57D300007F39 /* ProfilePic.swift in Sources */,
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */,
 				08993EF8289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift in Sources */,
 				08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */,
 				0804006028368CA100BC43A2 /* MountainEssentialView.swift in Sources */,
@@ -360,9 +385,11 @@
 				0E67E0272830014B00829F52 /* MountCard.swift in Sources */,
 				0E75B3432834DD1B00D052A0 /* Persistence.swift in Sources */,
 				0E75B31F2834AEB900D052A0 /* Carousel.swift in Sources */,
+				0E6F191C28AE4D15006E910D /* JourneyDetailScreen.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
 				08993EF9289AB8150082ADFD /* Journey+CoreDataClass.swift in Sources */,
 				0EBE72722837D58F00ECC55A /* Func.swift in Sources */,
+				0E36A7C128B26B1E00A70566 /* PersonalItemCard.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
 				0804005E28368A4D00BC43A2 /* MountainInformation.swift in Sources */,
 				08993EF7289AB8150082ADFD /* GroupItemDB+CoreDataClass.swift in Sources */,
@@ -370,6 +397,7 @@
 				08040062283691BA00BC43A2 /* MountainRequirement.swift in Sources */,
 				0E75B3462834E23C00D052A0 /* HikingDetailScreen.swift in Sources */,
 				08B41F0228A8E29A00EB1D45 /* JourneyCard.swift in Sources */,
+				0E118AD628AF79CA004BC185 /* GroupItemCard.swift in Sources */,
 				08D68C612835D7C10021EF0E /* Mountain.swift in Sources */,
 				08B41F0028A8DCCF00EB1D45 /* JourneyScreen.swift in Sources */,
 				08F916EA282D09A400463F69 /* TestFormsFile.swift in Sources */,
@@ -377,6 +405,7 @@
 				08993EFB289AB8150082ADFD /* User+CoreDataClass.swift in Sources */,
 				08993EF5289AB8150082ADFD /* PersonalItemDB+CoreDataClass.swift in Sources */,
 				08A923C3282E0B9900862E8A /* MountainDetailScreen.swift in Sources */,
+				0E36A7C828B35F6000A70566 /* ItemDetailFormV2.swift in Sources */,
 				08A923C5282E4A5900862E8A /* ItemDetailForm.swift in Sources */,
 				0E75B34A283502C800D052A0 /* HikingCard.swift in Sources */,
 				08993EF6289AB8150082ADFD /* PersonalItemDB+CoreDataProperties.swift in Sources */,
@@ -515,7 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1-Group12/Preview Content\"";
-				DEVELOPMENT_TEAM = B699U74AW4;
+				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -546,7 +575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1-Group12/Preview Content\"";
-				DEVELOPMENT_TEAM = B699U74AW4;
+				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -596,6 +625,7 @@
 		0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0E36A7C628B27D8A00A70566 /* coredata2.xcdatamodel */,
 				0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */,
 			);
 			currentVersion = 0E75B3402834DD1100D052A0 /* coredata.xcdatamodel */;

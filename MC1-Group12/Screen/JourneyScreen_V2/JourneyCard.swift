@@ -19,7 +19,7 @@ struct JourneyCard: View {
             VStack(alignment: .leading) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("\(formatDate(inDate: journey.wrapDate))")
+                        Text("\(formatDate(journey.wrapDate))")
                             .foregroundColor(Color.accentColor)
                         .font(.footnote)
                         
@@ -39,19 +39,15 @@ struct JourneyCard: View {
                                 .foregroundColor(Color.red.opacity(0.3))
                         )
                 }
-                
-//                ProfilePic(name: journey.wrapMembers[0].getName(), colorCode: .indigo)
-                
+                    
                 HStack {
-                    if(journey.wrapMembers.count < 3) {
-                        ForEach(journey.wrapMembers) {pic in
-                            ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal].randomElement()!)
+                    ForEach(Array(journey.wrapMembers.prefix(3).enumerated()), id: \.element) {index, pic in
+                        ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal][(index + 1) % 3])
+                                .offset(x: index > 0 ? CGFloat(index * -12) : 0, y: 0)
+                                .zIndex(Double(journey.wrapMembers.count - index))
                         }
-                    } else {
-                        ProfilePic(name: journey.wrapMembers[0].getName(), colorCode: .indigo)
-                        ProfilePic(name: journey.wrapMembers[1].getName(), colorCode: .cyan)
-                        ProfilePic(name: journey.wrapMembers[2].getName(), colorCode: .mint)
-                        ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray)
+                    if (journey.wrapMembers.count > 3) {
+                        ProfilePic(name: "+\(journey.wrapMembers.count - 3)", colorCode: .gray).offset(x: -45)
                     }
                 }
                 
@@ -101,15 +97,10 @@ struct JourneyCard: View {
         }.padding(.horizontal, 13).padding(.bottom, 9)
     }
     
-    func formatDate(inDate: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, d MMMM yyyy"
-        return formatter.string(from: inDate)
-    }
 }
-
-struct JourneyCard_Previews: PreviewProvider {
-    static var previews: some View {
-        JourneyCard()
-    }
-}
+//
+//struct JourneyCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        JourneyCard()
+//    }
+//}
