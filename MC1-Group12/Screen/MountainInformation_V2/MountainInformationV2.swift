@@ -85,7 +85,7 @@ struct MountainInformationScreen: View {
                     .foregroundColor(Color.darkGreen)
                     
                     //### Layer 3.2 Slight Mountain Information  ###
-                    HStack (alignment: .center, spacing: 80){
+                    HStack (alignment: .center, spacing: 50){
                         VStack(spacing: 10) {
                             HStack {
                                 Image(systemName: "tag")
@@ -126,7 +126,7 @@ struct MountainInformationScreen: View {
                         .font(.system(size: 19, weight: .bold))
                     
                     VStack (alignment: .leading, spacing: 10) {
-                        Text ("Title")
+                        Text (mountain.name)
                             .font(.system(size: 19, weight: .bold))
                         
                         Text ("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
@@ -134,7 +134,10 @@ struct MountainInformationScreen: View {
                     }
                     .frame(width: 350, height: 120)
                     .background(Color.white)
-                    .cornerRadius(10)
+                    .cornerRadius(8)
+                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 10))
+                    .modifier(ShadowModifier())
+                   
                    
                     
                 }
@@ -184,14 +187,14 @@ struct MountainInformationScreen: View {
 struct ShadowModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .shadow(color: Color ("shadow-light"), radius: 8, x: -8, y: -8)
-            .shadow(color: Color("shadow-dark"), radius: 8, x: 8, y: 8)
+            .shadow(color: Color ("shadow-light"), radius: 5, x: -4, y: -4)
+            .shadow(color: Color("empty-checkmark"), radius: 2, x: 4, y: 4)
     }
 }
 
 
-//struct SwiftUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwiftUIView(mountain: MountainList[0])
-//    }
-//}
+struct MountainInformationScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        MountainInformationScreen(mountain: MountainList[0])
+    }
+}

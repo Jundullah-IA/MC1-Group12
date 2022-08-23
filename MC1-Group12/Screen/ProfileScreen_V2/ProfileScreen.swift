@@ -114,8 +114,8 @@ struct ProfileScreen: View {
                         
                         
                     }
-                    .padding(EdgeInsets(top: 220, leading: 0, bottom: 0, trailing: 0))
-                }
+                    
+                }.padding(EdgeInsets(top: 235, leading: 0, bottom: 0, trailing: 0))
             }
         }
     }
