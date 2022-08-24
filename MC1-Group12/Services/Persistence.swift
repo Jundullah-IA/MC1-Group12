@@ -8,14 +8,18 @@
 import CoreData
 
 class DataController: ObservableObject {
-    let container = NSPersistentContainer(name: "coredata")
+    let container: NSPersistentCloudKitContainer
     
     init() {
+        container = NSPersistentCloudKitContainer(name: "coredata")
+        
         container.loadPersistentStores { description, error in
             if let error = error {
-                print("Core data erro to load: \(error.localizedDescription)")
+                print("Container load failed: \(error.localizedDescription)")
             }
         }
+        
+        container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
 

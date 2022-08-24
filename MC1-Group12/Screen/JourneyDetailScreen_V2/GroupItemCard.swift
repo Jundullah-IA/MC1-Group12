@@ -17,7 +17,20 @@ struct GroupItemCard: View {
             HStack {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
-                        Image(systemName: "plus.circle").font(.title3).foregroundColor(.red)
+                        if itemDetail.wrapPic.isEmpty {
+                            Image(systemName: "plus.circle").font(.title3).foregroundColor(.red)
+                        } else {
+                        HStack {
+                            ForEach(Array(itemDetail.wrapPic.prefix(3).enumerated()), id: \.element) {index, pic in
+                                ProfilePic(name: pic.wrapName, colorCode: [.indigo, .mint, .cyan, .teal][(index + 1) % 3])
+//                                        .offset(x: index > 0 ? CGFloat(index * -12) : 0, y: 0)
+//                                        .zIndex(Double(itemDetail.pic.count - index))
+                                }
+                            if (itemDetail.wrapPic.count > 3) {
+                                ProfilePic(name: "+\(itemDetail.wrapPic.count - 3)", colorCode: .gray)
+                            }
+                        }
+                        }
                         Spacer()
                     }
                     HStack {

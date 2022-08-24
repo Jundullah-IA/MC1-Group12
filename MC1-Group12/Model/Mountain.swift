@@ -1780,7 +1780,7 @@ let MountainList: [Mountain] = [
         name: "Ungaran",
         location: "Semarang, Indonesia",
         height: 2050,
-        image: "unggaran",
+        image: "ungaran",
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
