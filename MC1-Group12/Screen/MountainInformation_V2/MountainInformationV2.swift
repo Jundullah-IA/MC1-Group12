@@ -52,7 +52,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "person.3.fill")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("4").font(.title3)
+                                Text("\(mountain.minimumGroupHikers)").font(.title3)
                             }
                             Text("Min Hikers")
                                 .font(.system(size: 14, weight: .light, design: .default))
@@ -61,7 +61,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "hourglass")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("3D2N").font(.title3)
+                                Text("\(mountain.hikingDuration)").font(.title3)
                             }
                             Text("Max Hike Duration")
                                 .font(.system(size: 14, weight: .light, design: .default))
@@ -70,7 +70,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "capsule.portrait.fill")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("Open").font(.title3)
+                                Text("\(mountain.statusForHiking)").font(.title3)
                             }
                             Text("For Hiking")
                                 .font(.system(size: 14, weight: .light, design: .default))
@@ -90,7 +90,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "tag")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("Rp 100,00").font(.title3)
+                                Text("\(mountain.ticketWeekend)").font(.title3)
                             }
                             Text("Weekend")
                         }
@@ -103,7 +103,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "tag.fill")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("Rp 100,00").font(.title3)
+                                Text("\(mountain.ticketWeekdays)").font(.title3)
                             }
                             Text("Weekdays")
                         }
@@ -119,13 +119,15 @@ struct MountainInformationScreen: View {
                 
                 
                 //### Layer 4 FUN FACT ###
-                ScrollView(.horizontal) {
+                
                 VStack (alignment: .leading, spacing: 10) {
                     
                     Text("Safety Fun Fact")
                         .font(.system(size: 19, weight: .bold))
                     
-                    VStack (alignment: .leading, spacing: 10) {
+                    ScrollView(.horizontal) {
+                    
+                        VStack (alignment: .leading, spacing: 10) {
                         Text (mountain.name)
                             .font(.system(size: 19, weight: .bold))
                         
@@ -141,9 +143,9 @@ struct MountainInformationScreen: View {
                    
                     
                 }
-                .padding(EdgeInsets(top: 430, leading: 18, bottom: 0, trailing: 18))
+                
+                }.padding(EdgeInsets(top: 350, leading: 18, bottom: 0, trailing: 18))
                 Spacer()
-                }
                 
                 
                 //### Layer 5 CREATE JOURNEY BUTTON ###
