@@ -92,7 +92,7 @@ struct MountainInformationScreen: View {
                                     .font(.system(size: 22, weight: .light, design: .default))
                                 Text("Rp 100,00").font(.title3)
                             }
-                            Text("Locals")
+                            Text("Weekend")
                         }
                         .frame(width: 150, height: 80)
                         .background(Color.white)
@@ -105,7 +105,7 @@ struct MountainInformationScreen: View {
                                     .font(.system(size: 22, weight: .light, design: .default))
                                 Text("Rp 100,00").font(.title3)
                             }
-                            Text("Tourist")
+                            Text("Weekdays")
                         }
                         .frame(width: 150, height: 80)
                         .background(Color.white)

@@ -67,7 +67,14 @@ struct ProfileScreen: View {
                     
                 }
                 .padding(EdgeInsets(top: 80, leading: 0, bottom: 648, trailing: 0))
+            
                 
+                VStack (alignment: .leading){
+                    Text ("Journey History")
+                        .font(.system(size: 24, weight: .bold, design: .default))
+                        .position(x: 120, y: 20)
+                        .frame(width: 243, height: 41)
+                    
                 //Grid View
                 ScrollView {
                     LazyVGrid (columns: columns, alignment: .center) {
@@ -115,7 +122,8 @@ struct ProfileScreen: View {
                         
                     }
                     
-                }.padding(EdgeInsets(top: 235, leading: 0, bottom: 0, trailing: 0))
+                }
+                }.padding(EdgeInsets(top: 220, leading: 0, bottom: 0, trailing: 0))
             }
         }
     }
