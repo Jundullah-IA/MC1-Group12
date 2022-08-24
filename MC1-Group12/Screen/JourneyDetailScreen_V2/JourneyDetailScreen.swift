@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum SortType: String, CaseIterable, Identifiable {
+    case completed, dateCreated
+    var id: Self { self }
+}
+
 struct JourneyDetailScreen: View {
     @State var selection: Int = 0
     @State var scrolled: Bool = false
@@ -14,6 +19,8 @@ struct JourneyDetailScreen: View {
     @Environment(\.managedObjectContext) var moc
     
     @State var showOptions: Bool = false
+    @State var showNewItemSheet: Bool = false
+    @State private var selectedSort: SortType = .dateCreated
     @State private var selectedGroupItem: GroupItemDB? = nil
     @State private var selectedPersonalItem: PersonalItemDB? = nil
     
@@ -28,7 +35,7 @@ struct JourneyDetailScreen: View {
     var viewJourneyBrief: some View {
         VStack {
             HStack {
-                Image("rinjani")
+                Image(journey.wrapMountain.lowercased().replacingOccurrences(of: " ", with: "_"))
                     .resizable()
                     .frame(maxWidth: halfWidth)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -120,32 +127,46 @@ struct JourneyDetailScreen: View {
                 }
             }
             .listStyle(.plain)
+            .sheet(isPresented: $showNewItemSheet) {
+                ItemDetailFormV2(formState: .new, journey: journey, logisticType: .group)
+            }
             .sheet(item: $selectedGroupItem) {item in
-                ItemDetailFormV2(journey: journey, logisticType: .group, groupItem: item)
+                ItemDetailFormV2(formState: .edit, journey: journey, logisticType: .group, groupItem: item)
             }
             .sheet(item: $selectedPersonalItem) {item in
-                ItemDetailFormV2(journey: journey, logisticType: .personal, personalItem: item)
+                ItemDetailFormV2(formState: .edit, journey: journey, logisticType: .personal, personalItem: item)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Button("Add New Item", action: {})
+                        Button {
+                            showNewItemSheet = true
+                        } label: {
+                            Label("Add New Item", systemImage: "plus")
+                        }
+                        Divider()
+                        Picker(selection: $selectedSort) {
+                            Text("Completed").tag(SortType.completed)
+                            Text("Date Created").tag(SortType.dateCreated)
+                        } label: {
+                            Label("Sort By", systemImage: "arrow.up.arrow.down")
+                        }.pickerStyle(MenuPickerStyle())
+                        Divider()
                         Button {
                             
                         } label: {
-                            Label("Add", systemImage: "add")
+                            Label("Edit Trip", systemImage: "pencil")
                         }
-
-                        Divider()
-                        Menu("Sort By") {
-                            Button("Created Date", action: {})
-                            Button("Adjust Order", action: {})
-                            Button("Cancel", action: {})
+                        Button {
+                            
+                        } label: {
+                            Label("Leave Trip", systemImage: "rectangle.portrait.and.arrow.right")
                         }
-                        Divider()
-                        Button("Edit Trip", action: {})
-                        Button("Leave Trip", action: {})
-                        Button("Delete Trip", role: .destructive, action: {})
+                        Button(role: .destructive) {
+                            
+                        } label: {
+                            Label("Delete Trip", systemImage: "trash")
+                        }
                     } label: {
                         Label("Options", systemImage: "ellipsis.circle")
                     }
