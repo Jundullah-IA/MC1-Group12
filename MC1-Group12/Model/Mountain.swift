@@ -13,10 +13,17 @@ struct Mountain: Identifiable {
     var location: String = ""
     var height: Int = 0
     var image: String = ""
+    var ticketLocal: String = ""
+    var ticketTourist: String = ""
+    var statusForHiking: String = ""
+    var hikingDuration: String = ""
+    var minimumGroupHikers: Int = 0
     var estimation: HikingEstimation?
     var informations: [MountainInfo]?
     var essentials: MountainEssential?
     var requirements: [MountainRequirement]?
+
+    
 }
 
 struct MountainInfo: Identifiable {
@@ -49,6 +56,11 @@ let MountainList: [Mountain] = [
         location: "Malang, Indonesia",
         height: 3676,
         image: "semeru",
+        ticketLocal: "Rp 20.000",
+        ticketTourist: "Rp 100.000",
+        statusForHiking: "Open",
+        hikingDuration: "",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "3D2N",
             distance: 16,

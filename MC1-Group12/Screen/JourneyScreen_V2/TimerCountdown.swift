@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerCountdown: View {
-    var toDate = Calendar.current.date(byAdding: .day, value : 8, to: Date())!
+    var toDate = Calendar.current.date(byAdding: .day, value : 5, to: Date())!
     
     var body: some View {
         VStack {
