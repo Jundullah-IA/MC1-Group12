@@ -51,7 +51,7 @@
 		0E777EB5282BFF030090B74D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB4282BFF030090B74D /* HomeScreen.swift */; };
 		0E777EBA282C107F0090B74D /* MountainListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E777EB9282C107F0090B74D /* MountainListScreen.swift */; };
 		0E9361DD28B5D57F00E5D991 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9361D728B5D07B00E5D991 /* CloudKit.framework */; };
-		0EBE72722837D58F00ECC55A /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Func.swift */; };
+		0EBE72722837D58F00ECC55A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Helper.swift */; };
 		0EE58D6628B693380037510A /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE58D6528B693380037510A /* Enum.swift */; };
 		D1674B2028AE41B2003FAFD1 /* MountainInformationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */; };
 		D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F8E428393A6B002354DD /* LaunchScreen.storyboard */; };
@@ -109,7 +109,7 @@
 		0E9361D528B5D07300E5D991 /* HiKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiKit.entitlements; sourceTree = "<group>"; };
 		0E9361D728B5D07B00E5D991 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0E9361D928B5D0BB00E5D991 /* HiKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiKit-Info.plist"; sourceTree = "<group>"; };
-		0EBE72712837D58F00ECC55A /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
+		0EBE72712837D58F00ECC55A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0EE58D6528B693380037510A /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInformationV2.swift; sourceTree = "<group>"; };
 		D175F8E428393A6B002354DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
-		08852CF52834E3C800C7DD59 /* Model */ = {
+		08852CF52834E3C800C7DD59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				083B5407289A7DBD00891BDF /* CoreDataModel */,
@@ -172,7 +172,7 @@
 				08D68C62283616D80021EF0E /* HikingJourney.swift */,
 				0EE58D6528B693380037510A /* Enum.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		08A089E4282B569E00B0AA72 = {
@@ -198,15 +198,15 @@
 		08A089EF282B569E00B0AA72 /* MC1-Group12 */ = {
 			isa = PBXGroup;
 			children = (
-				08852CF52834E3C800C7DD59 /* Model */,
-				0E777EB7282BFF930090B74D /* Services */,
 				0E777EB1282BFDE20090B74D /* View */,
+				08852CF52834E3C800C7DD59 /* Models */,
+				0EE58D6728B695B40037510A /* Utilities */,
+				0E777EB7282BFF930090B74D /* Services */,
 				08A089F0282B569E00B0AA72 /* MC1_Group12App.swift */,
 				08A089F2282B569E00B0AA72 /* ContentView.swift */,
 				08A089F4282B56A000B0AA72 /* Assets.xcassets */,
 				08A089F6282B56A000B0AA72 /* Preview Content */,
 				D175F8E428393A6B002354DD /* LaunchScreen.storyboard */,
-				D175F8E628393B27002354DD /* CongratulationScreen.swift */,
 			);
 			path = "MC1-Group12";
 			sourceTree = "<group>";
@@ -275,6 +275,7 @@
 				0E777EB8282C106A0090B74D /* MountainListScreen */,
 				0E75B3442834E22000D052A0 /* HikingDetailScreen */,
 				0E777EB3282BFE8F0090B74D /* HomeScreen */,
+				0EE58D6828B6965E0037510A /* CongratsScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,8 +296,6 @@
 			children = (
 				0E75B3422834DD1B00D052A0 /* Persistence.swift */,
 				0E75B33F2834DD1100D052A0 /* coredata.xcdatamodeld */,
-				0E67E024282FFFEE00829F52 /* Colors.swift */,
-				0EBE72712837D58F00ECC55A /* Func.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,6 +315,23 @@
 				0E9361D728B5D07B00E5D991 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0EE58D6728B695B40037510A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0E67E024282FFFEE00829F52 /* Colors.swift */,
+				0EBE72712837D58F00ECC55A /* Helper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0EE58D6828B6965E0037510A /* CongratsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D175F8E628393B27002354DD /* CongratulationScreen.swift */,
+			);
+			path = CongratsScreen;
 			sourceTree = "<group>";
 		};
 		D1674B1E28AE40FE003FAFD1 /* MountainInformation_V2 */ = {
@@ -415,7 +431,7 @@
 				0E6F191C28AE4D15006E910D /* JourneyDetailScreen.swift in Sources */,
 				0E67E02928300E8900829F52 /* JourneyList.swift in Sources */,
 				08993EF9289AB8150082ADFD /* Journey+CoreDataClass.swift in Sources */,
-				0EBE72722837D58F00ECC55A /* Func.swift in Sources */,
+				0EBE72722837D58F00ECC55A /* Helper.swift in Sources */,
 				0E36A7C128B26B1E00A70566 /* PersonalItemCard.swift in Sources */,
 				08A089F1282B569E00B0AA72 /* MC1_Group12App.swift in Sources */,
 				D1EE1B4028B5F876002A9D73 /* ProgressBarView.swift in Sources */,
