@@ -32,7 +32,7 @@ struct TimerView : View {
     var body: some View {
         Text(TimerFunction(from: setDate))
             .onAppear(perform: {self.timer
-                
+                print(timer)
             })
     }
     
