@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum SortType: String, CaseIterable, Identifiable {
-    case completed, dateCreated
-    var id: Self { self }
-}
-
 struct JourneyDetailScreen: View {
     @State var selection: Int = 0
     @State var scrolled: Bool = false

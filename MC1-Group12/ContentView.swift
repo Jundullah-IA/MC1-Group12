@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum Tabs: String, CaseIterable, Identifiable {
-    case home, mountains
-    var id: Self { self }
-}
-
 struct ContentView: View {
     @State private var selectedTab: Tabs = .home
     
