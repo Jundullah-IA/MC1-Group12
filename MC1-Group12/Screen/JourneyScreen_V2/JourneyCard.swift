@@ -16,7 +16,8 @@ struct JourneyCard: View {
                 .stroke(Color.black.opacity(0.5), lineWidth: 1)
                 .background(Color.white)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading)
+            {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("\(formatDate(journey.wrapDate))")
@@ -31,7 +32,7 @@ struct JourneyCard: View {
                     
                     Spacer()
                     
-                    Text("In 8d")
+                    TimerCountdown()
                         .padding(.vertical, 5)
                         .padding(.horizontal, 7)
                         .background(
@@ -51,56 +52,60 @@ struct JourneyCard: View {
                     }
                 }
                 
-                Text("Group progress")
-                    .foregroundColor(Color.darkGreen)
-                    .font(.body)
+//                Text("Group progress")
+//                    .foregroundColor(Color.darkGreen)
+//                    .font(.body)
                 
-                ZStack {
-                    ZStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.gray)
-                            .opacity(0.1)
-                        
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .frame(maxWidth: 70)
-                            .foregroundColor(Color.accentColor)
-                    }
-                    
-                    HStack {
-                        Text("45%")
-                    }
-                }
+                ProgressBarView(value: .constant(1))
                 
-                Text("Individual progress")
-                    .foregroundColor(Color.darkGreen)
-                    .font(.body)
-                
-                ZStack {
-                    ZStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.gray)
-                            .opacity(0.1)
-                        
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .frame(maxWidth: 70)
-                            .foregroundColor(Color.accentColor)
-                    }
-                    
-                    HStack {
-                        Text("45%")
-                    }
-                }
+//                ZStack {
+////                    ProgressBarView()
+//                    ZStack(alignment: .leading) {
+//
+//                        RoundedRectangle(cornerRadius: 10, style: .circular)
+//                            .frame(maxWidth: .infinity)
+//                            .foregroundColor(.gray)
+//                            .opacity(0.1)
+//
+//                        RoundedRectangle(cornerRadius: 10, style: .circular)
+//                            .frame(maxWidth: 70)
+//                            .foregroundColor(Color.accentColor)
+//                    }
+//
+//                    HStack {
+//                        Text("45%")
+//                    }
+//                }
+//
+//                Text("Individual progress")
+//                    .foregroundColor(Color.darkGreen)
+//                    .font(.body)
+//
+//                ZStack {
+//                    ZStack(alignment: .leading) {
+//                        RoundedRectangle(cornerRadius: 10, style: .circular)
+//                            .frame(maxWidth: .infinity)
+//                            .foregroundColor(.gray)
+//                            .opacity(0.1)
+//
+//                        RoundedRectangle(cornerRadius: 10, style: .circular)
+//                            .frame(maxWidth: 70)
+//                            .foregroundColor(Color.accentColor)
+//                    }
+//
+//                    HStack {
+//                        Text("45%")
+//                    }
+//                }
 
             }.padding(12)
         }.padding(.horizontal, 13).padding(.bottom, 9)
     }
     
 }
-//
-//struct JourneyCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        JourneyCard()
-//    }
-//}
+
+struct JourneyCard_Previews: PreviewProvider {
+    static var previews: some View {
+        JourneyCard()
+    }
+}

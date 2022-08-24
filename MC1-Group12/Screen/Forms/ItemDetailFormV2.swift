@@ -42,6 +42,7 @@ struct ItemDetailFormV2: View {
     ]
     
     @State var selectedPIC: [User] = []
+    @State var deletePrevItem: Bool = false
     
     var body: some View {
         let isGroup = logisticType == .group
@@ -64,7 +65,14 @@ struct ItemDetailFormV2: View {
                         Text("Group").tag(LogisticType.group)
                     } label: {
                         Text("Type")
-                    }.pickerStyle(.menu)
+                    }
+                    .pickerStyle(.menu)
+                    .onChange(of: logisticType) { newValue in
+                        if isEditing {
+                            formState = .new
+                            deletePrevItem = true
+                        }
+                    }
                 }
                 if isGroup {
                     HStack {
@@ -121,6 +129,7 @@ struct ItemDetailFormV2: View {
                     Button(
                         action: {
                             if isGroup {
+                                print("groip")
                                 let itemDetail = isEditing ? groupItem : GroupItemDB(context: moc)
                                 itemDetail.name = itemName
                                 itemDetail.total = Int16(totalItem)
@@ -129,12 +138,20 @@ struct ItemDetailFormV2: View {
                                 itemDetail.pic = Set(selectedPIC)
                                 try? moc.save()
                             } else {
+                                print("person")
                                 let itemDetail = isEditing ? personalItem : PersonalItemDB(context: moc)
                                 itemDetail.name = itemName
                                 itemDetail.total = Int16(totalItem)
                                 itemDetail.note = notes
                                 itemDetail.journey = journey
                                 try? moc.save()
+                            }
+                            if deletePrevItem {
+                                if isGroup {
+                                    journey.removeFromPersonalItems(personalItem)
+                                } else {
+                                    journey.removeFromGroupItems(groupItem)
+                                }
                             }
                             dismiss()
                         },
@@ -147,9 +164,6 @@ struct ItemDetailFormV2: View {
             .animation(.linear, value: isGroup)
         }
         .onAppear(perform: {
-//            if selectedPIC.isEmpty {
-//                selectedPIC = journey.wrapMembers
-//            }
             if isEditing {
                 itemName = isGroup ? groupItem.wrapName : personalItem.wrapName
                 totalItem = Int(isGroup ? groupItem.total : personalItem.total)

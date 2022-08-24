@@ -13,10 +13,17 @@ struct Mountain: Identifiable {
     var location: String = ""
     var height: Int = 0
     var image: String = ""
+    var ticketWeekend: String = ""
+    var ticketWeekdays: String = ""
+    var statusForHiking: String = ""
+    var hikingDuration: String = ""
+    var minimumGroupHikers: Int = 0
     var estimation: HikingEstimation?
     var informations: [MountainInfo]?
     var essentials: MountainEssential?
     var requirements: [MountainRequirement]?
+
+    
 }
 
 struct MountainInfo: Identifiable {
@@ -49,6 +56,11 @@ let MountainList: [Mountain] = [
         location: "Malang, Indonesia",
         height: 3676,
         image: "semeru",
+        ticketWeekend: "Rp 24.000",
+        ticketWeekdays: "Rp 19.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D2N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "3D2N",
             distance: 16,
@@ -66,7 +78,6 @@ let MountainList: [Mountain] = [
             MountainInfo(
                 title: "Mountain Fun Fact",
                 information: "- Highest mountain in Java island, \n- Third most highest mountain in Indonesia"
-                
             ),
         ],
         essentials: MountainEssential(
@@ -144,6 +155,11 @@ let MountainList: [Mountain] = [
         location: "Kuningan, Indonesia",
         height: 3078,
         image: "ciremai",
+        ticketWeekend: "Rp 7.500",
+        ticketWeekdays: "Rp 5.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 9,
@@ -240,6 +256,11 @@ let MountainList: [Mountain] = [
         location: "Bondowoso, Indonesia",
         height: 3344,
         image: "raung",
+        ticketWeekend: "Rp 15.000",
+        ticketWeekdays: "Rp 15.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D2N",
+        minimumGroupHikers: 3,
         estimation: HikingEstimation(
             duration: "3D2N",
             distance: 14,
@@ -343,6 +364,11 @@ let MountainList: [Mountain] = [
         location: "Cianjur, Indonesia",
         height: 2958,
         image: "gede-pangrango",
+        ticketWeekend: "Rp 34.000",
+        ticketWeekdays: "Rp 29.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 3,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 9,
@@ -438,6 +464,11 @@ let MountainList: [Mountain] = [
         location: "Garut, Indonesia",
         height: 2665,
         image: "papandayan",
+        ticketWeekend: "Rp 30.000",
+        ticketWeekdays: "Rp 20.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 1,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 9,
@@ -530,6 +561,11 @@ let MountainList: [Mountain] = [
         location: "Garut, Indonesia",
         height: 2821,
         image: "cikuray",
+        ticketWeekend: "Rp 10.000",
+        ticketWeekdays: "Rp 10.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 1,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -622,6 +658,11 @@ let MountainList: [Mountain] = [
         location: "Jambi, Indonesia",
         height: 3805,
         image: "kerinci",
+        ticketWeekend: "Rp 15.000",
+        ticketWeekdays: "Rp 15.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D1N",
+        minimumGroupHikers: 3,
         estimation: HikingEstimation(
             duration: "3D1N",
             distance: 17,
@@ -714,6 +755,11 @@ let MountainList: [Mountain] = [
         location: "Papua, Indonesia",
         height: 4884,
         image: "jaya-wijaya",
+        ticketWeekend: "Rp 40jt",
+        ticketWeekdays: "Rp 40jt",
+        statusForHiking: "Open",
+        hikingDuration: "14D3N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "14D13N",
             distance: 96,
@@ -824,6 +870,11 @@ let MountainList: [Mountain] = [
         location: "Lombok, Indonesia",
         height: 3726,
         image: "rinjani",
+        ticketWeekend: "Rp 5.000",
+        ticketWeekdays: "Rp 5.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D1N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -911,6 +962,11 @@ let MountainList: [Mountain] = [
         location: "Magelang, Indonesia",
         height: 3371,
         image: "sumbing",
+        ticketWeekend: "Rp 20.000",
+        ticketWeekdays: "Rp 20.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 3,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -998,6 +1054,11 @@ let MountainList: [Mountain] = [
         location: "Temanggung, Indonesia",
         height: 3136,
         image: "sindoro",
+        ticketWeekend: "Rp 20.000",
+        ticketWeekdays: "Rp 20.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 3,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1085,6 +1146,11 @@ let MountainList: [Mountain] = [
         location: "Karanganyar, Indonesia",
         height: 3265,
         image: "lawu",
+        ticketWeekend: "Rp 20.000",
+        ticketWeekdays: "Rp 20.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D2N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1172,6 +1238,11 @@ let MountainList: [Mountain] = [
         location: "Boyolali, Indonesia",
         height: 3145,
         image: "merbabu",
+        ticketWeekend: "Rp 7.500",
+        ticketWeekdays: "Rp 7.500",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1259,6 +1330,11 @@ let MountainList: [Mountain] = [
         location: "Enrekan, Indonesia",
         height: 3478,
         image: "latimojong",
+        ticketWeekend: "Rp 15.000",
+        ticketWeekdays: "Rp 15.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D2N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1346,6 +1422,11 @@ let MountainList: [Mountain] = [
         location: "Kediri, Indonesia",
         height: 1731,
         image: "kelud",
+        ticketWeekend: "Rp 10.000",
+        ticketWeekdays: "Rp 8.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1433,6 +1514,11 @@ let MountainList: [Mountain] = [
         location: "Malang, Indonesia",
         height: 3339,
         image: "arjuno",
+        ticketWeekend: "Rp 15.000",
+        ticketWeekdays: "Rp 10.000",
+        statusForHiking: "Open",
+        hikingDuration: "",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1520,6 +1606,11 @@ let MountainList: [Mountain] = [
         location: "Probolinggo, Indonesia",
         height: 3088,
         image: "argopuro",
+        ticketWeekend: "Rp 15.000",
+        ticketWeekdays: "Rp 10.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D2N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1607,6 +1698,11 @@ let MountainList: [Mountain] = [
         location: "Garut, Indonesia",
         height: 2249,
         image: "guntur",
+        ticketWeekend: "Rp 10.000",
+        ticketWeekdays: "Rp 10.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1694,6 +1790,11 @@ let MountainList: [Mountain] = [
         location: "Bali, Indonesia",
         height: 3142,
         image: "agung",
+        ticketWeekend: "Rp 20.000",
+        ticketWeekdays: "Rp 30.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1781,6 +1882,11 @@ let MountainList: [Mountain] = [
         location: "Semarang, Indonesia",
         height: 2050,
         image: "ungaran",
+        ticketWeekend: "Rp 5.000",
+        ticketWeekdays: "Rp 5.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1868,6 +1974,11 @@ let MountainList: [Mountain] = [
         location: "Kediri, Indonesia",
         height: 2563,
         image: "wilis",
+        ticketWeekend: "Rp 5.000",
+        ticketWeekdays: "Rp 5.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -1955,6 +2066,11 @@ let MountainList: [Mountain] = [
         location: "Sumbawa, Indonesia",
         height: 2850,
         image: "tambora",
+        ticketWeekend: "Rp 11.000",
+        ticketWeekdays: "Rp 11.000",
+        statusForHiking: "Open",
+        hikingDuration: "3D2N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -2042,6 +2158,11 @@ let MountainList: [Mountain] = [
         location: "Aceh, Indonesia",
         height: 2885,
         image: "geureudong",
+        ticketWeekend: "Rp 20.000",
+        ticketWeekdays: "Rp 20.000",
+        statusForHiking: "Open",
+        hikingDuration: "6D5N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -2129,6 +2250,11 @@ let MountainList: [Mountain] = [
         location: "Agam, Indonesia",
         height: 2877,
         image: "singgalang",
+        ticketWeekend: "Rp 10.000",
+        ticketWeekdays: "Rp 10.000",
+        statusForHiking: "Open",
+        hikingDuration: "2D1N",
+        minimumGroupHikers: 2,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,
@@ -2216,6 +2342,11 @@ let MountainList: [Mountain] = [
         location: "Aceh, Indonesia",
         height: 3404,
         image: "leuseur",
+        ticketWeekend: "Rp 7.500",
+        ticketWeekdays: "Rp 7.500",
+        statusForHiking: "Open",
+        hikingDuration: "16D15N",
+        minimumGroupHikers: 4,
         estimation: HikingEstimation(
             duration: "2D1N",
             distance: 10,

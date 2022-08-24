@@ -52,7 +52,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "person.3.fill")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("4").font(.title3)
+                                Text("\(mountain.minimumGroupHikers)").font(.title3)
                             }
                             Text("Min Hikers")
                                 .font(.system(size: 14, weight: .light, design: .default))
@@ -61,7 +61,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "hourglass")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("3D2N").font(.title3)
+                                Text("\(mountain.hikingDuration)").font(.title3)
                             }
                             Text("Max Hike Duration")
                                 .font(.system(size: 14, weight: .light, design: .default))
@@ -70,7 +70,7 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "capsule.portrait.fill")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("Open").font(.title3)
+                                Text("\(mountain.statusForHiking)").font(.title3)
                             }
                             Text("For Hiking")
                                 .font(.system(size: 14, weight: .light, design: .default))
@@ -85,14 +85,14 @@ struct MountainInformationScreen: View {
                     .foregroundColor(Color.darkGreen)
                     
                     //### Layer 3.2 Slight Mountain Information  ###
-                    HStack (alignment: .center, spacing: 80){
+                    HStack (alignment: .center, spacing: 50){
                         VStack(spacing: 10) {
                             HStack {
                                 Image(systemName: "tag")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("Rp 100,00").font(.title3)
+                                Text("\(mountain.ticketWeekend)").font(.title3)
                             }
-                            Text("Locals")
+                            Text("Weekend")
                         }
                         .frame(width: 150, height: 80)
                         .background(Color.white)
@@ -103,9 +103,9 @@ struct MountainInformationScreen: View {
                             HStack {
                                 Image(systemName: "tag.fill")
                                     .font(.system(size: 22, weight: .light, design: .default))
-                                Text("Rp 100,00").font(.title3)
+                                Text("\(mountain.ticketWeekdays)").font(.title3)
                             }
-                            Text("Tourist")
+                            Text("Weekdays")
                         }
                         .frame(width: 150, height: 80)
                         .background(Color.white)
@@ -119,14 +119,16 @@ struct MountainInformationScreen: View {
                 
                 
                 //### Layer 4 FUN FACT ###
-                ScrollView(.horizontal) {
+                
                 VStack (alignment: .leading, spacing: 10) {
                     
                     Text("Safety Fun Fact")
                         .font(.system(size: 19, weight: .bold))
                     
-                    VStack (alignment: .leading, spacing: 10) {
-                        Text ("Title")
+                    ScrollView(.horizontal) {
+                    
+                        VStack (alignment: .leading, spacing: 10) {
+                        Text (mountain.name)
                             .font(.system(size: 19, weight: .bold))
                         
                         Text ("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
@@ -134,13 +136,16 @@ struct MountainInformationScreen: View {
                     }
                     .frame(width: 350, height: 120)
                     .background(Color.white)
-                    .cornerRadius(10)
+                    .cornerRadius(8)
+                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 10))
+                    .modifier(ShadowModifier())
+                   
                    
                     
                 }
-                .padding(EdgeInsets(top: 430, leading: 18, bottom: 0, trailing: 18))
+                
+                }.padding(EdgeInsets(top: 350, leading: 18, bottom: 0, trailing: 18))
                 Spacer()
-                }
                 
                 
                 //### Layer 5 CREATE JOURNEY BUTTON ###
@@ -184,14 +189,14 @@ struct MountainInformationScreen: View {
 struct ShadowModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .shadow(color: Color ("shadow-light"), radius: 8, x: -8, y: -8)
-            .shadow(color: Color("shadow-dark"), radius: 8, x: 8, y: 8)
+            .shadow(color: Color ("shadow-light"), radius: 5, x: -4, y: -4)
+            .shadow(color: Color("empty-checkmark"), radius: 2, x: 4, y: 4)
     }
 }
 
 
-//struct SwiftUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwiftUIView(mountain: MountainList[0])
-//    }
-//}
+struct MountainInformationScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        MountainInformationScreen(mountain: MountainList[0])
+    }
+}
