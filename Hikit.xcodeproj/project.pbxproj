@@ -54,6 +54,7 @@
 		D1674B2028AE41B2003FAFD1 /* MountainInformationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */; };
 		D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F8E428393A6B002354DD /* LaunchScreen.storyboard */; };
 		D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F8E628393B27002354DD /* CongratulationScreen.swift */; };
+		D1EE1B2228B5B287002A9D73 /* TimerCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE1B2128B5B287002A9D73 /* TimerCountdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInformationV2.swift; sourceTree = "<group>"; };
 		D175F8E428393A6B002354DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D175F8E628393B27002354DD /* CongratulationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationScreen.swift; sourceTree = "<group>"; };
+		D1EE1B2128B5B287002A9D73 /* TimerCountdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCountdown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				08B41EFF28A8DCCF00EB1D45 /* JourneyScreen.swift */,
 				08B41F0128A8E29A00EB1D45 /* JourneyCard.swift */,
 				080EB59B28AE57D300007F39 /* ProfilePic.swift */,
+				D1EE1B2128B5B287002A9D73 /* TimerCountdown.swift */,
 			);
 			path = JourneyScreen_V2;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			files = (
 				080EB59C28AE57D300007F39 /* ProfilePic.swift in Sources */,
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				D1EE1B2228B5B287002A9D73 /* TimerCountdown.swift in Sources */,
 				0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */,
 				08993EF8289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift in Sources */,
 				08D68C63283616D80021EF0E /* HikingJourney.swift in Sources */,
@@ -544,7 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1-Group12/Preview Content\"";
-				DEVELOPMENT_TEAM = 474XANH3RF;
+				DEVELOPMENT_TEAM = 7KZXZF7RC9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -575,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC1-Group12/Preview Content\"";
-				DEVELOPMENT_TEAM = 474XANH3RF;
+				DEVELOPMENT_TEAM = 7KZXZF7RC9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

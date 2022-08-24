@@ -111,9 +111,9 @@ struct MountainDetailScreen: View {
     }
 }
 
-//struct MountainDetailScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MountainDetailScreen()
-//            .previewInterfaceOrientation(.portrait)
-//    }
-//}
+struct MountainDetailScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        MountainDetailScreen(mountain: MountainList[0])
+            .previewInterfaceOrientation(.portrait)
+    }
+}

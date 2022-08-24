@@ -31,7 +31,7 @@ struct JourneyCard: View {
                     
                     Spacer()
                     
-                    Text("In 8d")
+                    TimerCountdown()
                         .padding(.vertical, 5)
                         .padding(.horizontal, 7)
                         .background(
@@ -98,9 +98,9 @@ struct JourneyCard: View {
     }
     
 }
-//
-//struct JourneyCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        JourneyCard()
-//    }
-//}
+
+struct JourneyCard_Previews: PreviewProvider {
+    static var previews: some View {
+        JourneyCard()
+    }
+}
