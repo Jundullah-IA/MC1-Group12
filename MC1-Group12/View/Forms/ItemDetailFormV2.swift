@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-enum LogisticType {
-    case group, personal
-}
-
-enum FormType {
-    case edit, new
-}
-
 struct ItemDetailFormV2: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
