@@ -66,7 +66,6 @@ let MountainList: [Mountain] = [
             MountainInfo(
                 title: "Mountain Fun Fact",
                 information: "- Highest mountain in Java island, \n- Third most highest mountain in Indonesia"
-                
             ),
         ],
         essentials: MountainEssential(

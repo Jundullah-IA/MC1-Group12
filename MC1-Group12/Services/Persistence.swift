@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import CloudKit
 
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
@@ -14,11 +15,13 @@ class DataController: ObservableObject {
         container = NSPersistentCloudKitContainer(name: "coredata")
         
         container.loadPersistentStores { description, error in
+            description.cloudKitContainerOptions?.databaseScope = .public
+            
             if let error = error {
                 print("Container load failed: \(error.localizedDescription)")
             }
         }
-        
+
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
