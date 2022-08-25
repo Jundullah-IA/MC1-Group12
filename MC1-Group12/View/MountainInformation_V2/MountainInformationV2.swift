@@ -28,13 +28,13 @@ struct MountainInformationScreen: View {
                 
                 //### Layer 1 CITY/PROVINCE + MDPL ###
                 VStack {
-                    HStack(spacing: 200) {
-                        Text(mountain.name)
+                    HStack {
+                        Text(mountain.location)
                             .font(.system(size: 18, weight: .light, design: .default))
+                        Spacer()
                         Text("\(mountain.height)mdpl")
                             .font(.system(size: 18, weight: .light, design: .default))
-                    }
-                    .padding(EdgeInsets(top: 5, leading: 18, bottom: 478, trailing: 18))
+                    }.padding(.horizontal, 20)
                     Spacer()
                 }
                 
@@ -168,7 +168,6 @@ struct MountainInformationScreen: View {
                 .navigationTitle(mountain.name)
                 .navigationBarTitleDisplayMode(.automatic)
                 .sheet(isPresented: $showSheet, onDismiss: {showSheet = false}) { HikingDetailForm(mountain: mountain) }
-            
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct JourneyScreen: View {
     @FetchRequest(sortDescriptors: []) private var journeySet: FetchedResults<Journey>
+    @Environment(\.managedObjectContext) var moc
+    @State private var refreshID = UUID()
     
     var body: some View {
         NavigationView {
@@ -16,10 +18,10 @@ struct JourneyScreen: View {
                 if(journeySet.count > 0) {
                     ScrollView {
                         ForEach(journeySet) {journey in
-                            NavigationLink(destination: JourneyDetailScreen(journey: journey)) {
+                            NavigationLink(destination: JourneyDetailScreen(journey: journey).onDisappear(perform: {self.refreshID = UUID()})) {
                                 JourneyCard(journey: journey)
                             }
-                        }
+                        }.id(refreshID)
                     }
                     .background(Color.background)
                 } else {
@@ -97,6 +99,10 @@ struct JourneyScreen: View {
             
             .navigationTitle("Let's Hike")
             .navigationBarTitleDisplayMode(.large)
+            
+            .onAppear {
+                try? moc.save()
+            }
         }
     }
 }
