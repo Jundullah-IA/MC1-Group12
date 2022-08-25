@@ -53,6 +53,7 @@
 		0E9361DD28B5D57F00E5D991 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9361D728B5D07B00E5D991 /* CloudKit.framework */; };
 		0EBE72722837D58F00ECC55A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE72712837D58F00ECC55A /* Helper.swift */; };
 		0EE58D6628B693380037510A /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE58D6528B693380037510A /* Enum.swift */; };
+		0EE58D6A28B738C10037510A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE58D6928B738C10037510A /* Extension.swift */; };
 		D1674B2028AE41B2003FAFD1 /* MountainInformationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */; };
 		D175F8E528393A6B002354DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D175F8E428393A6B002354DD /* LaunchScreen.storyboard */; };
 		D175F8E728393B27002354DD /* CongratulationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D175F8E628393B27002354DD /* CongratulationScreen.swift */; };
@@ -111,6 +112,7 @@
 		0E9361D928B5D0BB00E5D991 /* HiKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiKit-Info.plist"; sourceTree = "<group>"; };
 		0EBE72712837D58F00ECC55A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0EE58D6528B693380037510A /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		0EE58D6928B738C10037510A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D1674B1F28AE41B2003FAFD1 /* MountainInformationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInformationV2.swift; sourceTree = "<group>"; };
 		D175F8E428393A6B002354DD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D175F8E628393B27002354DD /* CongratulationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationScreen.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				0E67E024282FFFEE00829F52 /* Colors.swift */,
 				0EBE72712837D58F00ECC55A /* Helper.swift */,
+				0EE58D6928B738C10037510A /* Extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			files = (
 				080EB59C28AE57D300007F39 /* ProfilePic.swift in Sources */,
 				08A089F3282B569E00B0AA72 /* ContentView.swift in Sources */,
+				0EE58D6A28B738C10037510A /* Extension.swift in Sources */,
 				D1EE1B2228B5B287002A9D73 /* TimerCountdown.swift in Sources */,
 				0E118AD428AF3CA4004BC185 /* CustomSegmentedControl.swift in Sources */,
 				08993EF8289AB8150082ADFD /* GroupItemDB+CoreDataProperties.swift in Sources */,

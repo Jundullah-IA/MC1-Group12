@@ -37,7 +37,7 @@ struct JourneyCard: View {
                     
                     Spacer()
                     
-                    TimerCountdown()
+                    TimerCountdown(hikingDate: journey.wrapDate)
                         .padding(.vertical, 5)
                         .padding(.horizontal, 7)
                         .background(
