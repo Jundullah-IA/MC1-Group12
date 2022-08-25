@@ -9,6 +9,7 @@ import SwiftUI
 
 struct JourneyScreen: View {
     @FetchRequest(sortDescriptors: []) private var journeySet: FetchedResults<Journey>
+    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         NavigationView {
@@ -97,6 +98,10 @@ struct JourneyScreen: View {
             
             .navigationTitle("Let's Hike")
             .navigationBarTitleDisplayMode(.large)
+            
+            .onAppear {
+                try? moc.save()
+            }
         }
     }
 }

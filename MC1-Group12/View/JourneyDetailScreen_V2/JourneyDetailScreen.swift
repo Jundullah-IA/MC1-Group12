@@ -11,10 +11,14 @@ struct JourneyDetailScreen: View {
     @State var selection: Int = 0
     @State var scrolled: Bool = false
     @ObservedObject var journey: Journey = Journey()
+    @ObservedObject var user: User = User()
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
     
     @State var showOptions: Bool = false
     @State var showNewItemSheet: Bool = false
+    @State var showingAlert: Bool = false
+    @State var backToHome: Bool = false
     @State private var selectedSort: SortType = .dateCreated
     @State private var selectedGroupItem: GroupItemDB? = nil
     @State private var selectedPersonalItem: PersonalItemDB? = nil
@@ -131,6 +135,19 @@ struct JourneyDetailScreen: View {
             .sheet(item: $selectedPersonalItem) {item in
                 ItemDetailFormV2(formState: .edit, journey: journey, logisticType: .personal, personalItem: item)
             }
+            .alert(isPresented:$showingAlert) {
+                Alert(
+                    title: Text("Are you sure you want to delete this?"),
+                    message: Text("There is no undo"),
+                    primaryButton: .destructive(Text("Delete")) {
+
+                        moc.delete(journey)
+                        dismiss()
+                        
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
@@ -158,7 +175,7 @@ struct JourneyDetailScreen: View {
                             Label("Leave Trip", systemImage: "rectangle.portrait.and.arrow.right")
                         }
                         Button(role: .destructive) {
-                            
+                            showingAlert = true
                         } label: {
                             Label("Delete Trip", systemImage: "trash")
                         }
@@ -168,7 +185,6 @@ struct JourneyDetailScreen: View {
                 }
             }
         }
-        
         .navigationTitle("\(journey.wrapMountain) Trip")
         
     }

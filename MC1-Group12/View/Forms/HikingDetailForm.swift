@@ -17,6 +17,7 @@ struct HikingDetailForm: View {
     @State var participants: [String] = [""]
     @State var notEnoughParticipant = false
     @State var presentAlert = false
+    @State var isEditing = false
     
     @ViewBuilder var headerParticipant: some View {
         HStack {
@@ -154,37 +155,6 @@ struct HikingDetailForm: View {
                                 }
                                 
                                 try? moc.save()
-                                
-//                                if let hiking = hiking {
-//                                    let index = globalObj.journeyList.firstIndex {$0.id == hiking.id} ?? 0
-//
-//                                    globalObj.journeyList[index].hiker = participants
-//                                    globalObj.journeyList[index].date = tripDate
-//                                } else {
-//                                    func qtyCount(_ item: String) -> Int {
-//                                        switch item {
-//                                        case "Flysheet":
-//                                            return 3
-//                                        case "Portable Gas", "Raffia rope":
-//                                            return 2
-//                                        default:
-//                                            return 1
-//                                        }
-//                                    }
-//                                    let groupLog = mountain.essentials.groupLogistic.map { items -> GroupItem in
-//                                        let list: GroupItem = GroupItem(name: items, quantity: qtyCount(items), notes: items == "Tents" ? "For \(participants.count) people" : "")
-//                                        return list
-//                                    }
-//                                    let personLog = mountain.essentials.personalLogistic.map { items -> PersonalItem in
-//                                        let list: PersonalItem = PersonalItem(name: items, quantity: 1)
-//                                        return list
-//                                    }
-//
-//                                    globalObj.journeyList.append(Hiking(
-//                                        mountain: mountain, date: tripDate, hiker: participants, groupLogistic: groupLog, personalLogistic: personLog
-//                                    ))
-//                                }
-                                
                                 dismiss()
                             }
                             
