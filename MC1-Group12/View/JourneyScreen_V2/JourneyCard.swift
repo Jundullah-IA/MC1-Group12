@@ -11,6 +11,11 @@ struct JourneyCard: View {
     var journey: Journey = Journey()
     
     var body: some View {
+        let progressGroup = journey.wrapGroupItems.filter { $0.isDone }.count
+        let totalGroup = journey.wrapGroupItems.count
+        let progressPersonal = journey.wrapPersonalItems.filter { $0.isDone }.count
+        let totalPersonal = journey.wrapPersonalItems.count
+        
         ZStack {
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color.black.opacity(0.5), lineWidth: 1)
@@ -55,8 +60,7 @@ struct JourneyCard: View {
 //                Text("Group progress")
 //                    .foregroundColor(Color.darkGreen)
 //                    .font(.body)
-                
-                ProgressBarView(value: .constant(1))
+                ProgressBarView(valueGroup: progressGroup, totalGroup: totalGroup, valuePersonal: progressPersonal, totalPersonal: totalPersonal)
                 
 //                ZStack {
 ////                    ProgressBarView()

@@ -25,6 +25,7 @@ struct GradientProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Progre
                     Rectangle()
                         .fill(fill)
                         .frame(maxWidth: geo.size.width * CGFloat(fractionCompleted))
+                        .cornerRadius(10)
 //                        .animation(animation)
                 }
             }
@@ -32,8 +33,9 @@ struct GradientProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Progre
             .cornerRadius(cornerRadius)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(stroke, lineWidth: 2)
+                    .stroke(stroke, lineWidth: 0)
             )
+            .background(Color.background)
             
             
         }
@@ -43,7 +45,10 @@ struct GradientProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Progre
 
 
 struct ProgressBarView: View {
-    @Binding var value : Int
+    var valueGroup : Int = 0
+    var totalGroup : Int = 0
+    var valuePersonal : Int = 0
+    var totalPersonal : Int = 0
     
     @State private var gradient = LinearGradient(
         gradient: Gradient(colors: [(Color.darkGreen), (Color.darkGreen), (Color.darkGreen)]),
@@ -51,7 +56,7 @@ struct ProgressBarView: View {
         endPoint: .bottomTrailing
     )
     
-    @State private var progress: Float = 0
+//    @State private var progress: Float = 0
     
     var body: some View {
         
@@ -67,7 +72,7 @@ struct ProgressBarView: View {
             Text("Group Logistic")
                 .foregroundColor(Color.darkGreen)
                 .font(.body)
-            ProgressView(value: 40, total: 100).progressViewStyle(gradientStyle).frame(height:20)
+            ProgressView(value: Float(valueGroup), total: Float(totalGroup)).progressViewStyle(gradientStyle).frame(height:20)
                 .contentShape(Rectangle())
             //                .onAppear {
             //                    progress = ProgressBarValue().getCheckdList()
@@ -76,16 +81,17 @@ struct ProgressBarView: View {
             Text("Personal Logistic")
                 .foregroundColor(Color.darkGreen)
                 .font(.body)
-            ProgressView(value: 50, total: 100).progressViewStyle(gradientStyle).frame(height:20)
+            ProgressView(value: Float(valuePersonal), total: Float(totalPersonal)).progressViewStyle(gradientStyle).frame(height:20)
                 .contentShape(Rectangle())
         }
     }
 }
-struct ProgressBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgressBarView(value: .constant(1))
-    }
-}
+//
+//struct ProgressBarView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProgressBarView(value: .constant(1), total: .constant(1))
+//    }
+//}
 
 
 //struct ProgressBarView: View {
